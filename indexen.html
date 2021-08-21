@@ -1,0 +1,2272 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Housework is valuable</title>
+	
+	<link rel="web icon" type="image/x-icon" href="网页标.ico)" media="screen" />
+	
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="style2.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- Resources -->
+	<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+	<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+	<script src="https://cdn.amcharts.com/lib/4/plugins/forceDirected.js"></script>
+	<!-- script src="https://cdn.amcharts.com/lib/4/themes/frozen.js"></script -->
+	
+	<script type="text/javascript" src="http://scrollmagic.io/assets/js/lib/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="js/ScrollMagic.js"></script>
+	
+	<style>
+		
+		html,body{
+			
+			width: 100%;
+			height: 100%;
+		}
+		
+		.tuzhu
+		{
+			color: #999999;
+			font-size: 12px;
+			margin: 0 auto;
+			text-align: center;
+		}
+		
+	.partwrap {}
+
+        .part1 {
+            position: relative;
+            z-index: 10;
+            background-color: #f6f4e7;
+        }
+
+        #blackmask1 {
+            z-index: 9;
+        }
+
+        .part2 {
+            position: fixed;
+            z-index: 8;
+            width: 100%;
+            top: 0;
+            left: 0;
+            
+            background-color: #f6f4e7;
+        }
+
+        #blackmask2 {
+            z-index: 7;
+        }
+
+        .part3 {
+            position: fixed;
+            z-index: 6;
+            width: 100%;
+            top: 0;
+            left: 0;
+            
+            background-color: #f6f4e7;
+        }
+
+        #blackmask3 {
+            z-index: 5;
+        }
+
+        .part4 {
+            position: fixed;
+            z-index: 4;
+            width: 100%;
+            top: 0;
+            left: 0;
+           
+            background-color: #f6f4e7;
+        }
+		
+		#blackmask4 {
+            z-index: 3;
+        }
+
+        .part5 {
+            position: fixed;
+            z-index: 2;
+            width: 100%;
+            top: 0;
+            left: 0;
+           
+            background-color: #f6f4e7;
+        }
+		
+        .partinner {
+            max-width: 100%;
+            padding: 0px;
+            margin: 0 auto;
+        }
+
+        .blackmask {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-color: #000;
+            opacity: 1;
+            pointer-events: none;
+        }
+
+
+
+        .torelative {
+            position: relative;
+        }	
+        
+
+    body {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑";
+        }
+		
+	.wenzi{
+			width: 620px;
+			text-align: left;
+            margin: 0 auto;
+			line-height: 33px;
+			font-size: 14px;
+			color: #5e564a;
+		}	
+		
+	.duanbiaotitu{
+			width: 1150px;
+			margin: 0 auto;
+			height: 700px;
+			background-color:cadetblue;
+		}
+		
+	.zhaopian{
+			width: 850px;
+			margin: 0 auto;
+			height: auto;
+		}	
+		
+	.top {
+            width: 100%;
+            height: 100vh;
+			position: relative;
+            
+        }	
+		
+	.gamebox{
+			width: 1000px;
+			height: 560px;
+			margin: auto;
+		}
+		
+	#ciyun{
+			position: relative;
+			width: 100%;
+			height: 700px;
+			margin: 0 auto;
+		}
+		
+	#chartdiv {
+  			width: 690px;
+			height:650px;
+			position: absolute;
+			margin-left: 12%;
+	}
+	
+	.xianshikuang{
+		width: 300px;
+		
+		margin-left:67%;
+		background-color:rgba(255,255,255,0);
+		position: absolute;
+		font-size: 13px;
+		margin-top: 10px;
+		}	
+		
+	.tupian1box{
+			width: 800px;
+			height: 556px;
+			margin: 0 auto;
+		}
+		
+		.anniu{
+			width: 40px;
+			height: 30px;
+			background: rgba(255,255,255,0);
+			/*background: #4FA5FC;*/
+			border: 0;
+		}
+		
+		.anniu2{
+			width: 50px;
+			height: 340px;
+			background: rgba(255,255,255,0);
+			/*background: #4FA5FC;*/
+			border: 0;
+		}
+		
+		.anniu,.anniu2{
+			cursor: pointer;
+		}
+		
+		.nannvbox{
+			width: 700px;
+			height: 554px;
+			margin: 0 auto;
+		}
+		
+		.nannvanniu{
+			width: 110px;
+			height: 20px;
+			background: rgba(255,255,255,0);
+			/*background: #4FA5FC;*/
+			border: 0;
+		}
+	
+		
+		.nannvanniu{
+			cursor: pointer;
+		}
+		
+		.huadongpic1 {
+            width: 850px;
+			height: 555px;
+            margin: 0 auto;
+			
+        }
+		
+		 #fixed-wrapper1 {
+            position: relative;
+			margin: 0 auto;
+			 
+        }
+
+        #fixedbg1 {
+            position: absolute;
+            top: 0;
+            left: 21.5%;
+            width: 800px;
+			height: 575px;
+
+        }
+
+		#laba{
+			cursor: pointer;
+		}
+		
+		 .desc-section {
+            width: 80%;
+			 left: 10%;
+            height: 50vh;
+            position: relative;
+			 margin: 0 auto;
+        }
+		
+		.shengyulvbox{
+			width: 750px;
+			height: 518px;
+			margin: 0 auto;
+		}
+		
+		.liudiqubox{
+			width: 700px;
+			height: 570px;
+			margin: 0 auto;
+		}
+		
+		.liudiquanniu{
+			width: 95px;
+			height: 28px;
+			background: rgba(255,255,255,0);
+			/*background: #4FA5FC;*/
+			border: 0;
+		}
+	
+		
+		.liudiquanniu{
+			cursor: pointer;
+		}
+		
+		.vedio{}
+		
+		.vedio{
+			cursor: pointer;
+		}
+		
+		
+	</style>
+	
+	</head>
+	
+	<body>
+
+	
+	<script>
+am4internal_webpackJsonp(["8ce2"],{ik00:function(e,c,t)
+{"use strict";Object.defineProperty(c,"__esModule",{value:!0});
+
+var b=t("aCit"), a=t("8ZqG"), i=function(e){Object(b.b)(e,"ColorSet")
+&&(e.list=[Object(a.c)("#ff9966"),//深橙色
+Object(a.c)("#ffb57f"),//浅橙色
+Object(a.c)("#7ebb97"),//中绿
+Object(a.c)("#ffcc99"),
+Object(a.c)("#339966"),//深绿色
+Object(a.c)("#fdd69f"),//最浅橙色
+Object(a.c)("#bbddba")],//最浅绿
+e.minLightness=.2,e.maxLightness=.7,e.reuse=!0)};
+ 
+window.am4themes_frozen=i}},["ik00"]);
+</script>
+
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+
+<!-- Chart code -->
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_frozen);
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+var chart = am4core.create("chartdiv", am4plugins_forceDirected.ForceDirectedTree);
+
+var networkSeries = chart.series.push(new am4plugins_forceDirected.ForceDirectedSeries())
+
+networkSeries.data = [{
+  name: '50K', value: 18.65,
+  children: [{
+    name: 'No', value: 1.22,
+    children: [{
+      name: 'No', value: 0.08,
+    }, {
+      name: 'Not', value: 0.36
+    }, {
+      name: 'No need', value: 0.63
+    }, {
+      name: 'No worth', value: 0.08
+    }, {
+      name: 'Not good', value: 0.07
+    }]
+  }, {
+    name: 'Little', value: 0.50,
+    children: [{
+      name: 'Cheap', value: 0.32
+      }, {
+      name: 'Worthless', value: 0.18
+    }]
+  }, {
+    name: 'Opposition', value: 0.36,
+    children: [{
+      name: 'Poor', value: 0.06
+      }, {
+      name: 'Saticrical', value: 0.06
+      }, {
+      name: 'Pathetic', value: 0.04
+      }, {
+      name: 'Overdo', value: 0.05
+      }, {
+      name: 'Gross', value: 0.08
+      }, {
+      name: 'Calmness', value: 0.07
+      }]
+  }, {
+    name: 'Justice', value: 0.14
+    }, {
+    name: 'Normal', value: 0.11
+    }]     
+}, {
+  name: 'Housewife', value: 11.39,
+    children: [{
+    name: 'Family', value: 3.39,
+    children: [{
+      name: 'Compensation', value: 0.63
+      }, {
+      name: 'housework', value: 0.52
+      }, {
+      name: 'Self', value: 0.60
+      }, {
+      name: 'Child', value: 0.52
+      }, {
+      name: 'Babysitter', value: 0.59
+    }] 
+  }, {
+    name: 'Divorce', value: 2.40,
+    children: [{
+      name: 'Male', value: 0.26
+      }, {
+      name: 'Compensation', value: 0.84
+      }, {
+      name: 'Housework', value: 0.81
+      }, {
+      name: 'Female', value: 0.21
+    }] 
+  }, {
+    name: 'Compensation', value: 3.06,
+    children: [{
+      name: 'Family', value: 0.72
+      }, {
+      name: 'Divorce', value: 0.97
+      }, {
+      name: 'Housewife', value: 0.44
+    }]
+  }, {
+    name: 'Housework', value: 2.37,
+      }, {
+    name: 'Job', value: 3.92,
+    children: [{
+      name: 'Toil', value: 0.19
+      }, {
+      name: 'Sacrifice', value: 0.23
+      }, {
+      name: 'Family', value: 1.17
+      }, {
+      name: 'Female', value: 0.57
+      }, {
+      name: 'Child', value: 0.68
+      }, {
+      name: 'Properties', value: 0.43
+    }]
+  }, {
+    name: 'Properties', value: 1.17,
+    children: [{
+      name: 'Guarantee', value: 0.31
+      }, {
+      name: 'Divorce', value: 0.31
+      }, {
+      name: 'Compensation', value: 0.43
+      }, {
+      name: 'Female', value: 0.32
+    }]
+  }] 
+}, {
+  name: 'Babysitter', value: 10.32,
+  children: [{
+    name: 'Salary', value: 1.54,
+    children: [{
+      name: 'Family', value: 0.21
+      }, {
+      name: 'Male', value: 0.20
+      }, {
+      name: 'Compensation', value: 0.23
+      }, {
+      name: 'Not enough', value: 0.21
+    }]
+  }, {
+    name: 'Marriage', value: 1.32,
+      children: [{
+      name: 'Divorce', value: 0.15
+      }, {
+      name: 'Losing money', value: 0.07
+      }, {
+      name: 'Devotion', value: 0.12
+      }, {
+      name: 'Cheap', value: 0.10
+    }]
+  }, {
+    name: 'Family', value: 1.28,
+      children: [{
+      name: 'Housework', value: 0.25
+      }, {
+      name: 'Female', value: 0.34
+    }]
+  }, {
+    name: 'Divorce', value: 0.80
+  }, {
+    name: 'Male', value: 0.75,
+      children: [{
+      name: 'Housework', value: 0.16
+      }, {
+      name: 'Not', value: 0.17
+    }]
+  }, {
+    name: 'Marriage', value: 1.32,
+      children: [{
+      name: 'Divorce', value: 0.15
+      }, {
+      name: 'Losing money', value: 0.07
+      }, {
+      name: 'Devotion', value: 0.12
+      }, {
+      name: 'Cheap', value: 0.10
+    }]
+  }, {
+    name: 'Housework', value: 1.08 
+  }, {
+    name: 'Woman', value: 1.58,
+      children: [{
+      name: 'Compensation', value: 0.25
+      }, {
+      name: 'No', value: 0.25
+      }, {
+      name: 'Devotion', value: 0.25
+      }, {
+      name: 'Same', value: 0.18
+    }]
+  }, {
+    name: 'Not', value: 1.29,
+      children: [{
+      name: 'Marriage', value: 0.026
+      }, {
+      name: 'Family', value: 0.031
+    }]
+  }]      
+}, {
+  name: 'Woman', value: 10.02,
+  children: [{
+    name: 'Housewife', value: 3.29,
+    children: [{
+      name: 'Marriage', value: 0.78
+      }, {
+      name: 'Child', value: 0.62
+      }, {
+      name: 'Babysitter', value: 0.50
+      }, {
+      name: 'Divorce', value: 0.47
+      }, {
+      name: 'Housework', value: 0.36
+      }, {
+      name: 'Compensation', value: 0.58
+    }]
+  }, {
+    name: 'Marriage', value: 3.23,
+      children: [{
+      name: 'Job', value: 0.68
+      }, {
+      name: 'Self', value: 0.64
+      }, {
+      name: 'Divorce', value: 0.71
+      }, {
+      name: 'Housework', value: 0.54
+      }, {
+      name: 'No', value: 1.07
+      }, {
+      name: 'Properties', value: 0.68
+    }]
+  }, {
+    name: 'Child', value: 2.85,
+      children: [{
+      name: 'Housework', value: 0.62
+      }, {
+      name: 'Devotion', value: 0.24
+    }]
+  }, {
+    name: 'Babysitter', value: 2.61,
+      children: [{
+      name: 'Housewife', value: 0.50
+      }, {
+      name: 'Job', value: 0.41
+      }, {
+      name: 'Properties', value: 0.42
+      }, {
+      name: 'Materialize', value: 0.13
+    }]
+  }, {
+    name: 'Job', value: 2.61,
+      children: [{
+      name: 'Housewife', value: 0.86
+      }, {
+      name: 'Marriage', value: 0.68
+      }, {
+      name: 'Child', value: 0.58
+      }, {
+      name: 'Self', value: 0.47
+    }]
+  }, {
+    name: 'Self', value: 2.31,
+      children: [{
+      name: 'Marriage', value: 0.64
+      }, {
+      name: 'Job', value: 0.47
+      }, {
+      name: 'Divorce', value: 0.33
+    }] 
+  }]      
+}, {
+  name: 'Housework', value: 9.12,
+  children: [{
+    name: 'Housewife', value: 2.47
+    }, {
+    name: 'Wife', value: 2.29
+    }, {
+    name: 'Female', value: 4.27
+    }, {
+    name: 'Male', value: 2.26
+    }, {
+    name: 'Guarantee', value: 0.66
+    }, {
+    name: 'Value', value: 0.66
+    }, {
+    name: 'Salary', value: 0.62
+    }, {
+    name: 'Toil', value: 0.32
+    }, {
+    name: 'Problem', value: 0.24
+    }, {
+    name: 'No good', value: 0.20
+    }, {
+    name: 'Balance', value: 0.16
+  }]
+}, {
+  name: 'Marriage', value: 8.95,
+  children: [{
+    name: 'Child', value: 1.84
+    }, {
+    name: 'Self', value: 1.81
+    }, {
+    name: 'Divorce', value: 1.76
+    }, {
+    name: 'Compensation', value: 1.52
+    }, {
+    name: 'Not', value: 0.79
+    }, {
+    name: 'Guarantee', value: 0.37
+    }, {
+    name: 'Spilt', value: 0.36
+    }, {
+    name: 'Cheap', value: 0.16
+    }, {
+    name: 'Best', value: 0.15
+    }, {
+    name: 'Calmness', value: 0.15
+    }, {
+    name: 'Careful', value: 0.12
+    }, {
+    name: 'Freedom', value: 0.09
+    }, {
+    name: 'Scary', value: 0.08
+    }, {
+    name: 'Troublesome', value: 0.06
+  }]
+}, {
+  name: 'Compensation',value: 6.07,
+  children: [{
+    name: 'Should', value: 0.97
+    }, {
+    name: 'Demand', value: 0.86
+    }, {
+    name: 'Spilt', value: 0.70
+    }, {
+    name: 'Guarantee', value: 0.63
+    }, {
+    name: 'Devotion', value: 0.56
+    }, {
+    name: 'Can', value: 0.54
+    }, {
+    name: 'Encourage', value: 0.39
+    }, {
+    name: 'Value', value: 0.28
+    }, {
+    name: 'Labour', value: 0.28
+    }, {
+    name: 'Economy', value: 0.25
+    }, {
+    name: 'Toil', value: 0.19
+    }, {
+    name: 'Gain', value: 0.18
+    }, {
+    name: 'Count', value: 0.12
+  }]
+}];
+
+networkSeries.dataFields.linkWith = "linkWith";
+networkSeries.dataFields.name = "name";
+networkSeries.dataFields.id = "name";
+networkSeries.dataFields.value = "value";
+networkSeries.dataFields.children = "children";
+networkSeries.links.template.distance = 1;
+networkSeries.nodes.template.tooltipText = "{name}";
+networkSeries.nodes.template.fillOpacity = 1;
+networkSeries.nodes.template.outerCircle.scale = 1;
+
+networkSeries.nodes.template.label.text = "{name}"
+networkSeries.fontSize = 12;
+networkSeries.nodes.template.label.hideOversized = true;
+networkSeries.nodes.template.label.truncate = true;
+networkSeries.minRadius = am4core.percent(2);
+networkSeries.manyBodyStrength = -5;
+networkSeries.links.template.strokeOpacity = 0;
+
+}); // end am4core.ready()
+</script>
+
+
+<div class="contact-info">
+      <div id="turnto1" class="option">
+		  
+        <i >
+			  <img src="PICS/ICON1.png" style="width: 70%;height: 65%;position: absolute; left: 15%;top: 18%;">
+			  </i>
+		  <div class="text">THE BEGINNING</div>
+		 
+        
+      </div>
+
+      <div id="turnto2" class="option">
+		 
+			  <i  >
+			  <img onclick="onTopClick1();" src="PICS/XIYIJIICON.png" style="width: 74%;height: 74%;position: absolute; left: 13%;top: 13%;">
+			  </i>
+		  <div class="text">DEPRESSION</div>
+		 
+        
+      </div>
+
+      <div id="turnto3" class="option">
+		 
+        <i >
+		  <img src="PICS/书包ICON.png" style="width: 100%;height: 100%;position: absolute; left: 0%;top: 0%;">
+			  </i>
+		  <div class="text">HESITATION</div>
+		
+        
+      </div>
+		
+	  <div id="turnto4" class="option">
+       
+		  <i >
+		  <img src="PICS/GUOICON.png" style="width: 70%;height: 70%;position: absolute; left: 18%;top: 15%;">
+		   </i>
+		  <div class="text">TENSION</div>
+		
+        
+      </div>
+		
+	  <div id="turnto5" class="option">
+      
+		  <i >
+		  <img src="PICS/PINTUICON.png" style="width: 78%;height: 58%;position: absolute; left: 11%;top: 23%;">
+		   </i>
+		  
+		  <div class="text">EXPECTATION</div>
+		
+        
+      </div>	
+
+    </div>
+		
+		
+<div class="partwrap">
+			
+        <div class="part1">
+            <div class="partinner" id="partinner1">
+                <div id="video" class="top">
+		<img src="PICS/标题/大标题[EN].jpg" alt="xiandao" style="width: 100%;height: 100%;">
+		<a class="vedio1" href="index.html" style="position: absolute;height: 30px;width: 30px;top: 3%;left: 90%;"	></a>
+		<a class="vedio1" href="indexen.html" style="position: absolute;height: 30px;width: 35px;top: 3%;left: 93.5%;"	></a>			
+		</div>
+				
+		<script>
+              //视频播放
+              var indexVedio = document.getElementById("video");
+              indexVedio.onclick = function(){
+                indexVedio.innerHTML = "<iframe width=100% height='600' src='video/先导片粗剪.mp4' allowfullscreen></iframe>";
+              }
+        </script>
+				
+	<br><br><br>
+		
+	<div style="width: 850px;height: 162px;margin: 0 auto;">			
+		<img src="PICS/引言/先导部分“也就是我妈…….png"  alt="yinhao1" style="width: 100%;height: 100%;"></div><br><br>
+				
+	<div id="xiandaoyu" class="wenzi">
+		
+	Silence suddenly took over the house. <br>	<br>
+	At this moment, the mother was still out shopping for food. Shen Yanping looked at her husband lying in bed, pulled open the closet, took down sweaters and cotton jackets and smashed them at him. Shen Yanping asked her husband to move out and rent a room in within two weeks, saying that the life was impossible to carry on.<br><br>
+	Shen Yanping worked abroad for a long time; in her absence, her eighty-year-old mother took care of all the household chores at home. Her husband, Li Jianfeng, just spent his free time in the living room, bedroom and going out to parties. He looks like an outsider in the family - Shen Yanping pays for all the living expenses; her mother is the one who takes all the housework, prepares the three meals and takes care of everything.<br><br>
+	Every New Year's Eve is Li Jianfeng's only time to express gratitude. The mother received his 1000 yuan red packet, and the next day, she took out 800 yuan and gave to her granddaughter Xiao Chen.<br><br>
+		
+		<font color="#e98e51" size="+0.5" ><strong>In Shen Yanping's eyes, if measured in money, her mother's year of housework is worth 200 yuan for Li Jianfeng.</strong></font>
+		<!--
+		<p style="font-size:16px;text-align: center">在申燕萍眼里，<font color="#cc6633" size="+0.5" ><strong>如果用金钱衡量，母亲一年的家务劳动对于李建锋而言价值200元。</strong></font></p>-->
+	<br><br><br><br>
+		</div>
+
+            </div>
+            <div id="masktraigger1"></div>
+        </div>
+        <div class="blackmask" id="blackmask1"></div>
+        <div  class="part2">
+            <div class="partinner" id="partinner2">
+                <img id="titu2" src="PICS/英文小标题/DEPRESSION.gif" alt="part1" style="width: 100%;height: 100vh;">
+	<br>	
+	<br><br><br>			
+	<div style="width: 850px;height: 160px;margin: 0 auto;">			
+		<img src="PICS/引言/第一部分.png"  alt="yinhao2" style="width: 100%;height: 100%;"></div><br><br>	<br>		
+				
+		<div  class="wenzi">
+	
+	The unpaid nature of domestic work renders its value invisible, and the invisibility of its value relegates the labor effort to the background.<br><br>
+			
+	However, is there really no need to compensate for household work? Not so today.<br><br>		
+		
+	In February 2021, Ms. Wang, a full-time mother from Fangshan, Beijing, received a compensation of 50,000 yuan from her husband. Due to her long-term responsibility for most of the household chores, Ms. Wang filed a claim for domestic work compensation in her divorce claim; this was the first divorce domestic work compensation case concluded by applying the new provisions of the <i>Civil Code of the People's Republic of China </i>. Article 1088 of the Civil Code improves the system of financial compensation for domestic work, which started in 2001, and further recognizes the value of domestic work. In June of the same year, Ms. Qi, a full-time mother in Taizhou, Zhejiang Province, also applied for domestic labor compensation in her divorce and received a compensation payment of 15,000 yuan.<br><br>
+			
+	From February to June, as the number of domestic work compensation cases increased, what was presented was everyone who undertook domestic work in the family mutely.<br><br>
+	According to the 2018 National Time Use Survey Bulletin,<font color="#e98e51" size="+0.5" ><strong> each resident will spend an average more than 2 hours doing household chores, taking up almost all unpaid labor a day </strong></font> .For residents who need to accompany childcare, childcare becomes the main activity in caring for the family for more than 3 hours a day, with women often being the main contributors to the menial household chores and childcare. <br><br>
+				</div>
+			
+			<div  class="nannvbox" style="position: relative;">
+		
+		
+		
+		<div id="tuchunv" class="nannvbox" style="background-image: url(PICS/0615劳动时间图/女.png);background-size: 100% 100%;position: absolute;top: 0;left: 0;">
+			
+		</div>
+		
+		<div id="tuchunan" class="nannvbox" style="background-image: url(PICS/0615劳动时间图/男.png);background-size: 100% 100%;position: absolute;top: 0;left: 0;">
+			
+		</div>
+		
+		<button id="nv" class="nannvanniu" style="position: absolute;top: 60px;left: 200px;">
+			</button>
+		
+		<button id="nan" class="nannvanniu" style="position: absolute;top: 60px;left: 330px;">
+			</button>
+		
+	</div>
+	
+	<script>
+	var tcnan = document.getElementById('tuchunan');
+		tcnan.style.display="none";
+		
+	var tcnv = document.getElementById('tuchunv');
+		//tcnv.style.display="none";
+		
+	//var nannvditu = document.getElementById('nannvditu');	
+	
+	var tuchunv = document.getElementById('nv');	
+		tuchunv.onclick=function()
+		{
+			tcnv.style.display="block";
+			tcnan.style.display="none";
+			//nannvditu.style.display="none";
+			}	
+		
+	var tuchunan = document.getElementById('nan');	
+		tuchunan.onclick=function()
+		{
+			tcnan.style.display="block";
+			tcnv.style.display="none";
+			//nannvditu.style.display="none";
+			}		
+	</script>	
+
+
+	<br><br>
+	<div class="wenzi">
+		<font color="#e98e51" size="+0.5" ><strong>For those who choose to work full-time, the curtain is pulled tighter and getting up early to complete household chores has become the norm.</strong></font><br><br>
+		Liu Jia, a mother of two kids from Beijing, quit her job after the birth of her elder son. As her children grew up, Liu Jia's care tasks are not light but heavy. After doing the daily chores, Liu Jia has to stay with her children to work on the content of the after-school tutoring classes. From 6:20 a.m. to 23:00 p.m., Liu Jia has only one hour to read and relax before preparing lunch. For full-time mothers like Liu Jia, the "palm-up life - no income for themselves" makes them prefer to spend more time on their children than on themselves. <br><br>
+		Faced with "family" and "self", full-time fathers are equally helpless. <br><br>
+		To get more free time, full-time father Lao Tan in Chongqing wakes up 50 minutes earlier than Liu Jia only to play a few games before breakfast. "The most torturous part was the time when my youngest son was not yet in school," recalls Lao Tan, adding that childcare took up most of his time, and he had to do chores by making use of every little bit of time -using the children's TV watching time to clean and organize things, with very little leisure left. 
+			</div>
+			<br><br>
+	<div class="gamebox" id="playgame">
+ 		<iframe src="gameboxen.html" width="105%" height="105%" frameborder="0">
+ 		Your browser does not support iframe, please upgrade
+ 		</iframe>
+		</div>	<br><br><br><br><br>
+				
+	
+				
+	<div style="width: 1000px;height: 560px;margin: 0 auto;position: relative;">
+		
+		
+		<iframe src="两个时间轴en.html" width="100%" height="108%" frameborder="0">
+ 		Your browser does not support iframe, please upgrade
+ 		</iframe>
+				</div>			<br><br><br><br><br><br>
+	
+		<div class="wenzi">
+			Liu Jia, Lao Tan, and many more of the main bearers of housework, silently toggle the gears of the family forward in the alternation of housework - childcare - housework. <font color="#e98e51" size="+0.5" ><strong>Children's growth is constantly treasured and housework has also left its mark on them.</strong></font><br><br>
+			Shen Yanping's mother has been in the city from her hometown for more than 20 years. Because she was not used to wearing gloves to do housework, the long-term soaking in detergent caused cracks all over her hands. The mother had a recipe from somewhere, said that soaking hands with white vinegar and flowers can be effective to solve the problem, but the premise is not to touch detergent. But when Shen Yanping was not at home, her mother had to put on gloves and clean Li Jianfeng's clothes.<br>
+		</div>
+				
+		<br><br>
+				
+			<p style="width: 650px;height: 420px;margin: 0 auto;">
+		<iframe src="照片滑动.html" width="100%" height="100%" frameborder="0">
+ 		Your browser does not support iframe, please upgrade
+			</iframe></p>	
+				
+				<div class="tuzhu">
+				Shen Yanping's mother is running the household.
+				</div><br>
+		
+				
+		<br>
+		<div class="wenzi">
+			<font color="#e98e51" size="+0.5" ><strong>Long-term housework not only drains the body, but also leaves a knot in the heart. </strong></font><br><br>
+			Liu Jia, who thought she was strong, was devastated by her husband's words: "You are just idle at home, what have you done? Nothing." After doing full-time jobs, Liu Jia became sensitive in this regard. It's not that her husband doesn't understand her, but when they have conflicts, "full-time" becomes her husband's only point to attack.<br><br><br>
+		
+	</div>	<br><br>
+            </div>
+            <div id="masktraigger2"></div>
+        </div>
+        <div class="blackmask" id="blackmask2"></div>
+        <div class="part3">
+            <div class="partinner" id="partinner3">
+                <img id="titu3" src="PICS/英文小标题/HESITATION.gif" alt="part1" style="width: 100%;height: auto;">
+		<br><br><br><br>
+				
+		<div class="wenzi">
+			<br>
+			Nowadays, it is more common for couples to have one working outside and the other raising children at home -- "new parents" have become the mainstay of childcare compared to elders.</div>
+				
+		<br>	<br>
+	
+	<div id="8595tu" class="tupian1box" style="position: relative;">
+		
+		<div id="ditu" class="tupian1box" style="background-image: url(PICS/85、95后的图/EN/85-95对比饼图爸妈都亮.png);background-size: 100% 100%;position: absolute;top: 0;left: 0;"></div>
+		
+		
+		<div id="tuchumama" class="tupian1box" style="background-image: url(PICS/85、95后的图/EN/妈.png);background-size: 100% 100%;position: absolute;top: 0;left: 0;">
+			
+		</div>
+		
+		<div id="tuchubaba" class="tupian1box" style="background-image: url(PICS/85、95后的图/EN/爸.png);background-size: 100% 100%;position: absolute;top: 0;left: 0;">
+			
+		</div>
+		
+		
+		<div id="tuchubaomu" class="tupian1box" style="background-image: url(PICS/85、95后的图/EN/保姆.png);background-size: 100% 100%;position: absolute;top: 0;left: 0;">
+			
+		</div>
+		
+		<div id="tuchuzhangbei" class="tupian1box" style="background-image: url(PICS/85、95后的图/EN/长辈.png);background-size: 100% 100%;position: absolute;top: 0;left: 0;">
+			
+		</div>
+		
+		<div id="tuchuqita" class="tupian1box" style="background-image: url(PICS/85、95后的图/EN/其他.png);background-size: 100% 100%;position: absolute;top: 0;left: 0;">
+			
+		</div>
+		
+		
+	<button id="mm1" class="anniu" style="position: absolute;top: 200px;left: 180px;">
+			</button>
+		
+	<button id="mm2" class="anniu" style="position: absolute;top: 440px;left: 175px;">
+			</button>	
+		
+	<button id="mm3" class="anniu2" style="position: absolute;top: 145px;left: 535px;">
+			</button>		
+		
+	<button id="bb1" class="anniu" style="position: absolute;top: 120px;left: 168px;">
+			</button>	
+		
+	<button id="bb2" class="anniu" style="position: absolute;top: 358px;left: 170px;">
+			</button>	
+		
+	<button id="bb3" class="anniu2" style="position: absolute;top: 145px;left: 464px;">
+			</button>	
+		
+	<button id="bm1" class="anniu" style="position: absolute;top: 220px;left: 70px;">
+			</button>
+		
+	<button id="bm2" class="anniu" style="position: absolute;top: 425px;left: 50px;">
+			</button>	
+		
+	<button id="bm3" class="anniu2" style="position: absolute;top: 145px;left: 605px;">
+			</button>	
+		
+	<button id="zb1" class="anniu" style="position: absolute;top: 145px;left: 115px;">
+			</button>
+		
+	<button id="zb2" class="anniu" style="position: absolute;top: 380px;left: 115px;">
+			</button>	
+		
+	<button id="zb3" class="anniu2" style="position: absolute;top: 160px;left: 385px;">
+			</button>		
+		
+	<button id="qt1" class="anniu" style="position: absolute;top: 250px;left: 84px;">
+			</button>	
+			
+	<button id="qt2" class="anniu" style="position: absolute;top: 457px;left: 60px;">
+			</button>	
+		
+	<button id="qt3" class="anniu2" style="position: absolute;top: 140px;left: 680px;">
+			</button>		
+	</div>
+		<br><br>
+	<div class="wenzi">
+		<font color="#e98e51" size="+0.5" ><strong>Beyond home, "new parents" often face greater pressure </strong></font> --employees’ demand for sharing the burden of family caring would never be taken into account; on the contrary, the space for promotion has become more cramped, and returning to the workplace has become a trial that requires courage. An HR from Beijing confessed that most companies rarely recruit people over 35 years old. Compared with unmarried employees, married employees have to take more time off work because their children may get sick. In other words, housework increases job risks.<br><br>
+		<font color="#e98e51" size="+0.5" ><strong>For dads, participation in childcare has become a common expectation, but with insufficient support from the workplace, paternity leave seems to be a luxury.</strong></font><br><br>
+		In 2017, a male employee of a video platform said he was dismissed from his company for no reason while taking paternity leave.<br><br>
+		In 2019, another ZhiHu(social media App) respondent also said he had been deducted 50% of his performance for taking half a month of paternity leave.<br><br>
+		Tan understands the logic of the workplace and gave up looking for another job. When Tan’s first son started kindergarten, he got sick every month, and it took Tan at least a week to wait for these illnesses to heal. "There is no job that can give you a week off every month, it's impossible to balance work and childcare". After the birth of his second son, Tan's tight schedule became even more stretched.<br><br>
+		This is not an single case--according to research by LinkedIn and “Blue Book of the Mother and Baby Industry”, 87.9% of men are willing to take paternity leave, while 95% of women think it is necessary to implement paternity leave; but against all expectations, the proportion of working fathers taking paternity leave is only 65%, much lower than the proportion of men who are willing to take paternity leave.<br>
+
+		</div>	
+		
+<br><br><br>
+					
+	
+	 <div clss="huadongpic1" id="fixed-wrapper1">
+            <div  id="fixedbg1">
+                <img src="PICS/0615陪产假图/EN/底图.png" alt="" style="width: 100%;height: 80%;">
+            </div>
+            <div class="desc-section">
+                <img src="PICS/0615陪产假图/EN/文本框.png" width="850px" height="120px">
+            </div>
+     </div>
+
+	
+	<script>
+		 $(document).ready(function () {
+            var winHeight = $(window).height();
+            var winHeight2 = winHeight+20;
+
+            $("#fixed-wrapper1").css("padding-top", winHeight);
+            $("#fixed-wrapper1").css("padding-bottom", 130);
+            console.log("winHeight2 is : ", winHeight2)
+            var controller = new ScrollMagic.Controller();
+            var scene = new ScrollMagic.Scene({
+                    triggerElement: "#fixedbg1",
+                    duration: winHeight2,
+                    triggerHook: 0.2
+                })
+                .setPin("#fixedbg1")
+                .addTo(controller);
+            
+        })
+		
+						
+					</script>
+		<br><br><br><br>
+	<div class="wenzi">
+		<font color="#e98e51" size="+0.5" ><strong>And for mothers who take on childbirth, surviving in the workplace is even tougher.</strong></font><br><br>
+		After having a child, an important part of life is taking care of the child's daily life, which increases the time spent on housework. According to a 2014 survey of 4,438 women, every 1.65 hours per day spent on housework would decrease 7.68 hours per month spent on work after becoming a mother. Another study showed that female workers’ hourly or monthly wage levels drop by 8.1 percent after giving birth; and after giving birth to a second child, the drop was more than 22 percent--a wage fluctuation that visually demonstrates the results of time allocation changes.<br>
+
+		</div>	<br><br><br>
+		
+	<div style="width: 650px;height: 488px;margin: 0 auto;">
+		<!--<img id="giffengmian" alt="fengmian" src="PICS/gif封面.png" style="width: 100%;height: 100%;margin: 0 auto;">-->
+		<img id="gif1" src="PICS/三个女人和钱币2en.gif" alt="gif" style="width: 100%;height: 100%;margin: 0 auto;">			
+	</div>		
+		
+				
+			<br><br><br>
+		
+		<div class="wenzi">
+			Nine years after becoming a full-time mother, Liu Jia wants to have her job back, but the pace of growth in age cannot catch up with the frequency of iterations in the job market. The environment is opening up to young people more and more, and she has not yet adapted to the changes in her original position. In the tangle and self-doubting, Liu Jia lost her way back to work.<br><br>
+			<font color="#e98e51" size="+0.5" ><strong>However, one who can work without distractions needs the other partner of the family taking full responsibility for housework. </strong></font><br><br>
+			Tan describes himself as "Without solid support from the backward, the front cannot have a stable stage", after years of hard work, his wife's design studio is doing great, "we are in the same boat". Similar to the Lao Tan family, for Liu Jia, a true understanding with her husband is what allows them to grow and sustain their family together. <br><br>
+			But in an era when social support has entered the family on a large scale, the protection for housework comes more from outside the family. Ge Yunna, a professor at Communication University of China, explains that under the social nurturing model of the 1950s and 1960s, children could be sent to a factory nursery once they were 1 month old, and the factory would provide the necessary support for employees to help them balance their careers with childcare.<br>
+
+		</div><br><br>
+				
+		<div style="width: 700px;height: 453px;position: relative;margin: 0 auto;" >
+			<img src="PICS/特写/老谭人物照片/老谭1.1.jpg" alt="laotan" style="width: 340px;height: 453px;position: absolute; left: 0px;top: 0px;">
+			<img src="PICS/特写/老谭人物照片/老谭2.1.jpg" alt="laotan" style="width: 340px;height: 453px;position: absolute; right: 0px;top: 0px;">
+			</div>
+				<br><br>
+		<div class="tuzhu">
+				Full-time father Lao Tan is taking care of his son.
+				</div>
+				
+				<br><br><br>
+		<div class="wenzi">
+			However, under the current situation, <font color="#e98e51" size="+0.5" ><strong> employers only see the profit one can make by the labor process of employees, and no longer spare energy to care about the family that supports these employees, </strong></font> and it is difficult to provide help for employees' domestic housework.<br>
+			<br><br><br><br>
+
+
+		</div><br>		
+				
+            </div>
+			<div id="masktraigger3"></div>
+        </div>
+		
+		
+		<div class="blackmask" id="blackmask3"></div>
+        <div class="part4">
+            <div class="partinner" id="partinner4">
+                <img id="titu4" src="PICS/英文小标题/TENSION.gif" alt="part1" style="width: 100%;height: 100vh;">
+	<br>	<br><br><br>
+		
+		<div style="width: 850px;height: 160px;margin: 0 auto;">			
+		<img src="PICS/引言/第三部分.png"  alt="yinhao1" style="width: 100%;height: 100%;"></div><br><br>	
+				
+		<div class="wenzi">
+		
+		At the celebration party for Shen Yanping's daughter Xiao Chen, family and friends told Xiao Chen that the first person to thank was her grandmother.<br><br>
+		From 50,000 yuan to 12,000 yuan, <font color="#e98e51" size="+0.5" ><strong> when it comes to measuring the family contributions of the "great main force" in monetary terms, judicial decisions have generally remained in a conservative range.</strong></font><br><br>
+		However, there are many people who disagree with such judgment in social media. Some said that 50,000 is too little. Some said that the compensation should be based on at least the childcare wages.<br><br>
+
+		</div><br><br>
+		
+		
+		
+	<div id="ciyun">	
+	<div id="chartdiv"></div>
+<div class="xianshikuang">
+<div class="panel-group" id="accordion">
+	<div class="panel panel-default">
+		<div id="collapseOne" class="panel-collapse collapse in">
+			<div class="panel-body">
+				On <strong> January 1, 2021 </strong> ,  the Beijing Fangshan Court concluded the FIRST divorce domestic compensation case by applying the new provisions of the Civil Code of the People's Republic of China. 
+
+				Ms. Wang, a full-time mother in the case, finally received a compensation of <strong> 50,000 </strong> yuan. 
+
+				We counted a total of <strong> 6303 </strong> comments on  Weibo platform from the day of the case to May 10, and analyzed the <strong> 40 </strong> keywords with the highest word frequency. 
+
+				Click on the keywords in the chart on the left and below to see the relevant netizen comments.
+
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#collapseTwo">
+					<span style="font-size: 20px;">▿</span> 50,000 
+				</a>
+			</h4>
+		</div>
+		<div id="collapseTwo" class="panel-collapse collapse">
+			<div class="panel-body">
+				<strong>50,000</strong>：mentioned 1233 times
+		<br><br>
+		
+		“Compensation should be, but <span style="color:#ff9966"><strong> 50,000 </strong></span> is too little.”
+		<br><br>
+		
+		“<span style="color:#ff9966"><strong> 50,000 </strong></span> is too ironic. Get to work, all the girls.”
+		<br><br>
+		
+		“The disconnect with work cannot be <span style="color:#ff9966"><strong> 50,000 </strong></span> to make up for.”
+		<br><br>
+		
+		“Do not objectify women and the <span style="color:#ff9966"><strong> 50,000 </strong></span> is a sacrifice made by a full-time wife who gives up her job to take care of her family.”
+				
+		<br><br>
+		
+		“After equal division of community property, <span style="color:#ff9966"><strong> 50,000 </strong></span> is enough.”		
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#collapseTwo2">
+					<span style="font-size: 20px;">▿</span> Babysitter
+				</a>
+			</h4>
+		</div>
+		<div id="collapseTwo2" class="panel-collapse collapse">
+			<div class="panel-body">
+				<strong>Babysitter</strong>：mentioned 1233 times
+		<br><br>
+		
+		“You can't compare housework bearers with <span style="color:#339966"><strong> babysitters </strong></span> . The marriage between a husband and wife has become an employment relationship.”
+		<br><br>
+		
+		“It is cheaper to hiring a <span style="color:#339966"><strong> babysitter </strong></span> .”
+		<br><br>
+		
+		“I think it is standard to pay half of the <span style="color:#339966"><strong> nanny's </strong></span> salary. The home is shared by all, the labor costs are shared equally.”
+		<br><br>
+		
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#collapseTwo3">
+					<span style="font-size: 20px;">▿</span> Housework
+				</a>
+			</h4>
+		</div>
+		<div id="collapseTwo3" class="panel-collapse collapse">
+			<div class="panel-body">
+				<strong>Housework</strong>：mentioned 1227 times
+		<br><br>
+		
+		“ <span style="color:#FFB57F"><strong> Working outside </strong></span> the home is also a contribution to the family.”
+		<br><br>
+		
+		“There is nothing wrong with the model of running a family together with a clear division of <span style="color:#FFB57F"><strong> housework </strong></span> in a family, responsible for different aspects”
+		<br><br>
+		
+		“My husband has taken <span style="color:#FFB57F"><strong> taken care of my baby </strong></span>, and now understands the hardships of childcare.”
+		<br><br>
+		
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#collapseTwo4">
+					<span style="font-size: 20px;">▿</span> Housewife
+				</a>
+			</h4>
+		</div>
+		<div id="collapseTwo4" class="panel-collapse collapse">
+			<div class="panel-body">
+				<strong>Housewife</strong>：mentioned 1203 times
+		<br><br>
+		
+		“This is a very good start because housework compensation is referenced.”
+		<br><br>
+		
+		“No one dares to be a <span style="color:#7ebb97"><strong> housewife </strong></span> wife and the fertility rate will fall.”
+		<br><br>
+		
+		“Poor people are not the same as rich people. If you are not rich, don't be a <span style="color:#7ebb97"><strong> housewife </strong></span> .”
+		<br><br>
+			
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#collapseTwo5">
+					<span style="font-size: 20px;">▿</span> Women
+				</a>
+			</h4>
+		</div>
+		<div id="collapseTwo5" class="panel-collapse collapse">
+			<div class="panel-body">
+				<strong>Women</strong>：mentioned 1197 times
+		<br><br>
+		
+		“Household chores should be undertaken by men and <span style="color:#bbddba"><strong> women </strong></span> together.”
+		<br><br>
+		
+		“Working <span style="color:#bbddba"><strong> women </strong></span> have also completed household chores.”
+		<br><br>
+		
+		“The case indicates that every <span style="color:#bbddba"><strong> woman </strong></span> should live independently.”
+		<br><br>
+		
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#collapseThree">
+					<span style="font-size: 20px;">▿</span> Marriage
+				</a>
+			</h4>
+		</div>
+		<div id="collapseThree" class="panel-collapse collapse">
+			<div class="panel-body">
+				<strong>Marriage</strong>：mentioned 742 times
+		<br><br>
+		
+		“Has <span style="color:#ffcc99"><strong> marriage </strong></span> really become a deal?”
+		<br><br>
+		
+		“The <span style="color:#ffcc99"><strong> marriage </strong></span> of a coupe has nothing to do with others”
+		<br><br>
+		
+		“<span style="color:#ffcc99"><strong> Marriage </strong></span> is supposed to be a joint effort.”
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#collapseThree1">
+					<span style="font-size: 20px;">▿</span> Compensation
+				</a>
+			</h4>
+		</div>
+		<div id="collapseThree1" class="panel-collapse collapse">
+			<div class="panel-body">
+				<strong>Compensation</strong>：mentioned 643 times
+		<br><br>
+		
+		
+		“The <span style="color:#FDD69F"><strong> compensation </strong></span> should be calculated by multiplying the household income by the number of years.”
+		<br><br>
+		
+		“It is also very unreasonable to <span style="color:#FDD69F"><strong> compensate </strong></span> according to a babysitter's salary.”
+		<br><br>
+		
+		
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+		</div><br><br>
+		
+	
+	<div class="wenzi">
+	“You need to look back to the historical changes in housework compensation to understand the low compensation.”<br>
+	Xu Qiuli, a lawyer at JingShi Law Firm, analyzes the considerations behind the verdict in the First Case of Compensation for Housework.
+<br><br>
+	
+		<font color="#e98e51" size="+0.5" ><strong>In judicial practice, legislators need to weigh whether the amount of compensation is within the affordability of the majority of citizens.  </strong></font> Public calls that compensation should be based on at least the childcare provider's salary is impratical. If in Beijing, a resident is required to pay housework compensation at the domestic wage rate, he or she will need to keep his monthly expenses under 4,000 yuan. In provinces where per capita income has declined, the maximum monthly expenses for residents will be less than 2,000 yuan when compensation is covered. In a time when economic affluence is not yet widespread, a higher award would make it harder to pay, which would ultimately weaken the legal effects. So when Ms. Qi, a full-time mother in Taizhou, Zhejiang Province, asked for a total of 190,000 yuan in compensation at the rate of 5,000 yuan per month, the court's final award was 15,000 yuan.
+	</div><br><br>
+		
+	<div style="width: 950px;height:600px;margin: 0 auto;position: relative;">	
+		
+		<div style="width: 200px;height:10px;color: #999999;
+			font-size: 12px;position: absolute;left:720px;top: 0px; ">*Drag the map for a full view</div>
+		
+	<div style="width: 950px;height:550px;margin: 0 auto;position: absolute;top: 35px;">
+		
+		
+		<iframe src="英文地图散点效果.html" width="100%" height="110%" frameborder="0">
+ 		Your browser does not support iframe, please upgrade
+ 		</iframe>
+				</div></div>	<br><br><br>			
+				
+	
+		
+	<br><br>
+		
+	
+	<div class="wenzi">
+		<font color="#e98e51" size="+0.5" ><strong>Combining all the considerations, a lower compensation amount is more appropriate in the implementation of the Civil Code after the introduction of the mapping phase.  </strong></font> Behind the solemnity of the law is long-standing judicial practice. Xu believes that in three to five years, with the accumulation of relevant data and cases, the practical experience of front-line judges will be abundant, and the willingness of university researchers to participate will be enhanced, so that further judicial interpretations will be introduced.  <font color="#e98e51" size="+0.5" ><strong>  A big step forward is not in line with the law of law revision and improvement, "a small step" is more prudent.</strong></font><br><br>
+		If she could choose again, Liu Jia would choose to work rather than have a second child. At first, her family gave Liu Jia the promise that she could go out to work once her elder son was in kindergarten. <br><br>
+		After the birth of her second child, it was more difficult for Liu Jia to escape from the housework and childcare.<br><br>
+		With the rising cost of education and the lack of social support, childcare has become somewhat of a self-evident burden. On May 31, China further relaxed the family planning policy, allowing all couples to have up to three children. The first thorny issue to deal with is the reduced willingness to have children.<br><br>
+		The 7th National Census shows that the total fertility rate for women of childbearing age is 1.3, below the international warning line of 1.5. It is still unknown whether the adjustment of fertility policy can reverse the approaching era of low fertility.<br>
+
+		</div>	<br><br>
+		
+		<div id="zhexianditu" class="shengyulvbox" style="background-image: url(PICS/0615生育率图/【英】生育率.png);background-size: 100% 100%;position: relative;">
+		
+			
+		<div id="shujuzhexiantu" style="background-color:#f6f4e7;width: 400px;height: 300px;position: absolute;left: 320px;top: 160px;">
+		<iframe src="https://dycharts.com/xshow/index.html?id=c_d2f8bbfa43572b4ec33358b168da3d10" width="100%" height="100%" scrolling="no" frameborder="0" align="0"></iframe>
+		</div>
+	</div>	<br>
+		
+	<div class="wenzi">
+		<font color="#e98e51" size="+0.5" ><strong>Moreover, a 2019 study found that family motivation to have children increases significantly when the burden of housework is effectively relieved.</strong></font><br><br>
+		In addition to the mutual understanding of both spouses, social forces also bear an important responsibility.<br>	<br>
+		For businesses, how can they respond to calls for the implementation of paternity leave for men, and how can they strengthen support for women's employment?<br>
+		For the state, how can we promote the establishment of a system of inclusive childcare services and reduce the pressure of maintaining a family?<br><br>
+		What appears to be domestic work in the internal space of the family is in fact a joint action of the social security system, the national education system and various enterprises and companies, which is closely related to the demographic dividend and economic development and other significant issues.<br>
+
+		</div><br><br><br><br>
+	
+            </div>
+			<div id="masktraigger4"></div>
+        </div>		
+			
+		<div class="blackmask" id="blackmask4"></div>
+        <div class="part5">
+            <div class="partinner" id="partinner5">
+                <img id="titu5" src="PICS/英文小标题/EXPECTATION.gif" alt="part1" style="width: 100%;height: auto;">
+	<br>	<br><br><br>
+		
+		<div style="width: 850px;height: 160px;margin: 0 auto;">			
+		<img src="PICS/引言/第四部分.png"  alt="yinhao1" style="width: 100%;height: 100%;"></div><br><br>			
+				
+		<div class="wenzi">
+		<font color="#e98e51" size="+0.5" ><strong>Domesticity versus self, parenting versus the workplace, are not naturally contradictory.</strong></font><br><br>
+		When a small family gathers into a society and condenses into a nation, the family ceases to be a private sphere and becomes a public concern - and this concern will become a major force in sustaining the family. And the reality follows below: parents nowadays, struggling with childcare and job assignments, are eagerly encouraged to raise more kids. The school, as parents hope, can help release the burden if it would take on more educational responsibilities.<br><br>
+			
+		A single thread can not make a cord. Likewise, changes will only happen when a better social security system is put into place. Hence, government departments as well as commercial entities should act together to play a role in improving the faculty’s benefits, and providing parents with various services such as school busing and accidental insurance.<br><br>	
+			
+		Hopefully, <font color="#e98e51" size="+0.5" ><strong> policy optimization keeps pace with contemporary trends.  </strong></font>  On July 2, the Beijing Municipal Education Commission issued a notice on the launch of the summer custody service, requiring the custody service to undertake schools to do a good job in student safety, and earnestly implement various requirements for epidemic prevention and control. Behind this is a risk control mechanism with clear rights and responsibilities. As the notice goes, ‘The common growth of students is inseparable from the common care and support of the school, family and society’, social calls for burden sharing are answered. Parents no longer have to worry about "where to go on summer vacation." After they get their kids home, it's time for dinner, relaxation and family reunion.<br><br>
+			
+		<font color="#e98e51" size="+0.5" ><strong> In fact, the social security system which is built by the government, enterprises and families has been put into practice worldwide. </strong></font> Japan has switched from "family paying for social security" to "family paying for social security". "All nationals are insured and all nationals are annuities." Society assumes the responsibility of taking care of the family's children.In the European mode, the whole society shares risks and opportunities, and full-time care of family members is also supported and guaranteed by the state. In China, the government, social organizations, enterprises and other social entities are gradually giving assistance needed by the elderly. <font color="#e98e51" size="+0.5" ><strong> Social participation in the family has become a trend. The family is no longer just a private matter; it is a responsibility shared by all social members. </strong></font><br><br>
+		From the judicial level, however, Professor Jiang Shigong of Peking University Law School believes that <font color="#e98e51" size="+0.5" ><strong>  it is the problem of love that cannot rely on the law, which represents the form of rational calculation. </strong></font> According to Jiang, a more ideal solution is to separate marriage and family disputes from the current civil court, and establish an independent "family court", or set up a special "four civil courts" under the current court system in order to avoid equating the family with contract frame, but to value it as a soothing hotbed.<br><br>
+		<font color="#e98e51" size="+0.5" ><strong>When measures are taken, the pressure of running a family, consequently, will be relieved. Instead of precise monetary calculations, the maintenance of the family has returned to the emotion of love.</strong></font><br><br>
+		Shen Yanping is yearning for the division of housework in her nephew Ding’s family. Ding and his wife, both in their 30s, share family labor based on preferences.<br>
+
+
+		</div><br><br>
+				
+		<p style="width: 650px;height: 442px;margin: 0 auto;">
+		<iframe src="照片滑动2.html" width="100%" height="100%" frameborder="0">
+ 		Your browser does not support iframe. Please upgrade.
+			</iframe></p>		
+				
+				<div class="tuzhu">
+				Mr. and Mrs. Ding Jin are doing housework together.
+				</div><br><br>
+				
+		<div class="wenzi">
+		Ding takes charge of heavy tasks, such as floor mopping and house vacuuming, while his wife likes to clean out and tidy up. On the weekend, the young couple invited Shen to their home. Ding did not idle when his wife was cooking. Instead, he cleaned and disinfected the kitchen cupboards. Sweet and sour pork ribs were fried. Instead of competing for the title of “top chef”, Shen said the couple just praised each other's good cooking.<br><br>
+			<font color="#e98e51" size="+0.5" ><strong>“The young generation will absolutely have different concepts and multiple choices.” Shen is optimistic about the future.</strong></font><br>
+		</div><br><br>	
+				
+		<br><br><br>
+				
+		<style type="text/css">
+	#reveal1 {
+		opacity: 0;
+		-webkit-transform: scale(0.9);
+		-moz-transform: scale(0.9);
+		-ms-transform: scale(0.9);
+		-o-transform: scale(0.9);
+		transform: scale(0.9);
+		-webkit-transition: all 1s ease-in-out;
+		-moz-transition: all 1s ease-in-out;
+		-ms-transition: all 1s ease-in-out;
+		-o-transition: all 1s ease-in-out;
+		transition: all 1s ease-in-out;
+						}
+		
+		
+	#reveal1.visible {
+		opacity: 1;
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		-o-transform: none;
+		transform: none;
+						}
+		
+	#reveal2 {
+		opacity: 0;
+		-webkit-transform: scale(0.9);
+		-moz-transform: scale(0.9);
+		-ms-transform: scale(0.9);
+		-o-transform: scale(0.9);
+		transform: scale(0.9);
+		-webkit-transition: all 1s ease-in-out;
+		-moz-transition: all 1s ease-in-out;
+		-ms-transition: all 1s ease-in-out;
+		-o-transition: all 1s ease-in-out;
+		transition: all 1s ease-in-out;
+						}
+		
+		
+	#reveal2.visible {
+		opacity: 1;
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		-o-transform: none;
+		transform: none;
+						}
+		
+	#reveal3 {
+		opacity: 0;
+		-webkit-transform: scale(0.9);
+		-moz-transform: scale(0.9);
+		-ms-transform: scale(0.9);
+		-o-transform: scale(0.9);
+		transform: scale(0.9);
+		-webkit-transition: all 1s ease-in-out;
+		-moz-transition: all 1s ease-in-out;
+		-ms-transition: all 1s ease-in-out;
+		-o-transition: all 1s ease-in-out;
+		transition: all 1s ease-in-out;
+						}
+		
+		
+	#reveal3.visible {
+		opacity: 1;
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		-o-transform: none;
+		transform: none;
+						}
+		
+	#reveal4 {
+		opacity: 0;
+		-webkit-transform: scale(0.9);
+		-moz-transform: scale(0.9);
+		-ms-transform: scale(0.9);
+		-o-transform: scale(0.9);
+		transform: scale(0.9);
+		-webkit-transition: all 1s ease-in-out;
+		-moz-transition: all 1s ease-in-out;
+		-ms-transition: all 1s ease-in-out;
+		-o-transition: all 1s ease-in-out;
+		transition: all 1s ease-in-out;
+						}
+		
+		
+	#reveal4.visible {
+		opacity: 1;
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		-o-transform: none;
+		transform: none;
+						}	
+	
+	#reveal5 {
+		opacity: 0;
+		-webkit-transform: scale(0.9);
+		-moz-transform: scale(0.9);
+		-ms-transform: scale(0.9);
+		-o-transform: scale(0.9);
+		transform: scale(0.9);
+		-webkit-transition: all 1s ease-in-out;
+		-moz-transition: all 1s ease-in-out;
+		-ms-transition: all 1s ease-in-out;
+		-o-transition: all 1s ease-in-out;
+		transition: all 1s ease-in-out;
+						}
+		
+		
+	#reveal5.visible {
+		opacity: 1;
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		-o-transform: none;
+		transform: none;
+						}	
+				
+		
+		
+	</style>
+	
+	<div style="background-image: url(PICS/英文尾图/底图.png);background-size: 100% 100%;background-color: #f6f4e7; width: 100%;height:3900px; position: relative;">
+	<!--<img src="尾图长图.png" alt="a" style="width: 100%;height: 3900px;position: absolute;left: 0;top: 0;">-->
+		
+	<div id="laba" alt="laba" onClick="play()" style="width: 60px;height: 60px;position: absolute;top: 32.7%;right: 21.8%;">	</div>
+	<audio id="music" src="video/结尾纯人声.mp3" loop autoplay></audio>	
+	
+		
+	<div id="a1" style="position: absolute;top: 37.2%;left: 14.9%">
+	<img id="reveal1" src="PICS/英文尾图/1.png" style="width: 66%;height: auto;">
+	</div>	
+	
+	<div id="a2" style="position: absolute;top:40.85%;left: 42%">	
+	<img id="reveal2" src="PICS/英文尾图/2.png" alt="jieweitu" style="width: 77.3%;height: auto;"></div>
+	
+	<div id="a3" style="position: absolute;top: 44.7%;left: 14.2%;">	
+	<img id="reveal3" src="PICS/英文尾图/3.png" alt="jieweitu" style="width: 66%;height: auto;">	</div>
+		
+	<div id="a4" style="position: absolute;top:49.7%;left: 43.7%">	
+	<img id="reveal4" src="PICS/英文尾图/4.png" alt="jieweitu" style="width: 75.5%;height: auto; ">	</div>
+	
+	<div id="a5" style="position: absolute;top:56%;left:21.9%">
+	<img id="reveal5" src="PICS/英文尾图/5.png" alt="jieweitu" style="width: 74%;height: auto; "></div>
+		
+	</div>
+	<script>
+		var audio = document.getElementById('music');
+        audio.pause();//打开页面时无音乐
+		audio.loop=false;
+		function play() {
+    //var audio = document.getElementById('music');
+    	if (audio.paused) {
+        audio.play();
+        //document.getElementById('musicImg').src="images/play.png";
+		}else{
+        audio.pause();
+        //audio.currentTime = 0;//音乐从头播放
+        //document.getElementById('musicImg').src="images/stop.png";
+    }
+}
+		
+				</script>			
+				
+	<script>
+					
+		var controller1 = new ScrollMagic.Controller();
+		var scene1= new ScrollMagic.Scene({
+			triggerElement: "#a1",
+			triggerHook: 0.9, // show, when scrolled 10% into view
+			duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
+			offset: 50 // move trigger to center of element
+					})
+			
+			.setClassToggle("#reveal1", "visible") // add class to reveal
+			.addTo(controller1);
+		
+		var controller2 = new ScrollMagic.Controller();
+		var scene2= new ScrollMagic.Scene({
+			triggerElement: "#a2",
+			triggerHook: 0.9, // show, when scrolled 10% into view
+			duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
+			offset: 50 // move trigger to center of element
+					})
+			
+			.setClassToggle("#reveal2", "visible") // add class to reveal
+			.addTo(controller2);
+		
+		var controller3= new ScrollMagic.Controller();
+		var scene3= new ScrollMagic.Scene({
+			triggerElement: "#a3",
+			triggerHook: 0.9, // show, when scrolled 10% into view
+			duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
+			offset: 50 // move trigger to center of element
+					})
+			
+			.setClassToggle("#reveal3", "visible") // add class to reveal
+			.addTo(controller3);
+		
+		var controller4= new ScrollMagic.Controller();
+		var scene4= new ScrollMagic.Scene({
+			triggerElement: "#a4",
+			triggerHook: 0.9, // show, when scrolled 10% into view
+			duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
+			offset: 50 // move trigger to center of element
+					})
+			
+			.setClassToggle("#reveal4", "visible") // add class to reveal
+			.addTo(controller4);
+		
+		var controller5 = new ScrollMagic.Controller();
+		var scene5= new ScrollMagic.Scene({
+			triggerElement: "#a5",
+			triggerHook: 0.9, // show, when scrolled 10% into view
+			duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
+			offset: 50 // move trigger to center of element
+					})
+			
+			.setClassToggle("#reveal5", "visible") // add class to reveal
+			.addTo(controller5);
+		
+		var controller6 = new ScrollMagic.Controller();
+		var scene6= new ScrollMagic.Scene({
+			triggerElement: "#a6",
+			triggerHook: 0.9, // show, when scrolled 10% into view
+			duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
+			offset: 50 // move trigger to center of element
+					})
+			
+			.setClassToggle("#reveal6", "visible") // add class to reveal
+			.addTo(controller6);
+			
+					</script>		
+		
+				
+		<!--<img src="PICS/尾图长图.png" alt="jieweitu" style="width: 100%;height: auto;">
+				<br><br><br><br>-->
+				
+				
+				
+		<!--<div style="width: 100%;height: 650px;">
+			<iframe src="scalebanner/index.html" width="100%" height="110%" frameborder="0">
+ 		您的浏览器不支持iframe，请升级
+ 		</iframe>	
+				</div>	<br><br><br>-->	
+		
+		<!--<div style="width: 100%;height: 200px;background-color: #F6DB05">
+		落款位置
+		</div>-->
+            </div>
+			
+        </div>
+		
+		
+    </div>
+		
+	
+		<script src="js/jquery-3.5.1.js"></script>
+    <script src="js/ScrollMagic.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/animation.gsap.js"></script>
+    <script src="js/debug.addIndicators.js"></script>
+		
+		<script>
+	var tupianditu = document.getElementById('ditu');		
+			
+	var tcmm = document.getElementById('tuchumama');
+		tcmm.style.display="none";
+		
+	var tcbb = document.getElementById('tuchubaba');
+		tcbb.style.display="none";
+		
+	var tcbm = document.getElementById('tuchubaomu');
+		tcbm.style.display="none";
+		
+	var tcqt = document.getElementById('tuchuqita');
+		tcqt.style.display="none";	
+		
+	var tczb = document.getElementById('tuchuzhangbei');
+		tczb.style.display="none";	
+		
+	var x1=true;var x2=true;var x3=true;var x4=true;var x5=true;	
+		
+	var mm1 = document.getElementById('mm1');	
+		mm1.onclick=function()
+		{
+			if(x1){
+			tcmm.style.display="block";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+			tupianditu.style.display="none";	
+				x1=false;
+				x2=true;
+				x3=true;
+				x4=true;
+				x5=true;
+			}
+			
+			else{
+				tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x1=true;
+			}
+			
+		}
+		
+	var mm2 = document.getElementById('mm2');	
+		mm2.onclick=function()
+		{
+			if(x1){
+			tcmm.style.display="block";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+			tupianditu.style.display="none";
+				x1=false;
+				x2=true;
+				x3=true;
+				x4=true;
+				x5=true;
+			}
+			
+			else{
+				tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x1=true;
+			}
+		}	
+		
+		
+	var mm3 = document.getElementById('mm3');	
+		mm3.onclick=function()
+		{
+			if(x1){
+			tcmm.style.display="block";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+			tupianditu.style.display="none";
+				x1=false;
+				x2=true;
+				x3=true;
+				x4=true;
+				x5=true;
+			}
+			
+			else{
+				tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x1=true;
+			}
+		}		
+		
+	var bb1 = document.getElementById('bb1');	
+		bb1.onclick=function()
+		{
+			if(x2){
+			tcmm.style.display="none";
+			tcbb.style.display="block";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="none";
+				x2=false;
+				x1=true;
+				x3=true;
+				x4=true;
+				x5=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x2=true;
+			}
+		}	
+		
+	var bb2 = document.getElementById('bb2');	
+		bb2.onclick=function()
+		{
+			if(x2){
+			tcmm.style.display="none";
+			tcbb.style.display="block";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="none";
+				x2=false;
+				x1=true;
+				x3=true;
+				x4=true;
+				x5=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x2=true;
+			}
+		}	
+		
+	var bb3 = document.getElementById('bb3');	
+		bb3.onclick=function()
+		{
+			if(x2){
+			tcmm.style.display="none";
+			tcbb.style.display="block";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="none";
+				x2=false;
+				x1=true;
+				x3=true;
+				x4=true;
+				x5=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x2=true;
+			}
+		}		
+		
+	var bm1 = document.getElementById('bm1');	
+		bm1.onclick=function()
+		{
+			if(x3){
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="block";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="none";
+				x3=false;
+				x1=true;
+				x2=true;
+				x4=true;
+				x5=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x3=true;
+			}
+		}	
+		
+	var bm2 = document.getElementById('bm2');	
+		bm2.onclick=function()
+		{
+			if(x3){
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="block";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="none";
+				x3=false;
+				x1=true;
+				x2=true;
+				x4=true;
+				x5=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x3=true;
+			}
+		}	
+		
+	var bm3 = document.getElementById('bm3');	
+		bm3.onclick=function()
+		{
+			if(x3){
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="block";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="none";
+				x3=false;
+				x1=true;
+				x2=true;
+				x4=true;
+				x5=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x3=true;
+			}
+		}		
+		
+	var zb1 = document.getElementById('zb1');	
+		zb1.onclick=function()
+		{
+			if(x4){
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="block";
+				tupianditu.style.display="none";
+				x4=false;
+				x1=true;
+				x3=true;
+				x2=true;
+				x5=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x4=true;
+			}
+		}		
+		
+	var zb2 = document.getElementById('zb2');	
+		zb2.onclick=function()
+		{
+			if(x4){
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="block";
+				tupianditu.style.display="none";
+				x4=false;
+				x1=true;
+				x3=true;
+				x2=true;
+				x5=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x4=true;
+			}
+		}
+		
+	var zb3 = document.getElementById('zb3');	
+		zb3.onclick=function()
+		{
+			if(x4){
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="block";
+				tupianditu.style.display="none";
+				x4=false;
+				x1=true;
+				x3=true;
+				x2=true;
+				x5=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x4=true;
+			}
+		}	
+		
+	var qt1 = document.getElementById('qt1');	
+		qt1.onclick=function()
+		{
+			if(x5){
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="block";
+			tczb.style.display="none";
+				tupianditu.style.display="none";
+				x5=false;
+				x1=true;
+				x3=true;
+				x4=true;
+				x2=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x5=true;
+			}
+		}	
+		
+	var qt2 = document.getElementById('qt2');	
+		qt2.onclick=function()
+		{
+			if(x5){
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="block";
+			tczb.style.display="none";
+				tupianditu.style.display="none";
+				x5=false;
+				x1=true;
+				x3=true;
+				x4=true;
+				x2=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x5=true;
+			}
+		}		
+		
+		var qt3 = document.getElementById('qt3');	
+		qt3.onclick=function()
+		{
+			if(x5){
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="block";
+			tczb.style.display="none";
+				tupianditu.style.display="none";
+				x5=false;
+				x1=true;
+				x3=true;
+				x4=true;
+				x2=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x5=true;
+			}
+		}		
+		
+	</script>
+	
+		
+    <script>
+        $(document).ready(function () {
+            var part1Height = $("#partinner1").innerHeight();
+            var part2Height = $("#partinner2").innerHeight();
+            var part3Height = $("#partinner3").innerHeight();
+			var part4Height = $("#partinner4").innerHeight();
+			var part5Height = $("#partinner5").innerHeight();
+            var wrapHeight = part1Height + part2Height + part3Height + part4Height + part5Height;
+            console.log(part1Height);
+            console.log(part2Height);
+			console.log(part3Height);
+			console.log(part4Height);
+            $(".partwrap").css("height", wrapHeight);
+
+
+            var controller = new ScrollMagic.Controller();
+            var winHeight = $(window).height();
+
+            new ScrollMagic.Scene({
+                triggerElement: "#masktraigger1",
+                triggerHook: 1,
+                duration: winHeight
+            })
+                .on("progress", function (e) {
+                    $("#blackmask1").css("opacity", 1 - e.progress.toFixed(2));
+                })
+                .on("leave", function (e) {
+                    if (e.target.controller().info("scrollDirection") == "FORWARD") {
+                        $("#blackmask1").css("display", "none");
+                        $(".part2").css("position", "relative");
+                    }
+                })
+                .addTo(controller)
+
+            new ScrollMagic.Scene({
+                triggerElement: "#partinner2",
+                triggerHook: 0
+            })
+                .on("leave", function (e) {
+                    $("#blackmask1").css("display", "block");
+                    $(".part2").css("position", "fixed");
+                })
+                .addTo(controller)
+
+
+            //第2-3部分直接的切换
+            new ScrollMagic.Scene({
+                triggerElement: "#masktraigger2",
+                triggerHook: 1,
+                duration: winHeight
+            })
+                .on("progress", function (e) {
+                    $("#blackmask2").css("opacity", 1 - e.progress.toFixed(2));
+                })
+                .on("leave", function (e) {
+                    if (e.target.controller().info("scrollDirection") == "FORWARD") {
+                        $("#blackmask2").css("display", "none");
+                        $(".part3").css("position", "relative");
+                    }
+                })
+                .addTo(controller)
+
+            new ScrollMagic.Scene({
+                triggerElement: "#partinner3",
+                triggerHook: 0
+            })
+                .on("leave", function (e) {
+                    $("#blackmask2").css("display", "block");
+                    $(".part3").css("position", "fixed");
+                })
+                .addTo(controller)
+       // });
+		
+		
+			new ScrollMagic.Scene({
+                triggerElement: "#masktraigger3",
+                triggerHook: 1,
+                duration: winHeight
+            })
+                .on("progress", function (e) {
+                    $("#blackmask3").css("opacity", 1 - e.progress.toFixed(2));
+                })
+                .on("leave", function (e) {
+                    if (e.target.controller().info("scrollDirection") == "FORWARD") {
+                        $("#blackmask3").css("display", "none");
+                        $(".part4").css("position", "relative");
+                    }
+                })
+                .addTo(controller)
+		
+			new ScrollMagic.Scene({
+                triggerElement: "#partinner4",
+                triggerHook: 0
+            })
+                .on("leave", function (e) {
+                    $("#blackmask3").css("display", "block");
+                    $(".part4").css("position", "fixed");
+                })
+                .addTo(controller)
+			
+			new ScrollMagic.Scene({
+                triggerElement: "#masktraigger4",
+                triggerHook: 1,
+                duration: winHeight
+            })
+                .on("progress", function (e) {
+                    $("#blackmask4").css("opacity", 1 - e.progress.toFixed(2));
+                })
+                .on("leave", function (e) {
+                    if (e.target.controller().info("scrollDirection") == "FORWARD") {
+                        $("#blackmask4").css("display", "none");
+                        $(".part5").css("position", "relative");
+                    }
+                })
+                .addTo(controller)
+		
+			new ScrollMagic.Scene({
+                triggerElement: "#partinner5",
+                triggerHook: 0
+            })
+                .on("leave", function (e) {
+                    $("#blackmask4").css("display", "block");
+                    $(".part5").css("position", "fixed");
+                })
+                .addTo(controller)
+			
+			 $("#turnto1").on("click", function () {
+                $("html,body").animate({ scrollTop: 0 }, 1000);
+            })
+
+            $("#turnto2").on("click", function () {
+                $("html,body").animate({ scrollTop: part1Height }, 1000);
+            })
+
+            $("#turnto3").on("click", function () {
+                $("html,body").animate({ scrollTop: part1Height + part2Height }, 1000);
+            })
+			
+			$("#turnto4").on("click", function () {
+                $("html,body").animate({ scrollTop: part1Height + part2Height +part3Height }, 1000);
+            })
+			
+			$("#turnto5").on("click", function () {
+                $("html,body").animate({ scrollTop: part1Height + part2Height +part3Height +part4Height }, 1000);
+            })
+			
+        });
+
+    </script>
+	</body>
+	
+</html>

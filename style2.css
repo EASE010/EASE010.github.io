@@ -1,0 +1,55 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat",sans-serif;
+  background: #333;
+}
+
+.contact-info{
+  position: fixed;
+  top: 25%;
+  z-index: 99999;
+  left: 0;
+}
+
+.option{
+  cursor: pointer;
+  position: relative;
+}
+
+.option i{
+  display: block;
+  width: 60px;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  background: rgba(254,210,165,0.7);
+  /*color: #b9b9b9;
+  font-size: 20px;*/
+  transition: 0.6s;
+	border-bottom-color: aliceblue;
+	/*margin-top:3px;*/
+	
+}
+
+.option:hover i{
+  /*color: #3498db;*/
+}
+
+.text{
+  position: absolute;
+  height: 60px;
+  width: 150px;
+  background: rgba(254,167,121,0.5);
+  top: 0;
+  z-index: -1;
+  left: -150px;
+  color: #F6F4E7;
+  line-height: 60px;
+  text-align: center;
+  transition: 0.6s;
+}
+
+.option:hover .text{
+  left: 60px;
+}

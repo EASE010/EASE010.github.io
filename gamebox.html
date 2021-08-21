@@ -1,0 +1,848 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	
+<title>游戏界面</title>
+	<link rel="stylesheet" href="swiper-3.4.2.min.css">
+	
+	<style>
+		@font-face
+		{
+			font-family: myFirstFont;
+			src: url('FONT/江西拙楷2.0.TTF');
+		}
+		
+		body{
+			background-color:#F6F4E7;
+		}
+		
+		.gamebox1{
+			width: 1000px;
+			height: 560px;
+			background-color: #F6F4E7;
+			margin: auto;
+		}
+		
+		.gamebox2{
+			width: 800px;
+			height: 550px;
+			/*background-color: #F6F4E7;*/
+			margin: auto;
+			top: 20px;
+		}
+		
+		.choosecharac{
+			width: 220px;
+			height: 220px;
+			background: rgba(255,255,255,0);
+		}
+		
+		.choosecharac{
+			cursor: pointer;
+		}
+		
+		.choosecharac1{
+			width: 290px;
+			height: 290px;
+			background: rgba(255,255,255,0);
+		}
+		
+		
+		
+		.choosecharac:hover{
+		/*-webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;
+ 		border-color:#FFFFFF;
+ 		-webkit-box-shadow:0 0 18px rgba(255,255,255,0.3);*/
+		-webkit-transform:scale(1.1);
+	}	
+		
+		
+		.choosecharacbtn{
+			width: 141px;
+			height: 47px;
+			
+			
+		}
+		
+		.choosecharacbtn1{
+			width: 141px;
+			height: 47px;
+			
+			
+		}
+		
+		.choosecharacbtn,.choosecharacbtn1{
+			cursor: pointer;
+		}
+		
+		.choosehsw{
+		width: 195px;
+		height: 65px;
+		
+	}
+	
+	.choosehsw:hover{
+		-webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;
+ 		border-color:#FFFFFF;
+ 		-webkit-box-shadow:0 0 18px rgba(255,255,255,0.3);
+		-webkit-transform:scale(1.05)
+	}	
+	
+	/*.weixuanze{
+		background-image: url(095746daa670186.jpg) cover;
+		width: 30px;
+		height: 30px;
+	}*/
+	
+	.choosehswbtn{
+			width: 141px;
+			height: 47px;
+			outline: 0;
+			border: 0;
+		}
+		
+		.choosehswbtn{
+			cursor: pointer;
+		}
+	
+		
+	.swiper-container {
+        width: 806px;
+        height: 550px;
+		margin: auto;
+		top:20px;
+    }
+    .swiper-slide {
+        width: 100%;
+		height: 100%;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+		
+		#swiper1{
+			background-image: url(PICS/厨房.png) ;
+			background-size:100% 100%;
+		}
+		
+		#swiper2{
+			background-image: url(PICS/客厅.png) ;
+			background-size:100% 100%;
+		}
+		
+		#swiper3{
+			background-image: url(PICS/卧室.png) ;
+			background-size:100% 100%;
+		}	
+		
+		.dianji	{
+			width: auto;
+			height: auto;
+		}
+		
+		.dianji:hover{
+			cursor: pointer;
+		}
+		
+		.gototimeline{
+			background-image: url(PICS/报告摁纽.png);
+			background-size: 100% 100%;
+			width: 240px;
+			height: 54px;
+		}
+		
+		.gototimeline:hover{
+			cursor: pointer;
+		}
+		
+		.returngame1{
+			background-image: url(PICS/ENB/重新开始.png);
+			background-size: 100% 100%;
+			width: 140px;
+			height: 41px;
+		}
+		
+		.returngame1:hover{
+			cursor: pointer;
+		}
+		
+	</style>
+	
+	<script>
+function addSize(Xelement)
+{
+    var width=parseInt(Xelement.style.width.replace("px"));
+    var height=parseInt(Xelement.style.height.replace("px"));
+    Xelement.style.width=width+10+"px";
+    Xelement.style.height=height+6+"px";
+}
+</script>
+</head>
+
+<body>
+
+<div id="box1" class="gamebox1" style="position: relative;">
+	<br><br><br>
+	<!--<p style="margin: 0 auto;text-align: center;">请选择角色</p>-->
+	
+	<p style="width: 70%;height: 47px;position: absolute;left:13%;top: 3px;">
+		<img src="PICS/选择人物标题.png" alt="bt" style="width: 100%;height: 100%;">
+	</p>
+
+	<div id="qzmm" class="choosecharac" style="position: absolute;left: 140px;top: 35px;text-align: center;">
+		<img src="PICS/全职妈妈图标.png" alt="quanzhimama" style="width: 100%;height: auto;">
+	</div>
+	
+	<div id="qzmmjs" class="choosecharac1" style="position: absolute;left: 105px;top:210px;text-align: center;">
+		<img src="PICS/刘佳介绍.png" alt="quanzhimamajieshao" style="width: 100%;height: auto;">
+	</div>
+	
+	<div id="qzbb" class="choosecharac" style="position: absolute;right: 175px;top: 35px;text-align: center;">
+		<img src="PICS/全职爸爸图标.png" alt="quanzhibaba" style="width: 100%;height: auto;">
+	</div>	
+	
+	<div id="qzbbjs" class="choosecharac1" style="position:absolute;right: 140px;top:210px;text-align: center;">
+		<img src="PICS/老谭介绍.png" alt="quanzhimamajieshao" style="width: 100%;height: auto;">
+	</div>
+	
+	<div id="choosec1" class="choosecharacbtn1" style="background-image: url(PICS/确定1.png);background-size: 100% auto;position: absolute;left:405px;top: 520px;"></div>
+  	
+	<div id="choosec2" class="choosecharacbtn1" style="background-image: url(PICS/返回1.png);background-size: 100% auto;position: absolute;right:150px;top: 520px;"></div>
+	
+</div>
+	
+<div id="box2" class="gamebox1" style="position: relative;">
+	<br><br>
+	<p style="width: 60%;height: 85px;position: absolute;left:20%;top: 20px;">
+		<img src="PICS/日程清单标题.png" alt="bt" style="width: 100%;height: 100%;">
+	</p>
+	
+  <div id="zuofan1" class="choosehsw" style="background-image: url(PICS/做饭1.png);background-size:contain; position: absolute;left: 100px;top: 150px;">
+	  
+	</div>
+  <div id="xiwan1" class="choosehsw" style="background-image: url(PICS/洗碗1.png);background-size: 100% auto;position: absolute;left: 100px;top: 250px;">
+	
+	</div>
+  <div id="zhengli" class="choosehsw" style="background-image: url(PICS/整理床铺1.png);background-size: 100% auto;position: absolute;left: 100px;top: 350px;">
+	
+	</div>
+  <div id="daolaji1" class="choosehsw" style="background-image: url(PICS/倒垃圾1.png);background-size: 100% auto;position: absolute;left: 380px;top: 150px;">
+
+	</div>
+  <div id="qingsao" class="choosehsw" style="background-image: url(PICS/清扫地面1.png);background-size: 100% auto;position: absolute;left: 380px;top: 250px;">
+	
+	</div>
+  <div id="xishai" class="choosehsw" style="background-image: url(PICS/洗晒衣服1.png);background-size: 100% auto;position: absolute;left: 380px;top: 350px;">
+	
+	</div>
+  <div id="jiesong" class="choosehsw" style="background-image: url(PICS/接送小孩1.png);background-size: 100% auto;position: absolute;left: 660px;top: 150px;">
+	
+	</div>
+  <div id="fudao1" class="choosehsw" style="background-image: url(PICS/辅导作业1.png);background-size: 100% auto;position: absolute;left: 660px;top: 250px;">
+	
+	</div>
+  <div id="weixiu" class="choosehsw" style="background-image: url(PICS/维修电器1.png);background-size: 100% auto;position: absolute;left: 660px;top: 350px;">
+	
+	</div>
+	
+  <div id="chooseh1" class="choosehswbtn" style="background-image: url(PICS/确定1.png);background-size: 100% auto;position: absolute;left:220px;top: 470px;"></div>
+  <div id="chooseh2" class="choosehswbtn" style="background-image: url(PICS/返回1.png);background-size: 100% auto;position: absolute;right:220px;top: 470px;"></div>
+	
+ </div>
+
+	
+	<div id="box3" class="swiper-container">
+        <div class="swiper-wrapper">
+            <div id="swiper1" class="swiper-slide" style="position: relative;">
+				
+			<img id="meishuawan" src="PICS/没刷碗.png" alt="meixiwan" style="width: 243px;height: 165px;position: absolute;top: 270px;left: 81px;">	
+				
+			<p id="xianshikuang1" style="width: auto;height:auto; background-image: url(PICS/提示框.png);background-size: 100% 100%;text-align: center;position: absolute;top: 400px;left: 210px;font-size: 13px;padding: 12px 10px;"	><font color="#FFFFFF">&emsp;点击完成家务：<br>洗碗</font></p>
+				
+			<p id="xianshikuang2" style="width: auto;height:auto; background-image: url(PICS/提示框.png);background-size: 100% 100%;text-align: center;position: absolute;top: 390px;left: 600px;font-size: 13px;padding: 12px 10px;"	><font color="#FFFFFF">&emsp;点击完成家务：<br>倒垃圾</font></p>
+				
+			<p id="xianshikuang3" style="width: auto;height:auto; background-image: url(PICS/提示框.png);background-size: 100% 100%;text-align: center;position: absolute;top: 100px;left: 600px;font-size: 13px;padding: 12px 10px;"	><font color="#FFFFFF">&emsp;点击完成家务：<br>做饭</font></p>	
+				
+			<img id="meizuocai" src="PICS/没做饭.png" alt="meizuocai" style="width: 166px;height: 113px;position: absolute;top: 153px;left: 630px;">
+				
+			<img id="xihaodewan" src="PICS/洗好的碗.png" alt="xihaodewan" style="width: 210px;height: 142px;position: absolute;top: 61px;left: 11px;"	>
+				
+			<img id="guo" src="PICS/做饭.png" alt="zuofan" style="width: 225px;height: 152px;position: absolute;top: 145px;left: 358px;"	>	
+				
+			<img id="lajidai" src="PICS/垃圾袋.png" alt="meifudaozuoye" style="width: 806px;height: 550px;position: absolute;top: 0px;left: 0px;">	
+				
+			<div id="xiwan" class="dianji" style="position: absolute;top:340px;left:170px;">
+				<img src="PICS/闪光点.gif" alt="shangd" style="width:100px;height:100px;">
+				</div>
+				
+			<div id="daolaji" class="dianji" style="position: absolute;top:330px;left:660px;">
+				<img src="PICS/闪光点.gif" alt="shangd" style="width:100px;height:100px;">
+				</div>
+				
+			<div id="zuofan" class="dianji" style="position: absolute;top:180px;left:630px;">
+				<img src="PICS/闪光点.gif" alt="shangd" style="width:100px;height:100px;">
+				</div>	
+			</div>
+		
+		
+		
+            <div id="swiper2" class="swiper-slide" style="position: relative;">
+			<img id="zangyifu" src="PICS/交互房间3(1).png" alt="meixiyifu" style="width: 806px;height: 550px;position: absolute;top: 0px;left: 0px;"	>
+				
+			<img id="dibanluan" src="PICS/地面乱.png" alt="dimianluan" style="width: 500px;height: 338px;position: absolute;top:211px;left:70px;"	>
+				
+			<img id="liangyifu" src="PICS/交互房间3(2).png" alt="xihaoyifu" style="width: 806px;height: 550px;position: absolute;top: 0px;left: 0px;"	>
+				
+			<img id="jiehaizi" src="PICS/没挂书包.png" alt="meiguashubao" style="width: 166px;height: 113px;position: absolute;top: 275px;left: 106px;">	
+				
+			<img id="meijiehaizi" src="PICS/挂起来的书包.png" alt="meiguashubao" style="width: 166px;height: 113px;position: absolute;top: 125px;left: 0px;">	
+				
+			<p id="xianshikuang4" style="width: auto;height:auto; background-image: url(PICS/提示框.png);background-size: 100% 100%;text-align: center;position: absolute;top: 220px;left: 60px;font-size: 13px;padding: 12px 10px;"	><font color="#FFFFFF">&emsp;点击完成家务：<br>接送孩子</font></p>	
+				
+			<p id="xianshikuang5" style="width: auto;height:auto; background-image: url(PICS/提示框.png);background-size: 100% 100%;text-align: center;position: absolute;top: 400px;left: 270px;font-size: 13px;padding: 12px 10px;"	><font color="#FFFFFF">&emsp;点击完成家务：<br>清扫地面</font></p>		
+				
+			<p id="xianshikuang6" style="width: auto;height:auto; background-image: url(PICS/提示框.png);background-size: 100% 100%;text-align: center;position: absolute;top: 360px;left: 550px;font-size: 13px;padding: 12px 10px;"	><font color="#FFFFFF">&emsp;点击完成家务：<br>洗衣服</font></p>			
+				
+			<div id="jiesonghaizi" class="dianji" style="position: absolute;top:160px;left:30px;">
+				<img src="PICS/闪光点.gif" alt="shangd" style="width:100px;height:100px;">
+				</div>	
+				
+			<div id="qingsaodimian" class="dianji" style="position: absolute;top:450px;left:250px;">
+				<img src="PICS/闪光点.gif" alt="shangd" style="width:100px;height:100px;">
+				</div>
+				
+			<div id="xiyifu" class="dianji" style="position: absolute;top:350px;left:650px;">
+				<img src="PICS/闪光点.gif" alt="shangd" style="width:100px;height:100px;">
+				</div>	
+		
+		</div>
+		
+		
+		
+            <div id="swiper3" class="swiper-slide" style="position: relative;">
+			
+			<img id="luanbeizi" src="PICS/没叠被子.png" alt="meidiebeizi" style="width: 384px;height: 262px;position: absolute;top: 288px;left: 162px;">
+				
+			<img id="huaideng" src="PICS/坏的灯.png" alt="huaideng" style="width: 806px;height: 550px;position: absolute;top: 0px;left: 0px;">
+				
+			<img id="haodeng" src="PICS/修好的灯.png" alt="huaideng" style="width: 806px;height: 550px;position: absolute;top: 0px;left: 0px;">	
+				
+			<img id="weifudao" src="PICS/未辅导作业.png" alt="meifudaozuoye" style="width: 806px;height: 550px;position: absolute;top: 0px;left: 0px;">	
+				
+			<img id="fudao" src="PICS/辅导作业.png" alt="fudaozuoye" style="width: 806px;height: 550px;position: absolute;top: 0px;left: 0px;">	
+				
+			<img id="haobeizi" src="PICS/叠好被子.png" alt="diehaobeizi" style="width: 806px;height: 550px;position: absolute;top: 0px;left: 0px;">	
+				
+			<p id="xianshikuang7" style="width: auto;height:auto; background-image: url(PICS/提示框.png);background-size: 100% 100%;text-align: center;position: absolute;top: 400px;left: 210px;font-size: 13px;padding: 12px 10px;"	><font color="#FFFFFF">&emsp;点击完成家务：<br>整理床铺</font></p>	
+				
+			<p id="xianshikuang8" style="width: auto;height:auto; background-image: url(PICS/提示框.png);background-size: 100% 100%;text-align: center;position: absolute;top: 230px;left: 370px;font-size: 13px;padding: 12px 10px;"	><font color="#FFFFFF">&emsp;点击完成家务：<br>维修电器</font></p>		
+				
+			<p id="xianshikuang9" style="width: auto;height:auto; background-image: url(PICS/提示框.png);background-size: 100% 100%;text-align: center;position: absolute;top: 360px;left: 570px;font-size: 13px;padding: 12px 10px;"	><font color="#FFFFFF">&emsp;点击完成家务：<br>辅导作业</font></p>		
+				
+			<div id="gototimeline" class="gototimeline" style="position: absolute;left:540px;top: 480px;"></div>
+				
+			
+				
+				
+			<div id="mbed" class="dianji" style="position: absolute;top:380px;left:320px;">
+				<img src="PICS/闪光点.gif" alt="shangd" style="width:100px;height:100px;">
+				</div>
+				
+			<div id="xiudeng" class="dianji" style="position: absolute;top:180px;left:350px;">
+				<img src="PICS/闪光点.gif" alt="shangd" style="width:100px;height:100px;">
+				</div>
+				
+			<div id="helphmw" class="dianji" style="position: absolute;top:310px;left:660px;">
+				<img src="PICS/闪光点.gif" alt="shangd" style="width:100px;height:100px;">
+				</div>	
+		
+		</div>
+		
+		</div>
+        
+        <!-- Add Pagination -->
+        <!--<div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+	
+	<div id="box4" class="gamebox2" style="background-image: url(PICS/客厅蒙版.jpg);background-size:100% 100%;position: relative;font-family: myFirstFont;">
+		<div style="font-size: 32px;position: absolute; top: 40%;left: 16%;color: #555555;">今天做了 <span id="count1"><strong>5</strong></span> 项家务，一共用了 <span id="min1" ><strong>4.3</strong></span> 小时<br><br>
+				   &nbsp;&nbsp; 还剩 <span id="count2"><strong>4</strong></span> 项家务，还需要 <span id="min2"><strong>7.0</strong></span> 小时</div>
+		
+		<div style="color: #555555;font-family: myFirstFont;position: absolute;top: 85%;left: 36%;">
+		下滑查看刘佳和老谭的真实一天
+		</div>
+		
+		<img src="PICS/箭头.gif"	style="position: absolute;bottom: 1.5%;left: 47%;width: 40px;height: 40px;">
+		
+		<div id="re" class="returngame1" style="position: absolute;left: 40.7%;top:72%;" onclick="javascript:location.reload()"></div>
+		
+		<!--
+		<div id="fanhuianniu" style="position: absolute;top: 10%;left: 10%;width: 50px;
+									 height: 50px;background-color: aqua;">
+		返回
+		</div>
+		
+		<div id="fanhuianniu" style="width: 50px;height: 30px;position: absolute;top: 20%;left: 10%" onclick="javascript:location.reload()">返回</div>-->
+
+	
+	</div>
+	
+	
+	<script src="swiper-3.4.2.min.js"></script>
+	<script>
+		
+		var xiwan = document.getElementById("xiwan");
+		var meishuawan = document.getElementById("meishuawan");
+		var xihaodewan = document.getElementById("xihaodewan");
+		var xsk1 = document.getElementById("xianshikuang1");
+		xihaodewan.style.display="none";
+		xiwan.style.display="none";
+		xsk1.style.display="none";
+		xiwan.onclick=function()
+	{
+		xiwan.style.display="none";
+		xsk1.style.display="none";	
+		meishuawan.style.display="none";
+		xihaodewan.style.display = "block";
+	}
+		
+		
+		var laji = document.getElementById("daolaji");
+		var mdlj = document.getElementById("lajidai");
+		var xsk2 = document.getElementById("xianshikuang2");
+		laji.style.display="none";
+		xsk2.style.display="none";
+		laji.onclick=function()
+	{
+		laji.style.display="none";
+		xsk2.style.display="none";	
+		mdlj.style.display="none";
+	}
+		
+		var zuofan = document.getElementById("zuofan");
+		var meizuocai = document.getElementById("meizuocai");
+		var guo = document.getElementById("guo");
+		var xsk3 = document.getElementById("xianshikuang3");
+		guo.style.display="none";
+		zuofan.style.display="none";
+		xsk3.style.display="none";
+		zuofan.onclick=function()
+		
+	{
+		
+		zuofan.style.display="none";
+		xsk3.style.display="none";	
+		meizuocai.style.display="none";
+		guo.style.display = "block";
+	}
+		
+		var xiyifu = document.getElementById("xiyifu");
+		var zangyifu = document.getElementById("zangyifu");
+		var liangyifu = document.getElementById("liangyifu");
+		var xsk6 = document.getElementById("xianshikuang6");
+		liangyifu.style.display="none";
+		xsk6.style.display="none";
+		xiyifu.style.display="none";
+		xiyifu.onclick=function()
+	{
+		xiyifu.style.display="none";
+		xsk6.style.display="none";	
+		zangyifu.style.display="none";
+		liangyifu.style.display = "block";
+	}
+		
+		var qsdm = document.getElementById("qingsaodimian");
+		var dibanluan = document.getElementById("dibanluan");
+		var xsk5 = document.getElementById("xianshikuang5");
+		xsk5.style.display="none";
+		qsdm.style.display="none";
+		qsdm.onclick=function()
+	{
+		qsdm.style.display="none";
+		xsk5.style.display="none";	
+		dibanluan.style.display="none";
+	}
+		
+		
+		var jiesonghaizi = document.getElementById("jiesonghaizi");
+		var jiehaizi = document.getElementById("jiehaizi");
+		var meijiehaizi = document.getElementById("meijiehaizi");
+		var xsk4 = document.getElementById("xianshikuang4");
+		jiehaizi.style.display="none";
+		xsk4.style.display="none";
+		jiesonghaizi.style.display="none";
+		jiesonghaizi.onclick=function()
+	{
+		jiesonghaizi.style.display="none";
+		meijiehaizi.style.display="none";	
+		xsk4.style.display="none";
+		jiehaizi.style.display = "block";}
+		
+		
+		var xiulidianqi = document.getElementById("xiudeng");
+		var haodeng = document.getElementById("haodeng");
+		var huaideng = document.getElementById("huaideng");
+		var xsk8 = document.getElementById("xianshikuang8");
+		haodeng.style.display="none";
+		xsk8.style.display="none";
+		xiulidianqi.style.display="none";
+		xiulidianqi.onclick=function()
+	{
+		xiulidianqi.style.display="none";
+		xsk8.style.display="none";	
+		//huaideng.style.display="none";
+		haodeng.style.display = "block";
+	}
+		
+		
+		var helphmw = document.getElementById("helphmw");
+		var weifudao = document.getElementById("weifudao");
+		var fudao = document.getElementById("fudao");
+		var xsk9 = document.getElementById("xianshikuang9");
+		fudao.style.display="none";
+		helphmw.style.display="none";
+		xsk9.style.display="none";	
+		helphmw.onclick=function()
+	{
+		helphmw.style.display="none";
+		xsk9.style.display="none";	
+		weifudao.style.display="none";
+		fudao.style.display = "block";
+	}
+		
+		var mbed = document.getElementById("mbed");
+		var luanbeizi = document.getElementById("luanbeizi");
+		var haobeizi = document.getElementById("haobeizi");
+		var xsk7 = document.getElementById("xianshikuang7");
+		haobeizi.style.display="none";
+		mbed.style.display="none";
+		xsk7.style.display="none";	
+		mbed.onclick=function()
+	{
+		mbed.style.display="none";
+		xsk7.style.display="none";	
+		luanbeizi.style.display="none";
+		haobeizi.style.display = "block";
+	}
+		
+	var swiper = new Swiper('.swiper-container', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 30
+    });
+		
+	var gbox1 = document.getElementById('box1');
+	var gbox2 = document.getElementById('box2');
+	var gbox3 = document.getElementById('box3');
+	var gbox4 = document.getElementById('box4');
+	var chc1 = document.getElementById('choosec1');
+	var chc2 = document.getElementById('choosec2');
+	var qzmmjs = document.getElementById('qzmmjs');
+	var qzbbjs = document.getElementById('qzbbjs');		
+	
+	var x=0;
+	var y=0;
+	var hws = new Array();
+	hws[0] = 0;hws[1] = 0;hws[2] = 0;hws[3] = 0;hws[4] = 0;
+	hws[5] = 0;hws[6] = 0;hws[7] = 0;hws[8] = 0;
+		
+	var hws2 = new Array();
+	hws2[0] = 0;hws2[1] = 0;hws2[2] = 0;hws2[3] = 0;hws2[4] = 0;
+	hws2[5] = 0;hws2[6] = 0;hws2[7] = 0;hws2[8] = 0;	
+		
+	//gbox1.style.display = "none";
+	gbox2.style.display = "none";
+	gbox3.style.display = "none";
+	//gbox4.style.display = "block";
+	gbox4.style.display = "none";	
+	//chc1.style.display = "none";
+	//chc2.style.display = "none";
+		
+		
+	var mm = document.getElementById("qzmm");
+	var bb = document.getElementById("qzbb");	
+	mm.onclick=function()
+	{
+		//chc1.style.display = "block";
+		//chc2.style.display = "block";
+		x=1;
+		mm.style.display = "block";
+		qzmmjs.style.display = "block";
+		bb.style.display = "none";
+		qzbbjs.style.display = "none";
+	}
+	
+	
+	bb.onclick=function()
+	{
+		//chc1.style.display = "block";
+		//chc2.style.display = "block";
+		y=1;
+		bb.style.display = "block";
+		qzbbjs.style.display = "block";
+		mm.style.display = "none";
+		qzmmjs.style.display = "none";
+	}
+	
+	var char1 = document.getElementById("choosec1");
+	char1.onclick=function()
+	{
+		if(x==0&&y==0)
+			{
+				gbox1.style.display = "block";
+				gbox2.style.display = "none";
+			}
+		else{
+		gbox1.style.display = "none";
+		gbox2.style.display = "block";}
+	}
+	
+	var char2 = document.getElementById("choosec2");
+	char2.onclick=function()
+	{
+		x=0;y=0;
+		//chc1.style.display = "none";
+		//chc2.style.display = "none";
+		mm.style.display = "block";
+		qzmmjs.style.display = "block";
+		bb.style.display = "block";
+		qzbbjs.style.display = "block";
+	}
+	
+	//var si1 = document.getElementById('sign1');
+	//si1.style.display = "none";
+	
+	var hsw1 = document.getElementById("zuofan1");
+	hsw1.onclick=function()
+	{
+		zuofan.style.display="block";
+		xsk3.style.display="block";
+		hws[0]=3;
+		hws2[0]=1.5;
+		zuofan1.style.backgroundImage="url(PICS/做饭2.png)";
+		//si1.style.display = "block";
+	}
+	
+	var hsw2 = document.getElementById("xiwan1");
+	hsw2.onclick=function()
+	{
+		xiwan.style.display="block";
+		xsk1.style.display="block";
+		hws[1]=1;
+		hws2[1]=1;
+		xiwan1.style.backgroundImage="url(PICS/洗碗2.png)";
+	}
+	
+	var hsw3 = document.getElementById("zhengli");
+	hsw3.onclick=function()
+	{
+		mbed.style.display="block";
+		xsk7.style.display="block";	
+		hws[2]=0.3;
+		hws2[2]=0.3;
+		zhengli.style.backgroundImage="url(PICS/整理床铺2.png)";
+	}
+	
+	var hsw4 = document.getElementById("daolaji1");
+	hsw4.onclick=function()
+	{
+		laji.style.display="block";
+		xsk2.style.display="block";
+		hws[3]=0.3;
+		hws2[3]=0.3;
+		daolaji1.style.backgroundImage="url(PICS/倒垃圾2.png)";
+	}
+	
+	var hsw5 = document.getElementById("qingsao");
+	hsw5.onclick=function()
+	{
+		xsk5.style.display="block";
+		qsdm.style.display="block";
+		hws[4]=1;
+		hws2[4]=1.3;
+		qingsao.style.backgroundImage="url(PICS/清扫地面2.png)";
+	}
+	
+	var hsw6 = document.getElementById("xishai");
+	hsw6.onclick=function()
+	{
+		xsk6.style.display="block";
+		xiyifu.style.display="block";
+		hws[5]=1;
+		hws2[5]=0.8;
+		xishai.style.backgroundImage="url(PICS/洗晒衣服2.png)";
+	}
+	
+	var hsw7 = document.getElementById("jiesong");
+	hsw7.onclick=function()
+	{
+		jiesonghaizi.style.display="block";
+		xsk4.style.display="block";
+		hws[6]=1;
+		hws2[6]=1;
+		jiesong.style.backgroundImage="url(PICS/接送小孩2.png)";
+	}
+	
+	var hsw8 = document.getElementById("fudao1");
+	hsw8.onclick=function()
+	{
+		helphmw.style.display="block";
+		xsk9.style.display="block";
+		hws[7]=3.5;
+		hws2[7]=1;
+		fudao1.style.backgroundImage="url(PICS/辅导作业2.png)";
+	}
+	
+	var hsw9 = document.getElementById("weixiu");
+	hsw9.onclick=function()
+	{
+		xsk8.style.display="block";
+		xiulidianqi.style.display="block";
+		hws[8]=0.2;
+		hws2[8]=0.3;
+		weixiu.style.backgroundImage="url(PICS/维修电器2.png)";
+	}
+	
+	var swiper1 = document.getElementById("swiper1");
+	
+	var housewh1 = document.getElementById("chooseh1");
+	housewh1.onclick=function()
+	{
+		gbox2.style.display = "none";
+		gbox3.style.display = "block";
+		swiper1.style.display = "block";
+	}
+	
+	var housewh2 = document.getElementById("chooseh2");
+	housewh2.onclick=function()
+	{
+		hws[0]=0;hws[1]=0;hws[2]=0;hws[3]=0;hws[4]=0;hws[5]=0;hws[6]=0;hws[7]=0;hws[8]=0;
+		hws2[0]=0;hws2[1]=0;hws2[2]=0;hws2[3]=0;hws2[4]=0;hws2[5]=0;hws2[6]=0;hws2[7]=0;hws2[8]=0;
+		xiwan.style.display="none";
+		xsk1.style.display="none";	
+		
+		laji.style.display="none";
+		xsk2.style.display="none";	
+		
+		zuofan.style.display="none";
+		xsk3.style.display="none";	
+		
+		jiesonghaizi.style.display="none";
+		xsk4.style.display="none";
+		
+		qsdm.style.display="none";
+		xsk5.style.display="none";	
+		
+		xiyifu.style.display="none";
+		xsk6.style.display="none";	
+		
+		mbed.style.display="none";
+		xsk7.style.display="none";	
+		
+		xiulidianqi.style.display="none";
+		xsk8.style.display="none";	
+		
+		helphmw.style.display="none";
+		xsk9.style.display="none";	
+		
+		zuofan1.style.backgroundImage="url(PICS/做饭1.png)";
+		weixiu.style.backgroundImage="url(PICS/维修电器1.png)";
+		fudao1.style.backgroundImage="url(PICS/辅导作业1.png)";
+		jiesong.style.backgroundImage="url(PICS/接送小孩1.png)";
+		xishai.style.backgroundImage="url(PICS/洗晒衣服1.png)";
+		qingsao.style.backgroundImage="url(PICS/清扫地面1.png)";
+		daolaji1.style.backgroundImage="url(PICS/倒垃圾1.png)";
+		zhengli.style.backgroundImage="url(PICS/整理床铺1.png)";
+		xiwan1.style.backgroundImage="url(PICS/洗碗1.png)";
+	}
+	
+	
+		
+	var gototml = document.getElementById("gototimeline");
+	gototml.onclick=function()
+	{
+		gbox1.style.display = "none";
+		gbox2.style.display = "none";
+		gbox3.style.display = "none";
+		gbox4.style.display = "block";
+		var countmin=0;
+		var counthsw=0;
+		var countleft=0;
+		var minleft=0;
+		if(x==1)
+			{
+				for(var i=0;i<9;i++)
+					{
+						countmin=countmin+hws[i];
+					}
+				
+				minleft=11.3-countmin;
+				
+				for(var j=0;j<9;j++)
+					{
+						if(hws[j]>0)
+							{
+								counthsw=counthsw+1;
+							}
+					}
+				countleft=9-counthsw;
+			}
+		
+		if(y==1)
+			{
+				for(var ii=0;ii<9;ii++)
+					{
+						countmin=countmin+hws2[ii];
+					}
+				
+				minleft=7.5-countmin;
+				
+				for(var jj=0;jj<9;jj++)
+					{
+						if(hws2[jj]>0)
+							{
+								counthsw=counthsw+1;
+							}
+					}
+				countleft=9-counthsw;
+			}
+				minleft=minleft.toFixed(1);
+				countmin=countmin.toFixed(1);
+				str1=" "+countmin+" ";
+				str2=" "+counthsw+" ";
+				str3=" "+minleft+" ";
+				str4=" "+countleft+" ";
+				
+				var min1=document.getElementById("min1")
+				min1.innerHTML=str1;
+				
+				var count1=document.getElementById("count1")
+				count1.innerHTML=str2;
+				
+				var min2=document.getElementById("min2")
+				min2.innerHTML=str3;
+				
+				var count2=document.getElementById("count2")
+				count2.innerHTML=str4;
+	
+	}
+	
+	
+	</script>	
+	
+</body>
+</html>

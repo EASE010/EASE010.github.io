@@ -1,0 +1,2281 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>家务补偿：看见“隐形的劳动”</title>
+	
+	<link rel="web icon" type="image/x-icon" href="网页标.ico)" media="screen" />
+	
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" href="style2.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- Resources -->
+	<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+	<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+	<script src="https://cdn.amcharts.com/lib/4/plugins/forceDirected.js"></script>
+	<!-- script src="https://cdn.amcharts.com/lib/4/themes/frozen.js"></script -->
+	
+	<script type="text/javascript" src="http://scrollmagic.io/assets/js/lib/jquery.min.js"></script>
+	
+	<!--
+	<script type="text/javascript" src="https://scrollmagic.io/scrollmagic/uncompressed/ScrollMagic.js"></script>-->
+	
+	<script type="text/javascript" src="js/ScrollMagic.js"></script>
+	
+	<style>
+		
+		html,body{
+			
+			width: 100%;
+			height: 100%;
+		}
+		
+		.tuzhu
+		{
+			color: #999999;
+			font-size: 12px;
+			margin: 0 auto;
+			text-align: center;
+		}
+		
+	.partwrap {}
+
+        .part1 {
+            position: relative;
+            z-index: 10;
+            background-color: #f6f4e7;
+        }
+
+        #blackmask1 {
+            z-index: 9;
+        }
+
+        .part2 {
+            position: fixed;
+            z-index: 8;
+            width: 100%;
+            top: 0;
+            left: 0;
+            
+            background-color: #f6f4e7;
+        }
+
+        #blackmask2 {
+            z-index: 7;
+        }
+
+        .part3 {
+            position: fixed;
+            z-index: 6;
+            width: 100%;
+            top: 0;
+            left: 0;
+            
+            background-color: #f6f4e7;
+        }
+
+        #blackmask3 {
+            z-index: 5;
+        }
+
+        .part4 {
+            position: fixed;
+            z-index: 4;
+            width: 100%;
+            top: 0;
+            left: 0;
+           
+            background-color: #f6f4e7;
+        }
+		
+		#blackmask4 {
+            z-index: 3;
+        }
+
+        .part5 {
+            position: fixed;
+            z-index: 2;
+            width: 100%;
+            top: 0;
+            left: 0;
+           
+            background-color: #f6f4e7;
+        }
+		
+        .partinner {
+            max-width: 100%;
+            padding: 0px;
+            margin: 0 auto;
+        }
+
+        .blackmask {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-color: #000;
+            opacity: 1;
+            pointer-events: none;
+        }
+
+
+
+        .torelative {
+            position: relative;
+        }	
+        
+
+    body {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑";
+        }
+		
+	.wenzi{
+			width: 620px;
+			text-align: left;
+            margin: 0 auto;
+			line-height: 33px;
+			font-size: 14px;
+			color: #5e564a;
+		}	
+		
+	.duanbiaotitu{
+			width: 1150px;
+			margin: 0 auto;
+			height: 700px;
+			background-color:cadetblue;
+		}
+		
+	.zhaopian{
+			width: 850px;
+			margin: 0 auto;
+			height: auto;
+		}	
+		
+	.top {
+            width: 100%;
+            height: 100vh;
+			
+            
+        }	
+		
+	.gamebox{
+			width: 1000px;
+			height: 560px;
+			margin: auto;
+		}
+		
+	#ciyun{
+			position: relative;
+			width: 100%;
+			height: 700px;
+			margin: 0 auto;
+		}
+		
+	#chartdiv {
+  			width: 690px;
+			height:650px;
+			position: absolute;
+			margin-left: 12%;
+	}
+	
+	.xianshikuang{
+		width: 300px;
+		
+		margin-left:67%;
+		background-color:rgba(255,255,255,0);
+		position: absolute;
+		font-size: 13px;
+		margin-top: 10px;
+		}	
+		
+	.tupian1box{
+			width: 800px;
+			height: 556px;
+			margin: 0 auto;
+		}
+		
+		.anniu{
+			width: 40px;
+			height: 30px;
+			background: rgba(255,255,255,0);
+			/*background: #4FA5FC;*/
+			border: 0;
+		}
+		
+		.anniu2{
+			width: 50px;
+			height: 310px;
+			background: rgba(255,255,255,0);
+			/*background: #4FA5FC;*/
+			border: 0;
+		}
+		
+		.anniu,.anniu2{
+			cursor: pointer;
+		}
+		
+		.nannvbox{
+			width: 700px;
+			height: 554px;
+			margin: 0 auto;
+		}
+		
+		.nannvanniu{
+			width: 110px;
+			height: 20px;
+			background: rgba(255,255,255,0);
+			/*background: #4FA5FC;*/
+			border: 0;
+		}
+	
+		
+		.nannvanniu{
+			cursor: pointer;
+		}
+		
+		.huadongpic1 {
+            width: 850px;
+			height: 555px;
+            margin: 0 auto;
+			
+        }
+		
+		 #fixed-wrapper1 {
+            position: relative;
+			margin: 0 auto;
+			 
+        }
+
+        #fixedbg1 {
+            position: absolute;
+            top: 0;
+            left: 21.5%;
+            width: 800px;
+			height: 575px;
+
+        }
+
+		#laba{
+			cursor: pointer;
+		}
+		
+		 .desc-section {
+            width: 80%;
+			 left: 10%;
+            height: 50vh;
+            position: relative;
+			 margin: 0 auto;
+        }
+		
+		.shengyulvbox{
+			width: 750px;
+			height: 552px;
+			margin: 0 auto;
+		}
+		
+		.liudiqubox{
+			width: 700px;
+			height: 570px;
+			margin: 0 auto;
+		}
+		
+		.liudiquanniu{
+			width: 95px;
+			height: 28px;
+			background: rgba(255,255,255,0);
+			/*background: #4FA5FC;*/
+			border: 0;
+		}
+	
+		
+		.liudiquanniu{
+			cursor: pointer;
+		}
+		
+		.vedio{}
+		
+		.vedio{
+			cursor: pointer;
+		}
+		
+	</style>
+	
+	</head>
+	
+	<body>
+
+	
+	<script>
+am4internal_webpackJsonp(["8ce2"],{ik00:function(e,c,t)
+{"use strict";Object.defineProperty(c,"__esModule",{value:!0});
+
+var b=t("aCit"), a=t("8ZqG"), i=function(e){Object(b.b)(e,"ColorSet")
+&&(e.list=[Object(a.c)("#ff9966"),//深橙色
+Object(a.c)("#ffb57f"),//浅橙色
+Object(a.c)("#7ebb97"),//深绿
+Object(a.c)("#ffcc99"),
+Object(a.c)("#339966"),//中等绿色
+Object(a.c)("#fdd69f"),//最浅橙色
+Object(a.c)("#bbddba")],//最浅绿
+e.minLightness=.2,e.maxLightness=.7,e.reuse=!0)};
+
+window.am4themes_frozen=i}},["ik00"]);
+</script>
+
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+<!-- Chart code -->
+<script>
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_frozen);
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+var chart = am4core.create("chartdiv", am4plugins_forceDirected.ForceDirectedTree);
+
+var networkSeries = chart.series.push(new am4plugins_forceDirected.ForceDirectedSeries())
+
+networkSeries.data = [{
+  name: '五万', value: 18.65,
+  children: [{
+    name: '不', value: 1.22,
+    children: [{
+      name: '不', value: 0.08,
+    }, {
+      name: '不要', value: 0.36
+    }, {
+      name: '不够', value: 0.63
+    }, {
+      name: '不值钱', value: 0.08
+    }, {
+      name: '不好', value: 0.07
+    }]
+  }, {
+    name: '少', value: 0.50,
+    children: [{
+      name: '便宜', value: 0.32
+      }, {
+      name: '廉价', value: 0.18
+    }]
+  }, {
+    name: '反对', value: 0.36,
+    children: [{
+      name: '可怜', value: 0.06
+      }, {
+      name: '可笑', value: 0.06
+      }, {
+      name: '可悲', value: 0.04
+      }, {
+      name: '过分', value: 0.05
+      }, {
+      name: '恶心', value: 0.08
+      }, {
+      name: '冷静', value: 0.07
+      }]
+  }, {
+    name: '公平', value: 0.14
+    }, {
+    name: '正常', value: 0.11
+    }]     
+}, {
+  name: '全职太太', value: 11.39,
+    children: [{
+    name: '家庭', value: 3.39,
+    children: [{
+      name: '补偿', value: 0.63
+      }, {
+      name: '家务', value: 0.52
+      }, {
+      name: '自己', value: 0.60
+      }, {
+      name: '孩子', value: 0.52
+      }, {
+      name: '保姆', value: 0.59
+    }] 
+  }, {
+    name: '离婚', value: 2.40,
+    children: [{
+      name: '男方', value: 0.26
+      }, {
+      name: '补偿', value: 0.84
+      }, {
+      name: '家务', value: 0.81
+      }, {
+      name: '女性', value: 0.21
+    }] 
+  }, {
+    name: '补偿', value: 3.06,
+    children: [{
+      name: '家庭', value: 0.72
+      }, {
+      name: '离婚', value: 0.97
+      }, {
+      name: '主妇', value: 0.44
+    }]
+  }, {
+    name: '家务', value: 2.37,
+      }, {
+    name: '工作', value: 3.92,
+    children: [{
+      name: '辛苦', value: 0.19
+      }, {
+      name: '牺牲', value: 0.23
+      }, {
+      name: '家庭', value: 1.17
+      }, {
+      name: '女性', value: 0.57
+      }, {
+      name: '孩子', value: 0.68
+      }, {
+      name: '财产', value: 0.43
+    }]
+  }, {
+    name: '财产', value: 1.17,
+    children: [{
+      name: '平分', value: 0.31
+      }, {
+      name: '离婚', value: 0.31
+      }, {
+      name: '补偿', value: 0.43
+      }, {
+      name: '女方', value: 0.32
+    }]
+  }] 
+}, {
+  name: '保姆', value: 10.32,
+  children: [{
+    name: '工资', value: 1.54,
+    children: [{
+      name: '家庭', value: 0.21
+      }, {
+      name: '男方', value: 0.20
+      }, {
+      name: '补偿', value: 0.23
+      }, {
+      name: '不够', value: 0.21
+    }]
+  }, {
+    name: '结婚', value: 1.32,
+      children: [{
+      name: '离婚', value: 0.15
+      }, {
+      name: '倒贴', value: 0.07
+      }, {
+      name: '付出', value: 0.12
+      }, {
+      name: '便宜', value: 0.10
+    }]
+  }, {
+    name: '家庭', value: 1.28,
+      children: [{
+      name: '家务', value: 0.25
+      }, {
+      name: '女性', value: 0.34
+    }]
+  }, {
+    name: '离婚', value: 0.80
+  }, {
+    name: '男方', value: 0.75,
+      children: [{
+      name: '家务', value: 0.16
+      }, {
+      name: '不是', value: 0.17
+    }]
+  }, {
+    name: '结婚', value: 1.32,
+      children: [{
+      name: '离婚', value: 0.15
+      }, {
+      name: '倒贴', value: 0.07
+      }, {
+      name: '付出', value: 0.12
+      }, {
+      name: '便宜', value: 0.10
+    }]
+  }, {
+    name: '家务', value: 1.08 
+  }, {
+    name: '女性', value: 1.58,
+      children: [{
+      name: '补偿', value: 0.25
+      }, {
+      name: '不是', value: 0.25
+      }, {
+      name: '付出', value: 0.25
+      }, {
+      name: '一样', value: 0.18
+    }]
+  }, {
+    name: '不是', value: 1.29,
+      children: [{
+      name: '结婚', value: 0.026
+      }, {
+      name: '家庭', value: 0.031
+    }]
+  }]      
+}, {
+  name: '女性', value: 10.02,
+  children: [{
+    name: '全职太太', value: 3.29,
+    children: [{
+      name: '婚姻', value: 0.78
+      }, {
+      name: '孩子', value: 0.62
+      }, {
+      name: '保姆', value: 0.50
+      }, {
+      name: '离婚', value: 0.47
+      }, {
+      name: '家务', value: 0.36
+      }, {
+      name: '补偿', value: 0.58
+    }]
+  }, {
+    name: '婚姻', value: 3.23,
+      children: [{
+      name: '工作', value: 0.68
+      }, {
+      name: '自己', value: 0.64
+      }, {
+      name: '离婚', value: 0.71
+      }, {
+      name: '家务', value: 0.54
+      }, {
+      name: '不', value: 1.07
+      }, {
+      name: '财产', value: 0.68
+    }]
+  }, {
+    name: '孩子', value: 2.85,
+      children: [{
+      name: '家务', value: 0.62
+      }, {
+      name: '付出', value: 0.24
+    }]
+  }, {
+    name: '保姆', value: 2.61,
+      children: [{
+      name: '全职太太', value: 0.50
+      }, {
+      name: '工作', value: 0.41
+      }, {
+      name: '财产', value: 0.42
+      }, {
+      name: '物化', value: 0.13
+    }]
+  }, {
+    name: '工作', value: 2.61,
+      children: [{
+      name: '全职太太', value: 0.86
+      }, {
+      name: '婚姻', value: 0.68
+      }, {
+      name: '孩子', value: 0.58
+      }, {
+      name: '自己', value: 0.47
+    }]
+  }, {
+    name: '自己', value: 2.31,
+      children: [{
+      name: '婚姻', value: 0.64
+      }, {
+      name: '工作', value: 0.47
+      }, {
+      name: '离婚', value: 0.33
+    }] 
+  }]      
+}, {
+  name: '家务家庭', value: 9.12,
+  children: [{
+    name: '全职太太', value: 2.47
+    }, {
+    name: '主妇', value: 2.29
+    }, {
+    name: '女性', value: 4.27
+    }, {
+    name: '男性', value: 2.26
+    }, {
+    name: '平分', value: 0.66
+    }, {
+    name: '价值', value: 0.66
+    }, {
+    name: '工资', value: 0.62
+    }, {
+    name: '辛苦', value: 0.32
+    }, {
+    name: '问题', value: 0.24
+    }, {
+    name: '不好', value: 0.20
+    }, {
+    name: '平衡', value: 0.16
+  }]
+}, {
+  name: '婚姻', value: 8.95,
+  children: [{
+    name: '孩子', value: 1.84
+    }, {
+    name: '自己', value: 1.81
+    }, {
+    name: '离婚', value: 1.76
+    }, {
+    name: '补偿', value: 1.52
+    }, {
+    name: '不要', value: 0.79
+    }, {
+    name: '平分', value: 0.37
+    }, {
+    name: '分割', value: 0.36
+    }, {
+    name: '便宜', value: 0.16
+    }, {
+    name: '最好', value: 0.15
+    }, {
+    name: '冷静', value: 0.15
+    }, {
+    name: '慎重', value: 0.12
+    }, {
+    name: '自由', value: 0.09
+    }, {
+    name: '可怕', value: 0.08
+    }, {
+    name: '麻烦', value: 0.06
+  }]
+}, {
+  name: '补偿',value: 6.07,
+  children: [{
+    name: '应该', value: 0.97
+    }, {
+    name: '需要', value: 0.86
+    }, {
+    name: '分割', value: 0.70
+    }, {
+    name: '平分', value: 0.63
+    }, {
+    name: '付出', value: 0.56
+    }, {
+    name: '可以', value: 0.54
+    }, {
+    name: '鼓励', value: 0.39
+    }, {
+    name: '价值', value: 0.28
+    }, {
+    name: '劳动', value: 0.28
+    }, {
+    name: '经济', value: 0.25
+    }, {
+    name: '辛苦', value: 0.19
+    }, {
+    name: '获得', value: 0.18
+    }, {
+    name: '计算', value: 0.12
+  }]
+}];
+
+networkSeries.dataFields.linkWith = "linkWith";
+networkSeries.dataFields.name = "name";
+networkSeries.dataFields.id = "name";
+networkSeries.dataFields.value = "value";
+networkSeries.dataFields.children = "children";
+networkSeries.links.template.distance = 1;
+networkSeries.nodes.template.tooltipText = "{name}";
+networkSeries.nodes.template.fillOpacity = 1;
+networkSeries.nodes.template.outerCircle.scale = 1;
+
+networkSeries.nodes.template.label.text = "{name}"
+networkSeries.fontSize = 12;
+networkSeries.nodes.template.label.hideOversized = true;
+networkSeries.nodes.template.label.truncate = true;
+networkSeries.minRadius = am4core.percent(2);
+networkSeries.manyBodyStrength = -5;
+networkSeries.links.template.strokeOpacity = 0;
+
+}); // end am4core.ready()
+</script>
+
+
+<div class="contact-info">
+      <div id="turnto1" class="option">
+		  
+        <i >
+			  <img src="PICS/ICON1.png" style="width: 70%;height: 65%;position: absolute; left: 15%;top: 18%;">
+			  </i>
+		  <div class="text">看见，家务劳动</div>
+		 
+        
+      </div>
+
+      <div id="turnto2" class="option">
+		 
+			  <i  >
+			  <img onclick="onTopClick1();" src="PICS/XIYIJIICON.png" style="width: 74%;height: 74%;position: absolute; left: 13%;top: 13%;">
+			  </i>
+		  <div class="text">大 幕 紧 闭</div>
+		 
+        
+      </div>
+
+      <div id="turnto3" class="option">
+		 
+        <i >
+		  <img src="PICS/书包ICON.png" style="width: 100%;height: 100%;position: absolute; left: 0%;top: 0%;">
+			  </i>
+		  <div class="text">幕 后 彷 徨</div>
+		
+        
+      </div>
+		
+	  <div id="turnto4" class="option">
+       
+		  <i >
+		  <img src="PICS/GUOICON.png" style="width: 70%;height: 70%;position: absolute; left: 18%;top: 15%;">
+		   </i>
+		  <div class="text">呼 声 回 响</div>
+		
+        
+      </div>
+		
+	  <div id="turnto5" class="option">
+      
+		  <i >
+		  <img src="PICS/PINTUICON.png" style="width: 78%;height: 58%;position: absolute; left: 11%;top: 23%;">
+		   </i>
+		  
+		  <div class="text">光 束 渐 起</div>
+		
+        
+      </div>	
+
+    </div>
+		
+		
+<div class="partwrap">
+			
+        <div class="part1">
+            <div class="partinner" id="partinner1">
+                <div id="video" class="top">
+		<img src="PICS/标题/大标题.jpg" alt="xiandao" style="width: 100%;height: 100%;">
+		<a class="vedio1" href="index.html" style="position: absolute;height: 30px;width: 30px;top: 2%;left: 89%;"	></a>
+		<a class="vedio1" href="indexen.html" style="position: absolute;height: 30px;width: 36px;top: 2%;left: 92.5%;"	></a>			
+		</div>
+				
+		<script>
+              //视频播放
+              var indexVedio = document.getElementById("video");
+              indexVedio.onclick = function(){
+                indexVedio.innerHTML = "<iframe width=100% height='600' src='video/先导片粗剪.mp4' allowfullscreen></iframe>";
+              }
+        </script>
+				
+	<br><br><br>
+		
+	<div style="width: 850px;height: 162px;margin: 0 auto;">			
+		<img src="PICS/引号/先导部分 “也就是我妈…….png"  alt="yinhao1" style="width: 100%;height: 100%;"></div><br><br>
+				
+	<div id="xiandaoyu" class="wenzi">
+		
+	沉寂取代交锋，争吵声戛然而止。<br>	
+	家里顿时安静。此刻，母亲仍在外买菜。申艳萍看了看躺在床上的丈夫，一把拉开衣柜，拿下毛衣、棉袄一股脑砸向他。申燕萍让丈夫两周内搬出去租房住，说日子实在没法过下去了。<br><br>
+	申燕萍长期在外地工作；她不在家的日子里，八十岁的母亲承担家中所有家务劳动。丈夫李建锋，则在客厅、主卧与外出聚会中度过闲暇时光。他宛若家庭里的局外人——申燕萍出钱，支付一切生活开销；母亲出力，准备三餐、照料起居。<br>
+	每年除夕夜，是李建锋唯一的表示机会。母亲收下李建锋的1000元红包，第二天又从中拿出800元包给外孙女小晨。 <font color="#e98e51" size="+0.5" ><strong>在申燕萍眼里，如果用金钱衡量，母亲一年的家务劳动对于李建锋而言价值200元。</strong></font>
+	<br><br><br><br>
+		</div>
+
+            </div>
+            <div id="masktraigger1"></div>
+        </div>
+        <div class="blackmask" id="blackmask1"></div>
+        <div  class="part2">
+            <div class="partinner" id="partinner2">
+                <img id="titu2" src="PICS/大幕紧闭gif.gif" alt="part1" style="width: 100%;height: 100vh;">
+	<br>	
+	<br><br><br>			
+	<div style="width: 850px;height: 121px;margin: 0 auto;">			
+		<img src="PICS/引号/帷幕紧闭 “你就是闲在家里.png"  alt="yinhao2" style="width: 100%;height: 100%;"></div><br><br>	<br>		
+				
+		<div  class="wenzi">
+	
+	家务劳动的无酬特性，将其价值隐形；而价值的不可见，也使劳动的付出退居幕后。<br><br>
+	然而家务劳动，真的无需补偿吗？至少在今天并非如此。<br><br>		
+		
+	2021年2月，来自北京房山的全职妈妈王女士从丈夫手中拿到5万元的补偿费。因长期承担大部分家务，王女士在离婚诉求中提出家务补偿要求；这也是首次运用《民法典》新规审结的离婚家务补偿案件。《民法典》第1088条完善了始于2001年的家务劳动经济补偿制度，进一步肯认家务劳动的价值。同年6月，浙江台州的全职妈妈齐女士在离婚时也申请了家务劳动补偿，并获得了1.5万元的赔偿款。<br><br>
+	从2月到6月，随着家务补偿案件的增加，呈现在我们眼前的，是每一个在家庭中承担家务劳动的人——他们站在重重帷幕后，等待着点点灯光。<br>
+	据《2018年全国时间利用调查公报》，在一天中, <font color="#e98e51" size="+0.5" ><strong> 每一个居民平均会花超过2个小时做家务，几乎占据所有无酬劳动时间。 </strong></font> 对需要陪伴照料孩子的居民而言，每天超过3小时的育儿成为照料家庭的主要活动，在琐碎的家庭家务和育儿照料中，女性往往是主要的承担者。<br><br>
+				</div>
+			
+			<div  class="nannvbox" style="position: relative;">
+		
+		
+		
+		<div id="tuchunv" class="nannvbox" style="background-image: url(PICS/0615劳动时间图/初始图，也是选中女性高的图.png);background-size: 100% 100%;position: absolute;top: 0;left: 0;">
+			
+		</div>
+		
+		<div id="tuchunan" class="nannvbox" style="background-image: url(PICS/0615劳动时间图/点男性高的图.png);background-size: 100% 100%;position: absolute;top: 0;left: 0;">
+			
+		</div>
+		
+		<button id="nv" class="nannvanniu" style="position: absolute;top: 60px;left: 200px;">
+			</button>
+		
+		<button id="nan" class="nannvanniu" style="position: absolute;top: 60px;left: 330px;">
+			</button>
+		
+	</div>
+	
+	<script>
+	var tcnan = document.getElementById('tuchunan');
+		tcnan.style.display="none";
+		
+	var tcnv = document.getElementById('tuchunv');
+		//tcnv.style.display="none";
+		
+	//var nannvditu = document.getElementById('nannvditu');	
+	
+	var tuchunv = document.getElementById('nv');	
+		tuchunv.onclick=function()
+		{
+			tcnv.style.display="block";
+			tcnan.style.display="none";
+			//nannvditu.style.display="none";
+			}	
+		
+	var tuchunan = document.getElementById('nan');	
+		tuchunan.onclick=function()
+		{
+			tcnan.style.display="block";
+			tcnv.style.display="none";
+			//nannvditu.style.display="none";
+			}		
+	</script>	
+
+
+	<br><br>
+	<div class="wenzi">
+		<font color="#e98e51" size="+0.5" ><strong>而对于选择全职的一方来说，这块帷幕被拉得更紧，起早贪黑完成家务劳动已然成为他们的常态。</strong></font><br><br>
+		两个孩子的北京妈妈刘佳，在大儿子出生半年后辞掉了工作。随着孩子从婴儿长成少年，刘佳的照料任务不轻反重。做完日常家务后，刘佳要陪孩子消化课外辅导班的内容。从6：20起床到23：00睡觉，刘佳每天留给自己读书休闲的时间只有准备午饭前的1小时。对于刘佳这样的全职妈妈而言，“手心向上的日子”让她们宁愿多花一点时间在孩子身上，而来不及关注自己。<br><br>
+		面对“家庭”和“自我”，全职爸爸同样会束手无策。为了争取更多的自由时间，重庆的全职爸爸老谭比北京的刘佳每天早起50分钟，趁还没开始做早餐时玩几把游戏。“最折磨的是小儿子还没上学那段时间”，老谭回忆道，育儿占据了他大部分时间，做家务都只能见缝插针——利用孩子看电视的功夫打扫卫生、整理收纳，闲暇所剩无几。
+			</div>
+			<br><br>
+	<div class="gamebox" id="playgame">
+ 		<iframe src="gamebox.html" width="105%" height="105%" frameborder="0">
+ 		您的浏览器不支持iframe，请升级
+ 		</iframe>
+		</div>	<br><br><br><br><br>
+				
+	
+				
+	<div style="width: 1000px;height: 560px;margin: 0 auto;position: relative;">
+		
+		
+		<iframe src="2个时间轴.html" width="100%" height="108%" frameborder="0">
+ 		您的浏览器不支持iframe，请升级
+ 		</iframe>
+				</div>			<br><br><br><br><br><br>
+	
+		<div class="wenzi">
+			刘佳、老谭，以及更多的家务劳动主要承担者，在家务——育儿——家务的交替中默默拨动着家庭前进的齿轮。<font color="#e98e51" size="+0.5" ><strong>孩子成长的印记不断被回忆珍藏，而家务劳动也在他们身上留下了痕迹。</strong></font><br>
+			申燕萍的母亲从老家进城已有二十余年。因为不习惯戴手套做家务，长期的洗衣液、洗涤剂浸泡导致母亲的手上布满裂开的口子。母亲不知道从哪里听来的偏方，说三伏天用白醋和鲜花泡手能见效，前提是不能沾洗衣液。但遇到申燕萍不在家的情况，母亲不得不戴上手套，清洗完李建锋的换洗衣裳。<br>
+		</div>
+				
+		<br><br>
+				
+			<p style="width: 650px;height: 420px;margin: 0 auto;">
+		<iframe src="照片滑动.html" width="100%" height="100%" frameborder="0">
+ 		您的浏览器不支持iframe，请升级
+			</iframe></p>	
+				
+				<div class="tuzhu">
+				申燕萍的母亲在家操持家务
+				</div><br>
+		
+				
+		<br>
+		<div class="wenzi">
+			<font color="#e98e51" size="+0.5" ><strong>长期家务劳动不仅会透支身体，也会留下心结。</strong></font><br>
+	自认为坚强的刘佳，却被丈夫的一句话击垮：“你就是闲在家里，你都干了什么？什么都没干。”全职后，刘佳在这方面变得敏感起来。丈夫并不是不理解自己，只是两人有冲突时，“全职”便成为丈夫唯一的攻击点。<br><br><br>
+		
+	</div>	<br><br>
+            </div>
+            <div id="masktraigger2"></div>
+        </div>
+        <div class="blackmask" id="blackmask2"></div>
+        <div class="part3">
+            <div class="partinner" id="partinner3">
+                <img id="titu3" src="PICS/幕后彷徨gif.gif" alt="part1" style="width: 100%;height: auto;">
+		<br><br><br><br>
+				
+		<div class="wenzi">
+			<br>
+			如今，对于夫妻而言，一方在外工作，一方居家育儿成为更为常见的选择——相比于长辈，“新手爸妈”成为了育儿的主力。</div>
+				
+		<br>	<br>
+	
+	<div id="8595tu" class="tupian1box" style="position: relative;">
+		
+		<div id="ditu" class="tupian1box" style="background-image: url(PICS/85、95后的图/初始图.png);background-size: 100% 100%;position: absolute;top: 0;left: 0;"></div>
+		
+		
+		<div id="tuchumama" class="tupian1box" style="background-image: url(PICS/85、95后的图/妈妈突出.png);background-size: 100% 100%;position: absolute;top: 0;left: 0;">
+			
+		</div>
+		
+		<div id="tuchubaba" class="tupian1box" style="background-image: url(PICS/85、95后的图/爸爸突出.png);background-size: 100% 100%;position: absolute;top: 0;left: 0;">
+			
+		</div>
+		
+		
+		<div id="tuchubaomu" class="tupian1box" style="background-image: url(PICS/85、95后的图/保姆突出.png);background-size: 100% 100%;position: absolute;top: 0;left: 0;">
+			
+		</div>
+		
+		<div id="tuchuzhangbei" class="tupian1box" style="background-image: url(PICS/85、95后的图/长辈突出.png);background-size: 100% 100%;position: absolute;top: 0;left: 0;">
+			
+		</div>
+		
+		<div id="tuchuqita" class="tupian1box" style="background-image: url(PICS/85、95后的图/其他突出.png);background-size: 100% 100%;position: absolute;top: 0;left: 0;">
+			
+		</div>
+		
+		
+	<button id="mm1" class="anniu" style="position: absolute;top: 200px;left: 180px;">
+			</button>
+		
+	<button id="mm2" class="anniu" style="position: absolute;top: 440px;left: 175px;">
+			</button>	
+		
+	<button id="mm3" class="anniu2" style="position: absolute;top: 165px;left: 510px;">
+			</button>		
+		
+	<button id="bb1" class="anniu" style="position: absolute;top: 120px;left: 168px;">
+			</button>	
+		
+	<button id="bb2" class="anniu" style="position: absolute;top: 358px;left: 170px;">
+			</button>	
+		
+	<button id="bb3" class="anniu2" style="position: absolute;top: 165px;left: 444px;">
+			</button>	
+		
+	<button id="bm1" class="anniu" style="position: absolute;top: 220px;left: 70px;">
+			</button>
+		
+	<button id="bm2" class="anniu" style="position: absolute;top: 425px;left: 50px;">
+			</button>	
+		
+	<button id="bm3" class="anniu2" style="position: absolute;top: 165px;left: 575px;">
+			</button>	
+		
+	<button id="zb1" class="anniu" style="position: absolute;top: 145px;left: 115px;">
+			</button>
+		
+	<button id="zb2" class="anniu" style="position: absolute;top: 380px;left: 115px;">
+			</button>	
+		
+	<button id="zb3" class="anniu2" style="position: absolute;top: 170px;left: 365px;">
+			</button>		
+		
+	<button id="qt1" class="anniu" style="position: absolute;top: 250px;left: 84px;">
+			</button>	
+			
+	<button id="qt2" class="anniu" style="position: absolute;top: 457px;left: 60px;">
+			</button>	
+		
+	<button id="qt3" class="anniu2" style="position: absolute;top: 160px;left: 647px;">
+			</button>		
+	</div>
+		<br><br>
+	<div class="wenzi">
+		<font color="#e98e51" size="+0.5" ><strong>家庭以外，“新手爸妈”往往面临着更大的压力</strong></font>——职场并没有因为家务劳动的分担而开辟出体恤与共情的空间；相反，生存晋升空间变得更加逼仄，返回职场成为需要勇气的试探。北京一公司HR坦言，公司很少招35岁以上的人。和未婚员工相比，已婚员工因孩子生病不得不多请假——家务劳动增加了职场风险。<br><br>
+		<font color="#e98e51" size="+0.5" ><strong>对于爸爸们而言，参与育儿成为了普遍的期待，但职场的支持不足，陪产假似乎成为一种奢望。</strong></font><br>
+		2017年，视频平台一男员工表示自己在休陪产假时无故被公司辞退。<br>
+		2019年，另一位知乎答主也表示自己曾因休半个月的陪产假而被扣50%的绩效。<br>
+		老谭深谙职场逻辑，放弃了再次求职。大儿子刚上幼儿园时，每个月都生病，等待这些或大或小的病症痊愈至少需要一周的时间，“没有工作能让你一个月休息一个星期，无法兼顾”。小儿子出生后，老谭本就紧凑的时间变得更加捉襟见肘。<br><br>
+		这，并非个例——根据领英和《母婴行业蓝皮书》，87.9%的男性有意愿休陪产假，与妈妈分担育儿责任，而95%的女性认为落实陪产假非常有必要；但事与愿违，职场爸爸陪产假的比例为65%，远低于有意愿休陪产假的男性比例。<br>
+
+		</div>	
+		
+<br><br><br>
+					
+	
+	 <div clss="huadongpic1" id="fixed-wrapper1">
+            <div  id="fixedbg1">
+                <img src="PICS/0615陪产假图/底图（透明底）.png" alt="" style="width: 100%;height: 80%;">
+            </div>
+            <div class="desc-section">
+                <img src="PICS/0615陪产假图/三个矩形框（上拉浮动效果）.png" width="850px" height="195px">
+            </div>
+     </div>
+
+	
+	<script>
+		 $(document).ready(function () {
+            var winHeight = $(window).height();
+            var winHeight2 = winHeight+20;
+
+            $("#fixed-wrapper1").css("padding-top", winHeight);
+            $("#fixed-wrapper1").css("padding-bottom", 130);
+            console.log("winHeight2 is : ", winHeight2)
+            var controller = new ScrollMagic.Controller();
+            var scene = new ScrollMagic.Scene({
+                    triggerElement: "#fixedbg1",
+                    duration: winHeight2,
+                    triggerHook: 0.2
+                })
+                .setPin("#fixedbg1")
+                .addTo(controller);
+            
+        })
+		
+						
+					</script>
+		<br><br><br><br>
+	<div class="wenzi">
+		<font color="#e98e51" size="+0.5" ><strong>而对于承担生育的妈妈而言，在职场生存更为艰难。</strong></font><br>
+		有了孩子后，家务劳动中的重要一环便是照顾孩子的日常起居，所耗时间随之增加。根据2014年对4438名女性的调查 ，成为母亲后，女性平均每日需多花1.65小时在家务劳动中，每月工作小时则减少7.68小时。另一研究显示，城镇体制内女职工在生育后，小时工资、月工资水平均下降8.1%；生育二孩后，下降幅度超过22%——工资浮动直观展现了时间分配变化的结果。<br>
+
+		</div>	<br><br><br>
+		
+	<div style="width: 650px;height: 488px;margin: 0 auto;">
+		<!--<img id="giffengmian" alt="fengmian" src="PICS/gif封面.png" style="width: 100%;height: 100%;margin: 0 auto;">-->
+		<img id="gif1" src="PICS/三个女人和钱币2.gif" alt="gif" style="width: 100%;height: 100%;margin: 0 auto;">			
+	</div>		
+		
+				
+			<br><br><br>
+		
+		<div class="wenzi">
+			在成为全职妈妈九年后，刘佳想要重回职场，但年岁增长的步调追不上就业市场的迭代频次。大环境愈发向年轻人敞开怀抱，原先岗位的变化自己尚未适应。在纠结与彷徨中，刘佳迷途而返。<br><br>
+			<font color="#e98e51" size="+0.5" ><strong>然而，社会的视线向来聚焦“台前”，难以再分出精力关照“幕后”的角色 </strong></font> ；殊不知，一方的心无旁骛需要以家庭中另一方全权承担家务劳动为保障。<br>
+			老谭这样形容自己：“后院不稳，前方打不好仗”，多年打拼后，妻子的设计工作室已经小有规模，“我俩是一条船上的人”。与老谭一家相似，对于刘佳而言，与丈夫之间的真正理解，才能让他们共同成长、共同维系家庭。<br>
+
+		</div><br><br>
+				
+		<div style="width: 700px;height: 453px;position: relative;margin: 0 auto;" >
+			<img src="PICS/特写/老谭人物照片/老谭1.1.jpg" alt="laotan" style="width: 340px;height: 453px;position: absolute; left: 0px;top: 0px;">
+			<img src="PICS/特写/老谭人物照片/老谭2.1.jpg" alt="laotan" style="width: 340px;height: 453px;position: absolute; right: 0px;top: 0px;">
+			</div>
+				<br><br>
+		<div class="tuzhu">
+				全职爸爸老谭照顾儿子的日常生活
+				</div>
+				
+				<br><br><br>
+		<div class="wenzi">
+			<font color="#e98e51" size="+0.5" ><strong>但在社会支持大规模进入家庭的年代，保障更多来源于家庭外部。</strong></font> 中国传媒大学马克思主义学院讲师葛耘娜介绍，在上世纪五六十年代的社会抚育模式下，孩子满月后便可送到工厂的托儿所，单位为员工兼顾事业与育儿提供了必要的支持。<br>
+			<font color="#e98e51" size="+0.5" ><strong>然而，现状下，雇佣实则是“雇佣一双手的关系” </strong></font> ——企业看重的是员工的劳动过程能够创造多少利润，不再分出精力关注支撑这双手的家庭，也难以为员工的家务劳动提供空间。<br><br><br><br>
+
+
+		</div><br>		
+				
+            </div>
+			<div id="masktraigger3"></div>
+        </div>
+		
+		
+		<div class="blackmask" id="blackmask3"></div>
+        <div class="part4">
+            <div class="partinner" id="partinner4">
+                <img id="titu4" src="PICS/呼声回响gif.gif" alt="part1" style="width: 100%;height: 100vh;">
+	<br>	<br><br><br>
+		
+		<div style="width: 850px;height: 130px;margin: 0 auto;">			
+		<img src="PICS/引号/呼声回响 “姥姥是大功臣.png"  alt="yinhao1" style="width: 100%;height: 100%;"></div><br><br>	
+				
+		<div class="wenzi">
+		
+		在申燕萍女儿小晨的升学宴上，亲友们给申燕萍的母亲斟上酒，告诉小晨最先要敬的是姥姥。<br>
+		从“房山第一案”的5万到《民法典》出台后的最高补偿金额12万， <font color="#e98e51" size="+0.5" ><strong> 用金钱衡量“大功臣”的家庭贡献时，司法判决却整体维持在一个偏保守区间内。</strong></font><br>
+		但，在社交媒体相关话题的评论区中，出现了不少对这一结果持有异议的声音：“给钱是应该的，但给5万也忒少了”，“才5万，比请保姆还便宜”，“建议至少以育儿嫂工资为基数补偿”。<br><br>
+
+		</div><br><br>
+		
+		
+		
+	<div id="ciyun">	
+	<div id="chartdiv"></div>
+<div class="xianshikuang">
+<div class="panel-group" id="accordion">
+	<div class="panel panel-default">
+		<div id="collapseOne" class="panel-collapse collapse in">
+			<div class="panel-body">
+				<strong>2021年1月1日</strong>，北京房山法院适用民法典新规首次审结了一起离婚家务补偿案件。
+		<br><br>
+		案件中，全职太太王女士在离婚诉讼中称，因承担大部分家务，故提出要求家务补偿。最终，法院判决双方离婚，全职太太王女士获得家务补偿款<strong>50000</strong>元，引起网络热议。
+		<br><br>
+		我们统计了新浪微博平台上从案件发生当日到<strong>5月10日</strong>的共<strong>6303</strong>条评论，分析了词频数最高的<strong>40</strong>个关键词。
+		点击左侧图中及下方关键词，可以看到相关网友评论。
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#collapseTwo">
+					<span style="font-size: 20px;">▿</span> 五万 
+				</a>
+			</h4>
+		</div>
+		<div id="collapseTwo" class="panel-collapse collapse">
+			<div class="panel-body">
+				<strong>五万</strong>：出现了2118次
+		<br><br>
+		
+		“给钱是应该的，但给<span style="color:#ff9966"><strong>5万</strong></span>也忒少了。”
+		<br><br>
+		
+		“<span style="color:#ff9966"><strong>5万</strong></span>太讽刺了，去工作吧，所有女孩们。”
+		<br><br>
+		
+		“这几年和工作的脱节能是<span style="color:#ff9966"><strong>5万</strong></span>弥补的？”
+		<br><br>
+		
+		“不要物化女性，这<span style="color:#ff9966"><strong>5万</strong></span>是全职太太放弃工作照顾家庭作出的牺牲。”
+				
+		<br><br>
+		
+		“平分共同财产后，另外补偿<span style="color:#ff9966"><strong>5万</strong></span>块，为什么跟家政比？”		
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#collapseTwo2">
+					<span style="font-size: 20px;">▿</span> 保姆
+				</a>
+			</h4>
+		</div>
+		<div id="collapseTwo2" class="panel-collapse collapse">
+			<div class="panel-body">
+				<strong>保姆</strong>：出现了1233次
+		<br><br>
+		
+		“这能和<span style="color:#339966"><strong>保姆</strong></span>薪水比较吗？夫妻二人的婚姻成雇佣关系了？”
+		<br><br>
+		
+		“全职太太大部分比<span style="color:#339966"><strong>月嫂</strong></span>学历高，既然不谈感情，那么工资太低了吧。”
+		<br><br>
+		
+		“才5万，比请<span style="color:#339966"><strong>保姆</strong></span>还便宜。”
+		<br><br>
+		
+		“女方把自己当<span style="color:#339966"><strong>保姆</strong></span>？那男方呢，赚钱养家包吃包住，算啥”
+				
+		<br><br>
+		
+		“我感觉按请<span style="color:#339966"><strong>保姆</strong></span>的一半的工资算，家是大家一起的劳务费平摊。”		
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#collapseTwo3">
+					<span style="font-size: 20px;">▿</span> 家务家庭
+				</a>
+			</h4>
+		</div>
+		<div id="collapseTwo3" class="panel-collapse collapse">
+			<div class="panel-body">
+				<strong>家务家庭</strong>：出现了1227次
+		<br><br>
+		
+		“男的在外也是为<span style="color:#FFB57F"><strong>家庭</strong></span>劳动。”
+		<br><br>
+		
+		“在一个<span style="color:#FFB57F"><strong>家庭</strong></span>中分工明确，负责不同的方面，共同经营<span style="color:#FFB57F"><strong>家庭</strong></span>这种模式并没有什么不对。”
+		<br><br>
+		
+		“白天上班晚上全职的女人在离婚时同样或者更应该获赔。”
+		<br><br>
+		
+		“凭什么？丈夫天天早出晚归工作累死累活赚钱养家，你在家待着做点<span style="color:#FFB57F"><strong>家务</strong></span>活而已。”
+				
+		<br><br>
+		
+		“老公跟我在家带了三个月娃，深悟<span style="color:#FFB57F"><strong>家务</strong></span>育儿的艰辛劳累，说这比上班累多了。”		
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#collapseTwo4">
+					<span style="font-size: 20px;">▿</span> 全职太太
+				</a>
+			</h4>
+		</div>
+		<div id="collapseTwo4" class="panel-collapse collapse">
+			<div class="panel-body">
+				<strong>全职太太</strong>：出现了1203次
+		<br><br>
+		
+		“这是很好的开始，以后<span style="color:#7ebb97"><strong>全职太太</strong></span>离婚都可以有“家务劳动补偿”的依据了。”
+		<br><br>
+		
+		“以后谁还敢做<span style="color:#7ebb97"><strong>全职太太</strong></span>，生育率又要降了”
+		<br><br>
+		
+		“<span style="color:#7ebb97"><strong>全职太太</strong></span>也分穷人家的和富人家的，穷人家的么，生一个就算了吧…”
+		<br><br>
+		
+		“如果不当<span style="color:#7ebb97"><strong>全职太太</strong></span>在社会上有一份稳定工作的话，离婚也平分财产呢”
+				
+		<br><br>
+		
+		“请<span style="color:#7ebb97"><strong>全职太太</strong></span>不要碰瓷家政工作者！”		
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#collapseTwo5">
+					<span style="font-size: 20px;">▿</span> 女性
+				</a>
+			</h4>
+		</div>
+		<div id="collapseTwo5" class="panel-collapse collapse">
+			<div class="panel-body">
+				<strong>女性</strong>：出现了1197次
+		<br><br>
+		
+		“<span style="color:#bbddba"><strong>女</strong></span>孩子要独立，男孩子理解包容吧。这个赔偿金再多，也不够等同于<span style="color:#bbddba"><strong>女</strong></span>孩的付出吧。”
+		<br><br>
+		
+		“这就提醒了如果家境不好的<span style="color:#bbddba"><strong>女</strong></span>性，去做清洁工一年也有5万 比把时间花在家里有用。”
+		<br><br>
+		
+		“家务活难道不应该男<span style="color:#bbddba"><strong>女</strong></span>一起承担？”
+		<br><br>
+		
+		“个人认为不要拔高全职太太，因为绝大部分家庭<span style="color:#bbddba"><strong>女</strong></span>方工作家里也没保姆，该干的活都一样干。”
+				
+		<br><br>
+		
+		“这个案子说明一个问题，不要做全职太太，每一个<span style="color:#bbddba"><strong>女</strong></span>性都应该独立生活，保持风采。”	
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#collapseThree">
+					<span style="font-size: 20px;">▿</span> 婚姻
+				</a>
+			</h4>
+		</div>
+		<div id="collapseThree" class="panel-collapse collapse">
+			<div class="panel-body">
+				<strong>婚姻</strong>：出现了742次
+		<br><br>
+		
+		“争论的男男女女真有意思，都感觉吃亏，都不<span style="color:#ffcc99"><strong>结婚</strong></span>好了。”
+		<br><br>
+		
+		“什么都可以用钱衡量？所以<span style="color:#ffcc99"><strong>结婚</strong></span>真的成了做交易了吗？”
+		<br><br>
+		
+		“男女对立也太严重了吧，两个人<span style="color:#ffcc99"><strong>结婚</strong></span>离婚，只要双方达成一致，别人也不用管那么多吧。”
+		<br><br>
+		
+		“<span style="color:#ffcc99"><strong>婚姻</strong></span>本来就是要双方共同努力，共同付出的。”
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#collapseThree1">
+					<span style="font-size: 20px;">▿</span> 补偿
+				</a>
+			</h4>
+		</div>
+		<div id="collapseThree1" class="panel-collapse collapse">
+			<div class="panel-body">
+				<strong>补偿</strong>：出现了643次
+		<br><br>
+		
+		“应该以家庭收入乘以结婚年数然后百分比计算。”
+		<br><br>
+		
+		“白天上班晚上回家做家务的人也辛苦，这种白天上班晚上全职的女人在离婚时同样或者更应该<span style="color:#FDD69F"><strong>获赔</strong></span>”
+		<br><br>
+		
+		“建议至少按（代孕+育儿嫂）为基数<span style="color:#FDD69F"><strong>补偿</strong></span>”
+		<br><br>
+		
+		“按保姆工资和完全婚前工资<span style="color:#FDD69F"><strong>补贴</strong></span>的也很过分，结婚又不是打工，儿女也是自己的。”
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+		</div><br><br>
+		
+	
+	<div class="wenzi">
+	“我们国家家务补偿之所以高不了，你要了解它的历史沿革。”<br>
+	许秋莉，京师律师事务所律师，分析了“房山第一案”判决结果后的考量因素。<br><br>
+		<font color="#e98e51" size="+0.5" ><strong>司法实践中，立法者需要衡量补偿金额是否在大多数公民的承担能力之内。 </strong></font> 民众对“参考家政工资标准”的呼声并不贴合实际：如果一名北京居民需要按家政工资标准支付家务劳动补偿，按照2020年北京市67745元的人均可支配收入，扣除近2万元的补偿款后，他的每月开销需要控制在4000元以内；而在人均收入有所下降的省份，当负担了补偿款后，居民的每月最大开销将不足2000元。在经济富足尚未走进千家万户的当下，判定较高金额会使得当事人难以支付，而这将最终导致法律效果的削弱——所以，当浙江台州的全职妈妈齐女士要求按每月5000元的标准赔偿共19万元时，法院的最终判定金额为1.5万元。
+	</div><br><br>
+	
+	
+	<div style="width: 950px;height:580px;margin: 0 auto;position: relative;">	
+		<div style="width: 150px;height:10px;color: #999999;
+			font-size: 12px;position: absolute;left:730px;top: 0px; ">*拖动地图查看全貌</div>
+	<div style="width: 950px;height:550px;margin: 0 auto;position: absolute;top: 25px;">
+		
+		
+		<iframe src="地图散点效果(2).html" width="100%" height="110%" frameborder="0">
+ 		Your browser does not support iframe, please upgrade
+ 		</iframe>
+				</div></div>	<br><br><br>				
+	
+		
+	<br><br>
+		
+	
+	<div class="wenzi">
+		<font color="#e98e51" size="+0.5" ><strong>结合种种考量，在《民法典》出台后的实施摸索阶段，一个较低的补偿金额是更为稳妥的。 </strong></font> 法律庄严性的背后是长期的司法实践：许律师相信，等三五年后，随着相关数据与案例的累积，一线法官的实务经验将更加丰富、高校科研工作者的参与意愿也会增强，会有更进一步的司法解释。大踏步前进不符合法律修改完善的规律，“向前迈了一个小步子”更为稳妥。<br><br>
+		“小步子”的含义不仅局限于立法层面。女性主义研究学者孙百卉认为，补偿金额同样具有启示意义：面对因全职在家而错失的职业发展机会、婚姻另一方未公开的灰色收入等问题，法律无法也无需实现全覆盖；此时，较低的补偿金额不仅起到 “象征性安慰”的作用，同时也敲响了警钟：由于法律判决结果很难提供实质性补偿， <font color="#e98e51" size="+0.5" ><strong> “《民法典》更是一个号召，提醒面对‘工作还是回家’困境的人们审慎抉择。”</strong></font><br><br>
+		如果能重新选择，刘佳会选择工作而非再生二胎。起初，家人给刘佳的承诺是老大上了幼儿园就可以出去工作。老二出生后，家务与育儿令刘佳难以脱身。<br>
+		随着教育成本的提高、社会支持的缺乏，育儿在一定程度上已经成为不言自明的负担。5月31日，国家生育政策再次优化，放开三孩政策；而政策落地首先要处理的棘手问题是一孩生育意愿的降低。<br>
+		第七次全国人口普查结果显示，育龄妇女总和生育率为1.3，低于1.5的国际警戒线。生育政策的调整能否扭转低生育时代渐行渐近的局面，仍是未知数。<br>
+
+		</div>
+		
+		<div id="zhexianditu" class="shengyulvbox" style="background-image: url(PICS/0615生育率图/除数据图外的其他要素的底图（透明底）.png);background-size: 100% 100%;position: relative;">
+		
+			
+		<div id="shujuzhexiantu" style="background-color:#f6f4e7;width: 400px;height: 300px;position: absolute;left: 320px;top: 160px;">
+		<iframe src="https://dycharts.com/xshow/index.html?id=c_9e37f66f0aae9bbc7de22ddaea85d75c" width="100%" height="100%" scrolling="no" frameborder="0" align="0"></iframe>
+		</div>
+	</div>	<br>
+		
+	<div class="wenzi">
+		<font color="#e98e51" size="+0.5" ><strong>而一项2019年的研究发现 ，当家务劳动的重担被有效缓解后，家庭生育动机将显著提高。除了夫妻双方的互相理解与体谅，社会力量同样肩负着重要责任。</strong></font><br>
+		对于企业而言，如何回应对男性陪产假落实的呼吁，如何加强对女性就业的支持？对于国家而言，如何推进普惠托育服务体系的建立，如何降低维系家庭的压力？ <font color="#e98e51" size="+0.5" ><strong> 看似发生在家庭内部空间的家务劳动，实则牵系着社会保障体系、国家教育系统、各企业公司等多主体的联合行动，与人口红利、经济发展等宏大议题息息相关。</strong></font><br>	
+		</div><br><br><br><br>
+	
+            </div>
+			<div id="masktraigger4"></div>
+        </div>		
+			
+		<div class="blackmask" id="blackmask4"></div>
+        <div class="part5">
+            <div class="partinner" id="partinner5">
+                <img id="titu5" src="PICS/光束渐起gif.gif" alt="part1" style="width: 100%;height: auto;">
+	<br>	<br><br><br>
+		
+		<div style="width: 850px;height: 136px;margin: 0 auto;">			
+		<img src="PICS/引号/光束渐起.png"  alt="yinhao1" style="width: 100%;height: 100%;"></div><br><br>			
+				
+		<div class="wenzi">
+		<font color="#e98e51" size="+0.5" ><strong>家务与自我，育儿和职场，并非天然矛盾。当一个个小家聚集成社会、凝结成国家时，家庭便不再止于私领域，而成为公共的关切——而这一关切也将成为支撑家庭的重要力量。</strong></font><br><br>
+		在育儿成为国家期待的当下，如果学校承担了更多的教育责任，在“家—学校—单位”中辗转周旋的父母们便能更加从容应对工作与育儿。 <font color="#e98e51" size="+0.5" ><strong> 这一变化背后，是一整套环环相扣的社会保障体系。</strong></font> 国家和企业共同行动，提高教职人员工作福利、提供孩子们的接送、意外保险等各项服务。<br>
+		
+		<font color="#e98e51" size="+0.5" ><strong> 尝试与改变不曾止步： </strong></font> 7月2日，北京市教育委员会发布关于启动暑期托管服务的通知，要求托管服务承办学校做好学生安全工作，认真落实疫情防控各项要求，这一背后是一个权责明确的风险控制机制。“学生的共同成长，离不开学校家庭社会的共同关心和支持”，通知里的文字，是对社会呼唤的回应。爸爸妈妈们无需再为“暑假何处去”而忧心，把孩子接到家后便是晚餐、休闲，享受每日的亲子团聚时间。<br><br>
+		
+		<font color="#e98e51" size="+0.5" ><strong>事实上，由政府、企业、家庭共同搭建的社会保障体系，在世界范围内已有所实践。 </strong></font>日本由过去的“家庭支付社会保障”转换至“社会保障支付家庭”，“国民皆保险·国民皆年金”，由社会承担护理照顾家庭老幼的责任。在欧洲社会模式中，全社会共担风险、共享机会，全职照料家庭的成员同样由国家支持并提供保障。而在中国，政府、社会组织、企业等社会力量逐渐为老年人提供的各种生活所需的服务， <font color="#e98e51" size="+0.5" ><strong> 社会参与家庭成为趋势，家庭不再只是一个家内部的私事，成为了社会的共同责任。</strong></font><br><br>
+		即使是司法层面，北京大学法学院教授强世功也认为， <font color="#e98e51" size="+0.5" ><strong> 爱的难题不能依靠以理性计算为代表的法律。 </strong></font> 更理想的解决方案是把婚姻家庭纠纷从目前的民事一庭中分离出来，设立独立的“家事法庭”，或在目前法院体系之下设立专门的“民事四庭”，避免将家庭等同于基于契约搭建平台，而是将其视为抚慰人心的温床。<br><br>
+		<font color="#e98e51" size="+0.5" ><strong>当光束渐起，家务劳动从幕后走向社会台前，经营家庭的压力将被逐步纾解。家庭的维系渐渐远离精密的计算，取之以爱的归位。</strong></font><br><br>
+		申燕萍所向往的，是侄子丁进和侄媳的家务劳动分工模式。丁进和妻子都是体制内职工，二人有所侧重地分担家务。丁进更多承担拖地、吸尘等重活，妻子则负责折叠衣服、整理收纳。<br>
+
+
+		</div><br><br>
+				
+		<p style="width: 650px;height: 442px;margin: 0 auto;">
+		<iframe src="照片滑动2.html" width="100%" height="100%" frameborder="0">
+ 		您的浏览器不支持iframe，请升级
+			</iframe></p>		
+				
+				<div class="tuzhu">
+				丁进夫妇一同做家务
+				</div><br><br>
+				
+		<div class="wenzi">
+		周末，小两口邀请申燕萍来家做客，妻子炖菜时，丁进也没闲着，给厨房的碗柜清洁、消毒。糖醋排骨出锅后，丁进系上围裙，“大厨要一展身手了”，不一会儿端出一菜一汤。申燕萍笑道，两个人早把“竞争关系”抛之脑后，互相夸赞对方的手艺。<br>
+			<font color="#e98e51" size="+0.5" ><strong>“到了年轻一代，观念就和我们不一样了。”申燕萍对未来抱有乐观态度。</strong></font><br>
+		</div><br><br>	
+				
+		<br><br><br>
+				
+		<style type="text/css">
+	#reveal1 {
+		opacity: 0;
+		-webkit-transform: scale(0.9);
+		-moz-transform: scale(0.9);
+		-ms-transform: scale(0.9);
+		-o-transform: scale(0.9);
+		transform: scale(0.9);
+		-webkit-transition: all 1s ease-in-out;
+		-moz-transition: all 1s ease-in-out;
+		-ms-transition: all 1s ease-in-out;
+		-o-transition: all 1s ease-in-out;
+		transition: all 1s ease-in-out;
+						}
+		
+		
+	#reveal1.visible {
+		opacity: 1;
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		-o-transform: none;
+		transform: none;
+						}
+		
+	#reveal2 {
+		opacity: 0;
+		-webkit-transform: scale(0.9);
+		-moz-transform: scale(0.9);
+		-ms-transform: scale(0.9);
+		-o-transform: scale(0.9);
+		transform: scale(0.9);
+		-webkit-transition: all 1s ease-in-out;
+		-moz-transition: all 1s ease-in-out;
+		-ms-transition: all 1s ease-in-out;
+		-o-transition: all 1s ease-in-out;
+		transition: all 1s ease-in-out;
+						}
+		
+		
+	#reveal2.visible {
+		opacity: 1;
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		-o-transform: none;
+		transform: none;
+						}
+		
+	#reveal3 {
+		opacity: 0;
+		-webkit-transform: scale(0.9);
+		-moz-transform: scale(0.9);
+		-ms-transform: scale(0.9);
+		-o-transform: scale(0.9);
+		transform: scale(0.9);
+		-webkit-transition: all 1s ease-in-out;
+		-moz-transition: all 1s ease-in-out;
+		-ms-transition: all 1s ease-in-out;
+		-o-transition: all 1s ease-in-out;
+		transition: all 1s ease-in-out;
+						}
+		
+		
+	#reveal3.visible {
+		opacity: 1;
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		-o-transform: none;
+		transform: none;
+						}
+		
+	#reveal4 {
+		opacity: 0;
+		-webkit-transform: scale(0.9);
+		-moz-transform: scale(0.9);
+		-ms-transform: scale(0.9);
+		-o-transform: scale(0.9);
+		transform: scale(0.9);
+		-webkit-transition: all 1s ease-in-out;
+		-moz-transition: all 1s ease-in-out;
+		-ms-transition: all 1s ease-in-out;
+		-o-transition: all 1s ease-in-out;
+		transition: all 1s ease-in-out;
+						}
+		
+		
+	#reveal4.visible {
+		opacity: 1;
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		-o-transform: none;
+		transform: none;
+						}	
+	
+	#reveal5 {
+		opacity: 0;
+		-webkit-transform: scale(0.9);
+		-moz-transform: scale(0.9);
+		-ms-transform: scale(0.9);
+		-o-transform: scale(0.9);
+		transform: scale(0.9);
+		-webkit-transition: all 1s ease-in-out;
+		-moz-transition: all 1s ease-in-out;
+		-ms-transition: all 1s ease-in-out;
+		-o-transition: all 1s ease-in-out;
+		transition: all 1s ease-in-out;
+						}
+		
+		
+	#reveal5.visible {
+		opacity: 1;
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		-o-transform: none;
+		transform: none;
+						}	
+				
+		
+		
+	</style>
+	
+	<div style="background-image: url(尾图长图.png);background-size: 100% 100%; background-color: #f6f4e7; width: 100%;height:3900px; position: relative;">
+	<!--<img src="尾图长图.png" alt="a" style="width: 100%;height: 3900px;position: absolute;left: 0;top: 0;">-->
+		
+	<div id="laba" alt="laba" onClick="play()" style="width: 60px;height: 60px;position: absolute;top: 32.8%;right: 24.2%;">	</div>
+	<audio id="music" src="video/结尾纯人声.mp3" loop autoplay></audio>	
+	
+		
+	<div id="a1" style="position: absolute;top: 37.2%;left: 15.7%">
+	<img id="reveal1" src="PICS/结尾/文字1 - 副本.png" style="width: 66%;height: auto;">
+	</div>	
+	
+	<div id="a2" style="position: absolute;top:41.2%;left: 50.2%">	
+	<img id="reveal2" src="PICS/结尾/文字2 - 副本.png" alt="jieweitu" style="width: 67%;height: auto;"></div>
+	
+	<div id="a3" style="position: absolute;top: 44.44%;left: 15.3%;">	
+	<img id="reveal3" src="PICS/结尾/文字3 - 副本.png" alt="jieweitu" style="width: 43%;height: auto;">	</div>
+		
+	<div id="a4" style="position: absolute;top:48.65%;left: 52%">	
+	<img id="reveal4" src="PICS/结尾/文字4 - 副本.png" alt="jieweitu" style="width: 67%;height: auto; ">	</div>
+	
+	<div id="a5" style="position: absolute;top:56.8%;left:27.8%">
+	<img id="reveal5" src="PICS/结尾/文字5 - 副本.png" alt="jieweitu" style="width: 67%;height: auto; "></div>
+		<!--
+	<div style=" position: absolute;top: 36.9%;left: 15.7%">
+	<img  src="PICS/结尾/文字1 - 副本.png" style="width: 66%;height: auto;">
+	</div>	
+	
+	<div style="position: absolute;top:40.77%;left: 50.2%">	
+	<img  src="PICS/结尾/文字2 - 副本.png" alt="jieweitu" style="width: 67%;height: auto;"></div>
+	
+	<div  style="position: absolute;top: 44%;left: 15.3%;">	
+	<img src="PICS/结尾/文字3 - 副本.png" alt="jieweitu" style="width: 43%;height: auto;">	</div>
+		
+	<div style="position: absolute;top:48.3%;left: 52%">	
+	<img  src="PICS/结尾/文字4 - 副本.png" alt="jieweitu" style="width: 67%;height: auto; ">	</div>
+	
+	<div  style="position: absolute;top:55.5%;left:29%">
+	<img  src="PICS/结尾/文字5 - 副本.png" alt="jieweitu" style="width: 67%;height: auto; "></div>
+     -->
+	</div>
+	<script>
+		var audio = document.getElementById('music');
+        audio.pause();//打开页面时无音乐
+		audio.loop=false;
+		function play() {
+    //var audio = document.getElementById('music');
+    	if (audio.paused) {
+        audio.play();
+        //document.getElementById('musicImg').src="images/play.png";
+		}else{
+        audio.pause();
+        //audio.currentTime = 0;//音乐从头播放
+        //document.getElementById('musicImg').src="images/stop.png";
+    }
+}
+		
+				</script>			
+				
+	<script>
+					
+		var controller1 = new ScrollMagic.Controller();
+		var scene1= new ScrollMagic.Scene({
+			triggerElement: "#a1",
+			triggerHook: 0.9, // show, when scrolled 10% into view
+			duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
+			offset: 50 // move trigger to center of element
+					})
+			
+			.setClassToggle("#reveal1", "visible") // add class to reveal
+			.addTo(controller1);
+		
+		var controller2 = new ScrollMagic.Controller();
+		var scene2= new ScrollMagic.Scene({
+			triggerElement: "#a2",
+			triggerHook: 0.9, // show, when scrolled 10% into view
+			duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
+			offset: 50 // move trigger to center of element
+					})
+			
+			.setClassToggle("#reveal2", "visible") // add class to reveal
+			.addTo(controller2);
+		
+		var controller3= new ScrollMagic.Controller();
+		var scene3= new ScrollMagic.Scene({
+			triggerElement: "#a3",
+			triggerHook: 0.9, // show, when scrolled 10% into view
+			duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
+			offset: 50 // move trigger to center of element
+					})
+			
+			.setClassToggle("#reveal3", "visible") // add class to reveal
+			.addTo(controller3);
+		
+		var controller4= new ScrollMagic.Controller();
+		var scene4= new ScrollMagic.Scene({
+			triggerElement: "#a4",
+			triggerHook: 0.9, // show, when scrolled 10% into view
+			duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
+			offset: 50 // move trigger to center of element
+					})
+			
+			.setClassToggle("#reveal4", "visible") // add class to reveal
+			.addTo(controller4);
+		
+		var controller5 = new ScrollMagic.Controller();
+		var scene5= new ScrollMagic.Scene({
+			triggerElement: "#a5",
+			triggerHook: 0.9, // show, when scrolled 10% into view
+			duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
+			offset: 50 // move trigger to center of element
+					})
+			
+			.setClassToggle("#reveal5", "visible") // add class to reveal
+			.addTo(controller5);
+		
+		var controller6 = new ScrollMagic.Controller();
+		var scene6= new ScrollMagic.Scene({
+			triggerElement: "#a6",
+			triggerHook: 0.9, // show, when scrolled 10% into view
+			duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
+			offset: 50 // move trigger to center of element
+					})
+			
+			.setClassToggle("#reveal6", "visible") // add class to reveal
+			.addTo(controller6);
+			
+					</script>		
+		
+				
+		
+            </div>
+			
+        </div>
+		
+		
+    </div>
+		
+	
+		<script src="js/jquery-3.5.1.js"></script>
+    <script src="js/ScrollMagic.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/animation.gsap.js"></script>
+    <script src="js/debug.addIndicators.js"></script>
+		
+		<script>
+	var tupianditu = document.getElementById('ditu');		
+			
+	var tcmm = document.getElementById('tuchumama');
+		tcmm.style.display="none";
+		
+	var tcbb = document.getElementById('tuchubaba');
+		tcbb.style.display="none";
+		
+	var tcbm = document.getElementById('tuchubaomu');
+		tcbm.style.display="none";
+		
+	var tcqt = document.getElementById('tuchuqita');
+		tcqt.style.display="none";	
+		
+	var tczb = document.getElementById('tuchuzhangbei');
+		tczb.style.display="none";	
+		
+	var x1=true;var x2=true;var x3=true;var x4=true;var x5=true;	
+		
+	var mm1 = document.getElementById('mm1');	
+		mm1.onclick=function()
+		{
+			if(x1){
+			tcmm.style.display="block";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+			tupianditu.style.display="none";	
+				x1=false;
+				x2=true;
+				x3=true;
+				x4=true;
+				x5=true;
+			}
+			
+			else{
+				tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x1=true;
+			}
+			
+		}
+		
+	var mm2 = document.getElementById('mm2');	
+		mm2.onclick=function()
+		{
+			if(x1){
+			tcmm.style.display="block";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+			tupianditu.style.display="none";
+				x1=false;
+				x2=true;
+				x3=true;
+				x4=true;
+				x5=true;
+			}
+			
+			else{
+				tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x1=true;
+			}
+		}	
+		
+		
+	var mm3 = document.getElementById('mm3');	
+		mm3.onclick=function()
+		{
+			if(x1){
+			tcmm.style.display="block";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+			tupianditu.style.display="none";
+				x1=false;
+				x2=true;
+				x3=true;
+				x4=true;
+				x5=true;
+			}
+			
+			else{
+				tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x1=true;
+			}
+		}		
+		
+	var bb1 = document.getElementById('bb1');	
+		bb1.onclick=function()
+		{
+			if(x2){
+			tcmm.style.display="none";
+			tcbb.style.display="block";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="none";
+				x2=false;
+				x1=true;
+				x3=true;
+				x4=true;
+				x5=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x2=true;
+			}
+		}	
+		
+	var bb2 = document.getElementById('bb2');	
+		bb2.onclick=function()
+		{
+			if(x2){
+			tcmm.style.display="none";
+			tcbb.style.display="block";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="none";
+				x2=false;
+				x1=true;
+				x3=true;
+				x4=true;
+				x5=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x2=true;
+			}
+		}	
+		
+	var bb3 = document.getElementById('bb3');	
+		bb3.onclick=function()
+		{
+			if(x2){
+			tcmm.style.display="none";
+			tcbb.style.display="block";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="none";
+				x2=false;
+				x1=true;
+				x3=true;
+				x4=true;
+				x5=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x2=true;
+			}
+		}		
+		
+	var bm1 = document.getElementById('bm1');	
+		bm1.onclick=function()
+		{
+			if(x3){
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="block";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="none";
+				x3=false;
+				x1=true;
+				x2=true;
+				x4=true;
+				x5=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x3=true;
+			}
+		}	
+		
+	var bm2 = document.getElementById('bm2');	
+		bm2.onclick=function()
+		{
+			if(x3){
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="block";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="none";
+				x3=false;
+				x1=true;
+				x2=true;
+				x4=true;
+				x5=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x3=true;
+			}
+		}	
+		
+	var bm3 = document.getElementById('bm3');	
+		bm3.onclick=function()
+		{
+			if(x3){
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="block";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="none";
+				x3=false;
+				x1=true;
+				x2=true;
+				x4=true;
+				x5=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x3=true;
+			}
+		}		
+		
+	var zb1 = document.getElementById('zb1');	
+		zb1.onclick=function()
+		{
+			if(x4){
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="block";
+				tupianditu.style.display="none";
+				x4=false;
+				x1=true;
+				x3=true;
+				x2=true;
+				x5=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x4=true;
+			}
+		}		
+		
+	var zb2 = document.getElementById('zb2');	
+		zb2.onclick=function()
+		{
+			if(x4){
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="block";
+				tupianditu.style.display="none";
+				x4=false;
+				x1=true;
+				x3=true;
+				x2=true;
+				x5=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x4=true;
+			}
+		}
+		
+	var zb3 = document.getElementById('zb3');	
+		zb3.onclick=function()
+		{
+			if(x4){
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="block";
+				tupianditu.style.display="none";
+				x4=false;
+				x1=true;
+				x3=true;
+				x2=true;
+				x5=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x4=true;
+			}
+		}	
+		
+	var qt1 = document.getElementById('qt1');	
+		qt1.onclick=function()
+		{
+			if(x5){
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="block";
+			tczb.style.display="none";
+				tupianditu.style.display="none";
+				x5=false;
+				x1=true;
+				x3=true;
+				x4=true;
+				x2=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x5=true;
+			}
+		}	
+		
+	var qt2 = document.getElementById('qt2');	
+		qt2.onclick=function()
+		{
+			if(x5){
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="block";
+			tczb.style.display="none";
+				tupianditu.style.display="none";
+				x5=false;
+				x1=true;
+				x3=true;
+				x4=true;
+				x2=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x5=true;
+			}
+		}		
+		
+		var qt3 = document.getElementById('qt3');	
+		qt3.onclick=function()
+		{
+			if(x5){
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="block";
+			tczb.style.display="none";
+				tupianditu.style.display="none";
+				x5=false;
+				x1=true;
+				x3=true;
+				x4=true;
+				x2=true;
+			}
+			
+			else{
+			tcmm.style.display="none";
+			tcbb.style.display="none";
+			tcbm.style.display="none";
+			tcqt.style.display="none";
+			tczb.style.display="none";
+				tupianditu.style.display="block";
+				x5=true;
+			}
+		}		
+		
+	</script>
+	
+		
+    <script>
+        $(document).ready(function () {
+            var part1Height = $("#partinner1").innerHeight();
+            var part2Height = $("#partinner2").innerHeight();
+            var part3Height = $("#partinner3").innerHeight();
+			var part4Height = $("#partinner4").innerHeight();
+			var part5Height = $("#partinner5").innerHeight();
+            var wrapHeight = part1Height + part2Height + part3Height + part4Height + part5Height;
+            console.log(part1Height);
+            console.log(part2Height);
+			console.log(part3Height);
+			console.log(part4Height);
+            $(".partwrap").css("height", wrapHeight);
+
+
+            var controller = new ScrollMagic.Controller();
+            var winHeight = $(window).height();
+
+            new ScrollMagic.Scene({
+                triggerElement: "#masktraigger1",
+                triggerHook: 1,
+                duration: winHeight
+            })
+                .on("progress", function (e) {
+                    $("#blackmask1").css("opacity", 1 - e.progress.toFixed(2));
+                })
+                .on("leave", function (e) {
+                    if (e.target.controller().info("scrollDirection") == "FORWARD") {
+                        $("#blackmask1").css("display", "none");
+                        $(".part2").css("position", "relative");
+                    }
+                })
+                .addTo(controller)
+
+            new ScrollMagic.Scene({
+                triggerElement: "#partinner2",
+                triggerHook: 0
+            })
+                .on("leave", function (e) {
+                    $("#blackmask1").css("display", "block");
+                    $(".part2").css("position", "fixed");
+                })
+                .addTo(controller)
+
+
+            //第2-3部分直接的切换
+            new ScrollMagic.Scene({
+                triggerElement: "#masktraigger2",
+                triggerHook: 1,
+                duration: winHeight
+            })
+                .on("progress", function (e) {
+                    $("#blackmask2").css("opacity", 1 - e.progress.toFixed(2));
+                })
+                .on("leave", function (e) {
+                    if (e.target.controller().info("scrollDirection") == "FORWARD") {
+                        $("#blackmask2").css("display", "none");
+                        $(".part3").css("position", "relative");
+                    }
+                })
+                .addTo(controller)
+
+            new ScrollMagic.Scene({
+                triggerElement: "#partinner3",
+                triggerHook: 0
+            })
+                .on("leave", function (e) {
+                    $("#blackmask2").css("display", "block");
+                    $(".part3").css("position", "fixed");
+                })
+                .addTo(controller)
+       // });
+		
+		
+			new ScrollMagic.Scene({
+                triggerElement: "#masktraigger3",
+                triggerHook: 1,
+                duration: winHeight
+            })
+                .on("progress", function (e) {
+                    $("#blackmask3").css("opacity", 1 - e.progress.toFixed(2));
+                })
+                .on("leave", function (e) {
+                    if (e.target.controller().info("scrollDirection") == "FORWARD") {
+                        $("#blackmask3").css("display", "none");
+                        $(".part4").css("position", "relative");
+                    }
+                })
+                .addTo(controller)
+		
+			new ScrollMagic.Scene({
+                triggerElement: "#partinner4",
+                triggerHook: 0
+            })
+                .on("leave", function (e) {
+                    $("#blackmask3").css("display", "block");
+                    $(".part4").css("position", "fixed");
+                })
+                .addTo(controller)
+			
+			new ScrollMagic.Scene({
+                triggerElement: "#masktraigger4",
+                triggerHook: 1,
+                duration: winHeight
+            })
+                .on("progress", function (e) {
+                    $("#blackmask4").css("opacity", 1 - e.progress.toFixed(2));
+                })
+                .on("leave", function (e) {
+                    if (e.target.controller().info("scrollDirection") == "FORWARD") {
+                        $("#blackmask4").css("display", "none");
+                        $(".part5").css("position", "relative");
+                    }
+                })
+                .addTo(controller)
+		
+			new ScrollMagic.Scene({
+                triggerElement: "#partinner5",
+                triggerHook: 0
+            })
+                .on("leave", function (e) {
+                    $("#blackmask4").css("display", "block");
+                    $(".part5").css("position", "fixed");
+                })
+                .addTo(controller)
+			
+			 $("#turnto1").on("click", function () {
+                $("html,body").animate({ scrollTop: 0 }, 1000);
+            })
+
+            $("#turnto2").on("click", function () {
+                $("html,body").animate({ scrollTop: part1Height }, 1000);
+            })
+
+            $("#turnto3").on("click", function () {
+                $("html,body").animate({ scrollTop: part1Height + part2Height }, 1000);
+            })
+			
+			$("#turnto4").on("click", function () {
+                $("html,body").animate({ scrollTop: part1Height + part2Height +part3Height }, 1000);
+            })
+			
+			$("#turnto5").on("click", function () {
+                $("html,body").animate({ scrollTop: part1Height + part2Height +part3Height +part4Height }, 1000);
+            })
+			
+        });
+
+    </script>
+	</body>
+	
+</html>
