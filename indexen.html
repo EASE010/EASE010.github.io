@@ -1317,9 +1317,26 @@ networkSeries.links.template.strokeOpacity = 0;
 	<div style="width: 950px;height:550px;margin: 0 auto;position: absolute;top: 35px;">
 		
 		
-		<iframe src="Map_EN.html" width="100%" height="110%" frameborder="0">
- 		Your browser does not support iframe, please upgrade
- 		</iframe>
+		<!-- Drawn inline rather than in an <iframe>: an iframe gave this block its
+		     own scroll context, so a reader whose pointer was over the map scrolled
+		     the map instead of the page and saw scrollbars inside it. Height 110%
+		     keeps the same 950x605 drawing area the iframe had. -->
+		<div id="scatterMapEN" style="width:100%;height:110%;"></div>
+		<div id="scatterMapENFallback" style="display:none;font-family:Optima,Georgia,serif;color:#cc6633;padding:40px;text-align:center;">
+			The map could not be loaded. Please refresh the page.
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js" defer></script>
+		<script src="js/scatter-map-en.js" defer></script>
+		<script>
+			// Deferred scripts finish before DOMContentLoaded, so initScatterMapEN
+			// is defined by the time this runs.
+			document.addEventListener('DOMContentLoaded', function () {
+				initScatterMapEN({
+					container: 'scatterMapEN',
+					fallback: 'scatterMapENFallback'
+				});
+			});
+		</script>
 				</div></div>	<br><br><br>			
 				
 	
@@ -1342,8 +1359,16 @@ networkSeries.links.template.strokeOpacity = 0;
 		<div id="shujuzhexiantu" style="background-color:#f6f4e7;width: 400px;height: 300px;position: absolute;left: 320px;top: 160px;">
 		<!-- Was a dycharts.com embed: it stamped a watermark over the plot and was
 		     authored at 600x470 for this 400x300 slot, so it rendered squashed.
-		     Rebuilt with D3 in Fertility_EN.html at the slot's real size. -->
-		<iframe src="Fertility_EN.html" width="100%" height="100%" scrolling="no" frameborder="0" align="0" title="Fertility rate in China, 2006 to 2020"></iframe>
+		     Rebuilt with D3 in js/fertility-chart-en.js and drawn inline here, so
+		     the block has no scroll context of its own. -->
+		<div id="fertilityChartEN"></div>
+		<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
+		<script src="js/fertility-chart-en.js" defer></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				initFertilityChartEN({ container: 'fertilityChartEN' });
+			});
+		</script>
 		</div>
 	</div>	<br>
 		
