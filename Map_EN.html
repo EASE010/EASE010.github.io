@@ -74,37 +74,37 @@ var data = [
      {name: 'HeNan', value: 13897}
 ];
 var geoCoordMap = {
-    'XiZang' : [ 91.11, 30.97 ],
+            'XiZang' : [ 88.11, 31 ],
 			'ShangHai' : [ 121.48, 31.22 ],
-			'FuJian' : [ 118.1, 27.46 ],
-			'ZheJiang' : [ 119.96, 29.86 ],
-			'GuangDong' : [ 113.23, 24.16 ],
+			'FuJian' : [ 118.1, 25.66 ],
+			'ZheJiang' : [ 119.96, 28.86 ],
+			'GuangDong' : [ 113.23, 23.16 ],
 			'ShanXi' : [ 112.53, 38.87 ],
-			'YunNan' : [ 101.73, 25.04 ],
+			'YunNan' : [ 101.73, 24.04 ],
 			'LiaoNing' : [ 123.38, 42.8 ],
 			'JiLin' : [ 125.35, 44.88 ],
-			'JiangXi' : [ 115.89, 28.68 ],
-			'HaiNan' : [ 109.51, 20.25 ],
-			'GuangXi' : [ 108.74, 24.16 ],
+			'JiangXi' : [ 116.6, 28.68 ],
+			'HaiNan' : [ 109.51, 19.00 ],
+			'GuangXi' : [ 108.74, 23.66 ],
 			'NeiMengGu' : [ 111.65, 42.42 ],
-			'SiChuan' : [ 104.06, 31.67 ],
-			'ShaanXi' : [ 108.95, 35.27 ],
-			'JiangSu' : [ 119.78, 33.04 ],
-			'GuiZhou' : [ 106.71, 27.57 ],
+			'SiChuan' : [ 102.06, 30 ],
+			'ShaanXi' : [ 108.2, 34 ],
+			'JiangSu' : [ 119.78, 34.04 ],
+			'GuiZhou' : [ 106.71, 26.5 ],
 			'BeiJing' : [ 116.46,39.92 ],
 			'XinJiang' : [ 86.68, 41.77 ],
 			'ShanDong' : [ 118, 36.65 ],
-			'GanSu' : [ 103.73, 37.03 ],
+			'GanSu' : [ 104.73, 35.03 ],
 			'TianJin' : [ 117.2, 40.13 ],
-			'HeNan' : [ 113.65, 34.76 ],
+			'HeNan' : [ 113.65, 34 ],
 			'HeiLongJiang' : [ 127.63, 47.75 ],
 			'HeBei' : [ 115.48, 40.03 ],
 			'HuNan' : [ 112, 28.21 ],
 			'AnHui' : [ 117.27, 32.86 ],
 			'HuBei' : [ 112.31, 31.52 ],
-			'QingHai' : [ 97.31, 37.03 ],
+			'QingHai' : [ 97.31, 36.03 ],
 			'ChongQing' : [ 107.31, 30.52 ],
-			'NingXia' : [ 106.31, 38.52 ],
+			'NingXia' : [ 106.31, 37.52 ],
 			'XiangGang' : [ 114.31, 23.02 ],
 			'AoMen' : [ 114.01, 22.52 ],
 			'TaiWan' : [ 120.81, 25.02 ]
@@ -126,7 +126,7 @@ var convertData = function (data) {
 
 option = {
     title: {
-     text: '\nOnly Shanghai and Hebei can afford',
+     text: '\nOnly Shanghai and Hebei Residents can Afford Housework Compensation',
    subtext: 'The amount of housework compensation based on the domestic service industry',
      left: '10%',
         textStyle: {
@@ -189,7 +189,18 @@ option = {
             encode: {
                 value: 2
             },
-            color: '#ffbc87',
+            // Translucent fill with a thin orange rim, so overlapping provinces
+            // read as distinct circles. The transparency is itemStyle.opacity
+            // rather than an alpha in the colour, because ECharts builds the
+            // tooltip's marker dot from the fill colour — an rgba() fill makes
+            // that dot nearly invisible. opacity fades the rim too, hence the
+            // deeper border colour.
+            itemStyle: {
+                color: '#ffbc87',
+                opacity: 0.6,
+                borderColor: '#d2691e',
+                borderWidth: 1
+            },
             label: {
                 formatter: '{b}',
                 position: 'right',

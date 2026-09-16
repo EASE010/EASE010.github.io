@@ -188,7 +188,16 @@ option = {
             encode: {
                 value: 2
             },
-            color: '#ffbc87',
+            // 半透明填充 + 细橙色描边，重叠的省份也能看清各自的圆。
+            // 透明度用 itemStyle.opacity 而不是颜色里的 alpha：
+            // ECharts 的提示框圆点取自填充色，rgba() 会让圆点几乎看不见。
+            // opacity 同时也会淡化描边，所以描边用了更深的橙色。
+            itemStyle: {
+                color: '#ffbc87',
+                opacity: 0.5,
+                borderColor: '#d2691e',
+                borderWidth: 1
+            },
             label: {
                 formatter: '{b}',
                 position: 'right',
