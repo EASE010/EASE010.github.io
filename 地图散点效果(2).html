@@ -1,37 +1,37 @@
 <!--
-    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/zh/editor.html?c=effectScatter-bmap
+    以家政服务业为标准的家务补偿金额散点地图。
+
+    原先基于 ECharts + 百度地图（bmap）示例：
+    https://echarts.apache.org/examples/zh/editor.html?c=effectScatter-bmap
+    百度底图需要 api.map.baidu.com 的密钥，境外读者也无法加载，
+    现改为由 ECharts 直接读取仓库内的 js/china-provinces.geo.json 绘制底图，
+    不再依赖任何第三方地图服务和密钥。
 -->
 <!DOCTYPE html>
 <html style="height: 100%">
     <head>
         <meta charset="utf-8">
+        <style>
+            html, body { height: 100%; margin: 0; background: #f6f4e7; }
+            #container { height: 100%; }
+            #fallback {
+                display: none;
+                font: 15px/1.6 "汉仪劲楷简", sans-serif;
+                color: #cc6633;
+                padding: 40px;
+                text-align: center;
+            }
+        </style>
     </head>
-    <body style="height: 100%; margin: 0">
-        <div id="container" style="height: 100%"></div>
+    <body>
+        <div id="container"></div>
+        <div id="fallback">地图加载失败，请刷新页面。</div>
 
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
- 
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/dataTool.min.js"></script>
-      
-     
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
-   
-       
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
-      
-     
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/china.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/world.js"></script>
-    
-      
-        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=<Your Key Here>"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/bmap.min.js"></script>
-   
 
         <script type="text/javascript">
 var dom = document.getElementById("container");
 var myChart = echarts.init(dom);
-var app = {};
 
 var option;
 
@@ -128,8 +128,7 @@ option = {
  title: {
         text:  '\n只 有 上 海 和 河 北 能 够 承 担',
      subtext: '以 家 政 服 务 业 为 标 准 的 家 务 补 偿 金 额',
-     sublink: 'http://www.pm25.in',
-      left: '15%',   
+      left: '15%',
       textStyle: {
    fontSize: 30,
     fontWeight: 'bolder',
@@ -140,133 +139,48 @@ option = {
      fontSize: 25,
      fontFamily: "汉仪劲楷简",
            color: '#cc6633'}
-      
+
    },
 
     tooltip : {
-        trigger: 'item'
+        trigger: 'item',
+        // valueFormatter 只改数字本身，默认的提示框版式
+        //（系列名、颜色圆点、右侧加粗数值）保持不变。
+        // 因为覆盖了默认数字格式，所以要自己调用 addCommas 加千分位
+        valueFormatter: function (value) {
+            return '¥' + echarts.format.addCommas(value);
+        }
     },
-    bmap: {
-        center: [104.114129, 37.550339],
-        zoom: 5,
-        roam: "move",
-        mapStyle: {
-            styleJson: [{
-                'featureType': 'water',
-                'elementType': 'all',
-                'stylers': {
-                    'color': '#f6f4e7'
-                }
-            }, {
-                'featureType': 'land',
-                'elementType': 'all',
-                'stylers': {
-                    'color': '#ddeedc'
-                }
-            }, {
-                'featureType': 'railway',
-                'elementType': 'all',
-                'stylers': {
-                    'visibility': 'off'
-                }
-            },  {
-                    'featureType': 'city',
-                    'elementType': 'all',
-                    'stylers': {
-                              'color': '#ffffff00'
-                    }
-          },
-          {
-                    'featureType': 'background',
-                    'elementType': 'all',
-                    'stylers': {}
-          },
-            {
-                'featureType': 'highway',
-                'elementType': 'all',
-                'stylers': {
-                    'color': '#fdfdfd'
-                }
-            }, {
-                'featureType': 'highway',
-                'elementType': 'labels',
-                'stylers': {
-                    'visibility': 'off'
-                }
-            }, {
-                'featureType': 'arterial',
-                'elementType': 'geometry',
-                'stylers': {
-                    'color': '#fefefe'
-                }
-            }, {
-                'featureType': 'arterial',
-                'elementType': 'geometry.fill',
-                'stylers': {
-                    'color': '#fefefe'
-                }
-            }, {
-                'featureType': 'poi',
-                'elementType': 'all',
-                'stylers': {
-                    'visibility': 'off'
-                }
-            }, {
-                'featureType': 'green',
-                'elementType': 'all',
-                'stylers': {
-                    'visibility': 'off'
-                }
-            }, {
-                'featureType': 'subway',
-                'elementType': 'all',
-                'stylers': {
-                    'visibility': 'off'
-                }
-            }, {
-                'featureType': 'manmade',
-                'elementType': 'all',
-                'stylers': {
-                    'color': '#d1d1d1'
-                }
-            }, {
-                'featureType': 'local',
-                'elementType': 'all',
-                'stylers': {
-                    'color': '#d1d1d1'
-                }
-            }, {
-                'featureType': 'arterial',
-                'elementType': 'labels',
-                'stylers': {
-                    'visibility': 'off'
-                }
-            }, {
-                'featureType': 'boundary',
-                'elementType': 'all',
-                'stylers': {
-                    'color': '#6aa84fff'
-                }
-            }, {
-                'featureType': 'building',
-                'elementType': 'all',
-                'stylers': {
-                    'color': '#d1d1d1'
-                }
-            }, {
-                'featureType': 'label',
-                'elementType': 'labels.text.fill',
-                'stylers': {
-                    'color': '#999999'
-                }
-            }]
+    geo: {
+        map: 'china',
+        // 让全国完整显示在标题下方，不再像原先 zoom 5 的百度底图那样被裁切
+        layoutCenter: ['50%', '58%'],
+        layoutSize: '100%',
+        roam: 'move',       // 鼠标拖拽功能，与原百度底图一致
+        selectedMode: false,
+        itemStyle: {
+            areaColor: '#ebebeb',
+            borderColor: '#c4c4c4',
+            borderWidth: 0.8
+        },
+        // 底图只是背景，不承载数据：不显示提示框，也不响应悬停高亮。
+        // 只有散点承载数据，因此下面每个 series 单独把提示框打开
+        //（series 会继承所属坐标系的 tooltip 配置）
+        tooltip: { show: false },
+        emphasis: {
+            label: { show: false },
+            itemStyle: {
+                areaColor: '#ebebeb',
+                borderColor: '#c4c4c4'
+            }
         }
     },
     series : [
         {
             name: '即使将所有可支配收入用于补偿，还差/元',
             type: 'scatter',
-            coordinateSystem: 'bmap',
+            coordinateSystem: 'geo',
+            tooltip: { show: true },
             data: convertData(data),
             symbolSize: function (val) {
                 return val[2] / 450;
@@ -285,12 +199,13 @@ option = {
                     show: true
                 }
             },
-            
+
         },
         {
             name: '人均可支配收入比补偿金额高/元',
             type: 'scatter',
-            coordinateSystem: 'bmap',
+            coordinateSystem: 'geo',
+            tooltip: { show: true },
             data: convertData(data1),
             symbolSize: function (val) {
                 return val[2] / 450;
@@ -315,44 +230,30 @@ option = {
             },
             zlevel: 1
         }
-        
-        //{
-        //    name: 'Top 5',
-        //    type: 'effectScatter',
-        //    coordinateSystem: 'bmap',
-        //    data: convertData(data.sort(function (a, b) {
-        //        return b.value - a.value;
-         //   }).slice(0, 6)),
-        //    symbolSize: function (val) {
-        //        return val[2] / 500;
-        //    },
-         //   encode: {
-        //        value: 2
-        //    },
-        //    showEffectOn: 'render',
-        //    rippleEffect: {
-        //        brushType: 'stroke'
-        //    },
-        //    hoverAnimation: true,
-        //    label: {
-        //        formatter: '{b}',
-        //        position: 'right',
-        //        show: true
-        //    },
-        //    itemStyle: {
-        //        shadowBlur: 10,
-        //        shadowColor: '#333'
-        //    },
-        //    zlevel: 1
-    //    }
     ]
 };
 
-if (option && typeof option === 'object') {
-    myChart.setOption(option);
-}
+// 省界数据放在仓库里，读者在哪个国家都不依赖地图服务商是否可达。
+fetch('js/china-provinces.geo.json')
+    .then(function (res) {
+        if (!res.ok) { throw new Error('HTTP ' + res.status); }
+        return res.json();
+    })
+    .then(function (geoJson) {
+        echarts.registerMap('china', geoJson);
+        myChart.setOption(option);
+    })
+    .catch(function (err) {
+        console.error('中国地图数据加载失败：', err);
+        myChart.dispose();
+        document.getElementById('container').style.display = 'none';
+        document.getElementById('fallback').style.display = 'block';
+    });
+
+window.addEventListener('resize', function () {
+    myChart.resize();
+});
 
         </script>
     </body>
 </html>
-    

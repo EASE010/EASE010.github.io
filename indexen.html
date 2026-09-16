@@ -7,19 +7,23 @@
 	
 	<link rel="web icon" type="image/x-icon" href="网页标.ico)" media="screen" />
 	
-	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-	
+	<!-- Same library versions as before, moved off cdn.staticfile.org: that CDN
+	     is only reachable from inside mainland China and these blocking <head>
+	     requests hung the whole page for readers elsewhere. -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+
 	<link rel="stylesheet" href="style2.css">
-	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@2.1.1/dist/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
 	<!-- Resources -->
 	<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
 	<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://cdn.amcharts.com/lib/4/plugins/forceDirected.js"></script>
 	<!-- script src="https://cdn.amcharts.com/lib/4/themes/frozen.js"></script -->
 	
-	<script type="text/javascript" src="http://scrollmagic.io/assets/js/lib/jquery.min.js"></script>
-	
+	<!-- A second, redundant jQuery used to be pulled from http://scrollmagic.io
+	     here. Over https it was blocked as mixed content, so the page has always
+	     run on the jQuery above; removed so local and deployed behave the same. -->
 	<script type="text/javascript" src="js/ScrollMagic.js"></script>
 	
 	<style>
@@ -1316,7 +1320,7 @@ networkSeries.links.template.strokeOpacity = 0;
 	<div style="width: 950px;height:550px;margin: 0 auto;position: absolute;top: 35px;">
 		
 		
-		<iframe src="英文地图散点效果.html" width="100%" height="110%" frameborder="0">
+		<iframe src="Map_EN.html" width="100%" height="110%" frameborder="0">
  		Your browser does not support iframe, please upgrade
  		</iframe>
 				</div></div>	<br><br><br>			
