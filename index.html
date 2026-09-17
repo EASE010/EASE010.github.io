@@ -7,19 +7,24 @@
 	
 	<link rel="web icon" type="image/x-icon" href="网页标.ico)" media="screen" />
 	
-	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-	
+	<!-- 与原来相同的库版本，只是从 cdn.staticfile.org 换到 jsDelivr：
+	     那个 CDN 只在中国大陆境内可达，而这几个 <head> 里的阻塞请求
+	     会让境外读者的整页卡住加载。 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+
 	<link rel="stylesheet" href="style2.css">
-	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@2.1.1/dist/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
 	<!-- Resources -->
 	<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
 	<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://cdn.amcharts.com/lib/4/plugins/forceDirected.js"></script>
 	<!-- script src="https://cdn.amcharts.com/lib/4/themes/frozen.js"></script -->
 	
-	<script type="text/javascript" src="http://scrollmagic.io/assets/js/lib/jquery.min.js"></script>
-	
+	<!-- 这里原先又从 http://scrollmagic.io 拉了一份多余的 jQuery。
+	     在 https 下它会被当作混合内容拦掉，所以页面一直用的是上面那份 jQuery；
+	     移除后本地和线上的行为一致。 -->
+
 	<!--
 	<script type="text/javascript" src="https://scrollmagic.io/scrollmagic/uncompressed/ScrollMagic.js"></script>-->
 	
@@ -1329,9 +1334,25 @@ networkSeries.links.template.strokeOpacity = 0;
 	<div style="width: 950px;height:550px;margin: 0 auto;position: absolute;top: 25px;">
 		
 		
-		<iframe src="地图散点效果(2).html" width="100%" height="110%" frameborder="0">
- 		Your browser does not support iframe, please upgrade
- 		</iframe>
+		<!-- 直接内联绘制，不再用 <iframe>：iframe 会让这一块有自己的滚动区域，
+		     读者鼠标停在地图上继续滚动时，滚的是地图而不是页面，块内还会出现
+		     滚动条。高度 110% 保持与原来 iframe 相同的 950x605 绘图区。 -->
+		<div id="scatterMapCN" style="width:100%;height:110%;"></div>
+		<div id="scatterMapCNFallback" style="display:none;font-family:'微软雅黑',sans-serif;color:#cc6633;padding:40px;text-align:center;">
+			地图加载失败，请刷新页面。
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js" defer></script>
+		<script src="js/scatter-map-cn.js" defer></script>
+		<script>
+			// defer 脚本会在 DOMContentLoaded 之前执行完，
+			// 所以这里运行时 initScatterMapCN 已经定义好了。
+			document.addEventListener('DOMContentLoaded', function () {
+				initScatterMapCN({
+					container: 'scatterMapCN',
+					fallback: 'scatterMapCNFallback'
+				});
+			});
+		</script>
 				</div></div>	<br><br><br>				
 	
 		
@@ -1351,7 +1372,18 @@ networkSeries.links.template.strokeOpacity = 0;
 		
 			
 		<div id="shujuzhexiantu" style="background-color:#f6f4e7;width: 400px;height: 300px;position: absolute;left: 320px;top: 160px;">
-		<iframe src="https://dycharts.com/xshow/index.html?id=c_9e37f66f0aae9bbc7de22ddaea85d75c" width="100%" height="100%" scrolling="no" frameborder="0" align="0"></iframe>
+		<!-- 原先是 dycharts.com 的嵌入：图上会被压一个水印，而且图是按
+		     600x470 做的、这里的位置只有 400x300，所以渲染出来是压扁的。
+		     现用 D3 在 js/fertility-chart-cn.js 里重做，并直接内联绘制，
+		     这一块不再有自己的滚动区域。 -->
+		<div id="fertilityChartCN"></div>
+		<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
+		<script src="js/fertility-chart-cn.js" defer></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				initFertilityChartCN({ container: 'fertilityChartCN' });
+			});
+		</script>
 		</div>
 	</div>	<br>
 		

@@ -1,0 +1,25 @@
+<!--
+    正文生育率折线图的单独预览页。
+
+    正文（index.html）直接挂载图表，不再用 iframe 嵌入本页。
+    两边都加载 js/fertility-chart-cn.js，数据和样式都在那一份文件里。
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>生育率折线图，2006-2020</title>
+<style>
+    html, body { margin: 0; height: 100%; background: #f6f4e7; }
+</style>
+</head>
+<body>
+<div id="chart"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="js/fertility-chart-cn.js"></script>
+<script>
+    initFertilityChartCN({ container: 'chart' });
+</script>
+</body>
+</html>
