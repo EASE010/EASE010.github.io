@@ -16,8 +16,8 @@
     Fertility_EN.html loads this same script for previewing the chart alone, so
     the data and styling here are the single source of truth.
 
-    Data, palette (#ff9966 / #99cc99 / #339966), y-range [0.3, 1.9] and 2px
-    lines are carried over from the original chart's saved configuration.
+    Data, y-range [0.3, 1.9] and 2px lines are carried over from the original
+    chart's saved configuration; the palette was re-derived (see SERIES below).
     The title, the definitions, the legend and the source note live in the
     article's background image (PICS/0615生育率图/【英】生育率.png); this file
     draws only the plot that sits inside it.
@@ -30,10 +30,16 @@
     // Source: www.stats.gov.cn; www.kylc.com; Recent Levels and Trends of
     // Fertility in China. One-child and second-child rates are unavailable for
     // 2018-2020, which is the gap the background image's footnote refers to.
+    // Palette darkened from the published #ff9966 / #99cc99 / #339966, which
+    // failed on the cream surface: the old light green measured 1.66:1 contrast
+    // with chroma 0.089 (it read as grey), and both light tones sat above the
+    // lightness band. These three clear 3:1 contrast, the chroma floor and an
+    // OKLab CVD separation of >=8 on every pair. The legend dots in
+    // PICS/0615生育率图/【英】生育率.png were recoloured to match.
     var SERIES = [
-        { key: 'total',  name: 'Total Fertility Rate',        short: 'Total',        color: '#ff9966' },
-        { key: 'first',  name: 'One-child Fertility Rate',    short: 'One-child',    color: '#99cc99' },
-        { key: 'second', name: 'Second-child Fertility Rate', short: 'Second-child', color: '#339966' }
+        { key: 'total',  name: 'Total Fertility Rate',        short: 'Total',        color: '#db6f35' },
+        { key: 'first',  name: 'One-child Fertility Rate',    short: 'One-child',    color: '#379f6b' },
+        { key: 'second', name: 'Second-child Fertility Rate', short: 'Second-child', color: '#336d36' }
     ];
 
     var ROWS = [
